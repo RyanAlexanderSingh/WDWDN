@@ -32,12 +32,16 @@ function clicking_down_button() {
     mouse_position.y = game_screen.height - e.clientY + 10;
     
     //Check object!
-    
+    check_picked_object()
 }
 
-//Other functions
+//Other functionsJua
 
 function check_picked_object(){
+  var num_items = items.length;
+  for(var i = 0; i < num_items; i++){
+    DrawBox(game_screen,items[i])
+  }
 }
 
 //Draw characters
