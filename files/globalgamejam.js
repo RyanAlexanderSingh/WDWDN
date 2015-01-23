@@ -1,5 +1,9 @@
 console.log("running script")
 
+//IMPORT OTHER FILES
+
+
+//VARIABLES
 var viewportwidth
 var cat = {}
 var dog = {}
@@ -8,7 +12,9 @@ var control = {}
 var mouse_position = {}
 var time = {}
 
-function release_fun() {
+
+//RELEASING THE BUTTON OF THE MOUSE
+function releasing_click_up() {
   //obtain total time
   var angle = Math.atan(mouse_position.y/mouse_position.x)
   var intensity = time*2
@@ -20,7 +26,8 @@ function release_fun() {
   mouse_position.launching = false
 }
 
-function obtain_mouse_position_cat_dog() {
+//CLICKING DOWN THE BUTTON FROM WEB
+function clicking_down_button() {
   mouse_position.launching = true
     var e = window.event;
     mouse_position.inix = cat.x;
@@ -31,6 +38,10 @@ function obtain_mouse_position_cat_dog() {
     time = 0
     //initialize counting time
 }
+
+
+
+//Other functions
 
 function cat_dog_reset(){
   dog.x = cat.width - 10
@@ -51,6 +62,31 @@ function reach_dog(){
   return (distance.x < 2 && distance.y < 2)
 }
 
+
+//This function is the one starting up the game
+//This function will only load the game the first time
+function init_game() {
+  dif_time = 0.12
+  console.log("the body has loaded")
+  cat.context = document.getElementById("mycanvas").getContext("2d")
+  cat.angle = 0
+  cat.width = 400
+  cat.height = 400
+  dog.x = cat.width - 10
+  dog.y = 10
+  cat.x = 10
+  cat.y = 10
+  cat.vx = 50
+  cat.vy = 75
+  dog.vx = -25
+  dog.vy = 75
+  cat.moving = true
+  setInterval(render,  20)
+  control.move = false
+}
+
+
+//This is the render function. It will be called each frame
 function render() {
   var ctxt = cat.context
   //console.log("rendering")
@@ -71,7 +107,6 @@ function render() {
   ctxt.restore()
   
   // Paint mouse helper
-  
   if(mouse_position.launching){
     if(time < 50)
       time++
@@ -122,26 +157,4 @@ function render() {
     }
   }
   cat.moving = !reach_dog()
-  
 }
-
-function body_has_loaded() {
-  dif_time = 0.12
-  console.log("the body has loaded")
-  cat.context = document.getElementById("mycanvas").getContext("2d")
-  cat.angle = 0
-  cat.width = 400
-  cat.height = 400
-  dog.x = cat.width - 10
-  dog.y = 10
-  cat.x = 10
-  cat.y = 10
-  cat.vx = 50
-  cat.vy = 75
-  dog.vx = -25
-  dog.vy = 75
-  cat.moving = true
-  setInterval(render,  20)
-  control.move = false
-}
-
