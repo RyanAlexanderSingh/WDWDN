@@ -1,0 +1,48 @@
+ToDo list:
+
+1st deliverable
+- Basic programming
+  - Draw things into screen
+    - Draw UI
+    - Draw background
+    - Draw characters
+    - Draw objects
+  - Interact with things
+    - Pick item ( item )   (Item: object, choice)
+    - Apply item to container ( container )     (Container: character, place)
+  - Control game-flow
+    - Start screen
+      - WHAT DO WE DO NOW?! 
+      - Randomize objects
+    - Info screen
+      - New game, options, score...
+    - Next screen
+      - Countdown
+      - (Let's go) button
+  - Generated story outcomes
+    - Store decision (each screen)
+    - Generate outcome (each screen)
+    - Generate final 'story'
+- Basic art
+  - Graphics
+    - Background (s)
+    - Characters
+    - Objects
+    - UI
+  - Sound
+    - Music
+    - SFX
+      - Picking and applying objects
+      - WHAT DO WE DO NOW?
+  - "Story"
+
+2nd deliverable
+- Advanced art
+  - Random art
+- Advanced topic
+  - Horror
+  - Love
+  - Action
+  - Comedy
+
+
