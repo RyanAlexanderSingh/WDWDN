@@ -1,16 +1,18 @@
-console.log("running script")
-
-//IMPORT OTHER FILES
-
 
 //VARIABLES
 var viewportwidth
+var game_screen = {}
 var cat = {}
 var dog = {}
 var distance = {}
 var control = {}
 var mouse_position = {}
 var time = {}
+var character1
+var character2
+var character3
+var character4
+var character5
 
 
 //RELEASING THE BUTTON OF THE MOUSE
@@ -19,8 +21,6 @@ function releasing_click_up() {
   var angle = Math.atan(mouse_position.y/mouse_position.x)
   var intensity = time*2
   
-  cat.vx = intensity * Math.cos(angle)
-  cat.vy = intensity * Math.sin(angle)
   control.move = true
   time = 0
   mouse_position.launching = false
@@ -30,131 +30,51 @@ function releasing_click_up() {
 function clicking_down_button() {
   mouse_position.launching = true
     var e = window.event;
-    mouse_position.inix = cat.x;
-    mouse_position.iniy = cat.y;
     viewportwidth = window.innerWidth
-    mouse_position.x = e.clientX- (viewportwidth-400)/2;
-    mouse_position.y = cat.height -e.clientY;
+    mouse_position.x = 400 + e.clientX - (viewportwidth/2);
+    mouse_position.y = game_screen.height - e.clientY + 10;
     time = 0
     //initialize counting time
 }
 
-
-
 //Other functions
-
-function cat_dog_reset(){
-  dog.x = cat.width - 10
-  dog.y = 10
-  cat.x = 10
-  cat.y = 10
-  cat.vx = 50
-  cat.vy = 75
-  dog.vx = -25
-  dog.vy = 75
-  cat.moving = true
-  control.move = false
-}
-
-function reach_dog(){
-  distance.x = Math.abs(cat.x - dog.x)
-  distance.y = Math.abs(cat.y - dog.y)
-  return (distance.x < 2 && distance.y < 2)
-}
-
 
 //This function is the one starting up the game
 //This function will only load the game the first time
 function init_game() {
   dif_time = 0.12
   console.log("the body has loaded")
-  cat.context = document.getElementById("mycanvas").getContext("2d")
-  cat.angle = 0
-  cat.width = 400
-  cat.height = 400
-  dog.x = cat.width - 10
-  dog.y = 10
-  cat.x = 10
-  cat.y = 10
-  cat.vx = 50
-  cat.vy = 75
-  dog.vx = -25
-  dog.vy = 75
-  cat.moving = true
+  game_screen.context = document.getElementById("mycanvas").getContext("2d")
+  game_screen.width = 800
+  game_screen.height = 500
   setInterval(render,  20)
-  control.move = false
+  
+  character1 = new DrawableBox(100, (game_screen.height - 200), 30 ,80, "#ff0000")
+  character2 = new DrawableBox(200, (game_screen.height - 150), 30 ,70, "#ff5500")
+  character3 = new DrawableBox(400, (game_screen.height - 200), 30 ,80, "#ff5500")
+  character4 = new DrawableBox(500, (game_screen.height - 150), 30 ,70, "#ff5500")
+  
 }
 
 
 //This is the render function. It will be called each frame
 function render() {
-  var ctxt = cat.context
+  var ctxt = game_screen.context
   //console.log("rendering")
-  ctxt.clearRect(0, 0, cat.width, cat.height)
-  ctxt.clearRect(0, 0, cat.width, cat.height)
+  ctxt.clearRect(0, 0, game_screen.width, game_screen.height)
   ctxt.save()
-  //Draw dog (11, 10.75)
-  ctxt.translate(dog.x, cat.height -dog.y)
-  ctxt.beginPath()
-  ctxt.moveTo(-10, -10)
-  ctxt.lineTo( 10, -10)
-  ctxt.lineTo( 10,  10)
-  ctxt.lineTo(-10,  10)
-  ctxt.closePath()
-  ctxt.fillStyle = "#ff0000"
-  ctxt.fill()
-  ctxt.stroke()
-  ctxt.restore()
   
-  // Paint mouse helper
-  if(mouse_position.launching){
-    if(time < 50)
-      time++
-    if(time != 0){
-      ctxt.save()
-      ctxt.translate(cat.x, cat.height -cat.y)
-      ctxt.beginPath()
-      ctxt.moveTo(-1, -1)
-      mouse_position.x = e.clientX- (viewportwidth-400)/2;
-      mouse_position.y = cat.height -e.clientY;
-      ctxt.lineTo(mouse_position.x*(time/50), -mouse_position.y*(time/50))
-      ctxt.closePath()
-      ctxt.stroke()
-      ctxt.restore()
-    }
-  }
+  
+  DrawBox(game_screen, character4)
+  DrawBox(game_screen, character3)
+  DrawBox(game_screen, character2)
+  DrawBox(game_screen, character1)
   
   ctxt.restore()
   ctxt.save()
-  ctxt.translate(cat.x, cat.height -cat.y)
-  ctxt.beginPath()
-  ctxt.moveTo(-10, -10)
-  ctxt.lineTo( 10, -10)
-  ctxt.lineTo( 10,  10)
-  ctxt.lineTo(-10,  10)
-  ctxt.closePath()
-  ctxt.fillStyle = "#ffff00"
-  ctxt.fill()
-  ctxt.stroke()
-  ctxt.restore()
   ctxt.font = "14px Arial"
   viewportwidth = window.innerWidth
-  ctxt.fillText("Strength! ->" + (time), 20, 20)
-  ctxt.fillText(mouse_position.x, 20, 40)
+  ctxt.fillText("Strength! ->" + (10), 20, 20)
+  ctxt.fillText(mouse_position.x + " " + mouse_position.y, 20, 40)
   
-  
-  if(control.move){
-    if(cat.moving){
-      cat.x = cat.x + (cat.vx)*dif_time
-      cat.y = cat.y + (cat.vy)*dif_time
-      cat.vx = cat.vx - cat.y*0.01*dif_time
-      cat.vy = cat.vy - 9.8*dif_time
-      
-      dog.x = dog.x + (dog.vx)*dif_time
-      dog.y = dog.y + (dog.vy)*dif_time
-      dog.vx = dog.vx - dog.y*0.01*dif_time
-      dog.vy = dog.vy - 9.8*dif_time
-    }
-  }
-  cat.moving = !reach_dog()
 }
