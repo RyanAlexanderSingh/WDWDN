@@ -36,11 +36,12 @@ function clicking_down_button() {
 }
 
 //Other functionsJua
-
 function check_picked_object(){
   var num_items = items.length;
+  var item;
   for(var i = 0; i < num_items; i++){
-    DrawBox(game_screen,items[i])
+    item = items[i]
+    
   }
 }
 
