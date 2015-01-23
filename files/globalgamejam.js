@@ -8,11 +8,8 @@ var distance = {}
 var control = {}
 var mouse_position = {}
 var time = {}
-var character1
-var character2
-var character3
-var character4
-var character5
+var items = []
+var characters = []
 
 
 //RELEASING THE BUTTON OF THE MOUSE
@@ -33,11 +30,31 @@ function clicking_down_button() {
     viewportwidth = window.innerWidth
     mouse_position.x = 400 + e.clientX - (viewportwidth/2);
     mouse_position.y = game_screen.height - e.clientY + 10;
-    time = 0
-    //initialize counting time
+    
+    //Check object!
+    
 }
 
 //Other functions
+
+function check_picked_object(){
+}
+
+//Draw characters
+function draw_characters(){
+  var num_characters = characters.length;
+  for(var i = 0; i < num_characters; i++){
+    DrawBox(game_screen,characters[i])
+  }
+}
+
+//Draw items
+function draw_items(){
+  var num_items = items.length;
+  for(var i = 0; i < num_items; i++){
+    DrawBox(game_screen,items[i])
+  }
+}
 
 //This function is the one starting up the game
 //This function will only load the game the first time
@@ -49,11 +66,16 @@ function init_game() {
   game_screen.height = 500
   setInterval(render,  20)
   
-  character1 = new DrawableBox(100, (game_screen.height - 200), 30 ,80, "#ff0000")
-  character2 = new DrawableBox(200, (game_screen.height - 150), 30 ,70, "#ff5500")
-  character3 = new DrawableBox(400, (game_screen.height - 200), 30 ,80, "#ff5500")
-  character4 = new DrawableBox(500, (game_screen.height - 150), 30 ,70, "#ff5500")
+  characters.push(new DrawableBox(100, (game_screen.height - 200), 30 ,80, "#ff0000"))
+  characters.push(new DrawableBox(200, (game_screen.height - 150), 30 ,70, "#ff5500"))
+  characters.push(new DrawableBox(400, (game_screen.height - 200), 30 ,80, "#ff5500"))
+  characters.push(new DrawableBox(500, (game_screen.height - 150), 30 ,70, "#ff5500"))
   
+  items.push(new DrawableBox(50,  (game_screen.height - 20), 5,5 ,"#ff5500"))
+  items.push(new DrawableBox(500,  (game_screen.height - 400), 5,5 ,"#ff5500"))
+  items.push(new DrawableBox(30,  (game_screen.height - 1), 5,5 ,"#ff5500"))
+  items.push(new DrawableBox(400,  (game_screen.height - 2), 5,5 ,"#ff5500"))
+  items.push(new DrawableBox(150,  (game_screen.height - 222), 5,5 ,"#ff5500"))
 }
 
 
@@ -64,17 +86,13 @@ function render() {
   ctxt.clearRect(0, 0, game_screen.width, game_screen.height)
   ctxt.save()
   
-  
-  DrawBox(game_screen, character4)
-  DrawBox(game_screen, character3)
-  DrawBox(game_screen, character2)
-  DrawBox(game_screen, character1)
+  draw_characters()
+  draw_items()
   
   ctxt.restore()
   ctxt.save()
   ctxt.font = "14px Arial"
   viewportwidth = window.innerWidth
-  ctxt.fillText("Strength! ->" + (10), 20, 20)
-  ctxt.fillText(mouse_position.x + " " + mouse_position.y, 20, 40)
+  ctxt.fillText(mouse_position.x + " " + mouse_position.y, 20, 20)
   
 }

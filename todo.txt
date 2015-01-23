@@ -3,10 +3,10 @@ ToDo list:
 1st deliverable
 - Basic programming
   - Draw things into screen
-    - Draw UI
-    - Draw background
-    - Draw characters
-    - Draw objects
+    - Draw UI (almost)
+    - Draw background 
+    - Draw characters (almost)
+    - Draw objects (almost)
   - Interact with things
     - Pick item ( item )   (Item: object, choice)
     - Apply item to container ( container )     (Container: character, place)
