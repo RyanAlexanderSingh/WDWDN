@@ -172,7 +172,8 @@ function dragging_around_things(){
 function draw_characters(){
   var num_characters = characters.length;
   for(var i = 0; i < num_characters; i++){
-    DrawBox(game_screen,characters[i])
+    if(characters[i].drawable)
+      DrawBox(game_screen,characters[i])
   }
 }
 
@@ -180,7 +181,8 @@ function draw_characters(){
 function draw_items(){
   var num_items = items.length;
   for(var i = 0; i < num_items; i++){
-    DrawBox(game_screen,items[i])
+    if(items[i].drawable)
+      DrawBox(game_screen,items[i])
   }
 }
 

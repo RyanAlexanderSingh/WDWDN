@@ -22,6 +22,7 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
   this.colour = colour //colour? Maybe not used later!
   this.status = status //will represent so many different things...
   this.type = type //will represent so many different things...
+  this.drawable = true
 }
 
 //-1 means that he can receive that object. 
