@@ -28,26 +28,15 @@
       var canvas = document.getElementById('Screen 1 of 3');
       var context = canvas.getContext('2d');
 		
-      context.beginPath();
-      context.rect(188, 50, 200, 100);
-      context.fillStyle = 'red';
-      context.fill();
-      context.lineWidth = 7;
-      context.strokeStyle = 'black';
-      context.stroke();
     </script>
 	<canvas id="ui_canvas" width="800" height="100"></canvas>
     <script>
       var ui_canvas = document.getElementById("ui_canvas");
 	  var ui_context = ui_canvas.getContext("2d");
-	  var x = ui_canvas.width/2;
-	  var y = ui_canvas.height/2;
-	  
-	  if(document.getElementById('Screen 1 of 3')){
+
 		ui_context.font = "20px Georgia";
 		ui_context.fillStyle = '#3B0D11';
-		ui_context.fillText("TEST SCREEN: 1 OF 3          NUM OF ITEMS LEFT:	NaN		", x/2, y);
-	  }
+		ui_context.fillText("Take arms! Equip the nerds with items...if you dare 		                   Items left:	NaN		",30, ui_canvas.height/2);
     </script>
 	<canvas id="timer_canvas" width="800" height="50"></canvas>
 	<script>

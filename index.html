@@ -23,30 +23,23 @@
   <style type="text/css"></style></head>
     <canvas id="index" width="800" height="500 style="border:4px solid #000000;">">
 	Your browser does not support the HTML5 canvas tag. You cannot play this game!</canvas>
-	<img id="splash_screen" src="./files/pictures/Forest.png" alt="The splash screen" width="0" height="0">
+	
     <script>
-	window.onload = function(){
-      var canvas = document.getElementById("index");
-      var context = canvas.getContext("2d");
-	  var x = canvas.width;
-	  var y = canvas.height;
-
-	  var splash = document.getElementById("splash_screen");
-	  context.drawImage(splash, 0, 0, x, y);
-	  };
+		var canvas = document.getElementById('index');
+        var context = canvas.getContext('2d');
+		
+		make_splash_img();
+		
     </script>
 	<canvas id="ui_canvas" width="800" height="100"></canvas>
     <script>
       var ui_canvas = document.getElementById("ui_canvas");
 	  var ui_context = ui_canvas.getContext("2d");
-	  var x = ui_canvas.width/2;
-	  var y = ui_canvas.height/2;
+	
 	  
-	  if(document.getElementById('Screen 1 of 3')){
 		ui_context.font = "20px Georgia";
 		ui_context.fillStyle = '#3B0D11';
-		ui_context.fillText("TEST SCREEN: 1 OF 3          NUM OF ITEMS LEFT:	NaN		", x/2, y);
-	  }
+		ui_context.fillText("Trial 'N Error - What Do We Do Now?!", ui_canvas.width/4+40, ui_canvas.height/2);
     </script>
 	<canvas id="timer_canvas" width="800" height="50"></canvas>
 	<script>

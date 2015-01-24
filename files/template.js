@@ -25,7 +25,7 @@ function update(){
 
 //OUR ACTUAL TIMER
 function doTimer(){
-	timerID = setInterval("update()", 200);
+	timerID = setInterval("update()", 2000);
 	update();
 }
 
@@ -51,13 +51,16 @@ function pickScenario(clicked_id){
 	}	
 }
 
-function prepare(){
-	window.location.href = "./prepare.html";
+function make_splash_img(){
+	base_image = new Image();
+	base_image.src = './files/pictures/Forest.png'
+	var can = document.getElementById('index');
+    var con = can.getContext('2d');
+	var x = can.width;
+	var y = can.height;
+	base_image.onload = function(){
+		con.drawImage(base_image, 0, 0, can.width, can.height);
+	};
 }
-
-function outcome(){
-	window.location.href = "./outcome.html";
-}
-
 
 
