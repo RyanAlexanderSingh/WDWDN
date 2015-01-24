@@ -27,17 +27,14 @@ function init_items(){
   all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4)) 
   
   //Randomize a subset and add it to items
-  for (var a = 0; a < 10; a++)
+  for (var a = 0; a < 12; a++)
   {
     var i = getRandomInt(0,all_items.length-2 )
-    alert(i)
     while(all_items[i].selected){
-      alert("new one" + i)
       if(i>all_items.length-2) 
         i = 0
       i = i+1
     }
-    alert(i)
     all_items[i].selected = true
     items.push(new DrawableBox(40 * (a+1),  (game_screen.height - 30), 20, 20 ,-1,0,all_items[i].type, all_items[i].url, all_items[i].id))
   }
