@@ -96,7 +96,10 @@ function releasing_click_up() {
 
 //CLICKING DOWN THE BUTTON FROM WEB
 function clicking_down_button() {
-  mouse_position.launching = true
+  if(game_screen.cutscene){
+    game_screen.cutscene_pos++
+  }else{
+    mouse_position.launching = true
     var e = window.event;
     viewportwidth = window.innerWidth
     mouse_position.x = 400 + e.clientX - (viewportwidth/2);
@@ -104,6 +107,7 @@ function clicking_down_button() {
     
     //Check object!
     check_picked_object()
+  }
 }
 
 //Other functions
@@ -173,10 +177,11 @@ function dragging_around_things(){
 //This function is the one starting up the game
 //This function will only load the game the first time
 function init_game() {
-  
   clock_init()
   game_screen.story = "Zombie"
-  game_screen.name = document.getElementById("progress").value;
+  game_screen.name = document.getElementById("progress").value
+  game_screen.cutscene = false
+  game_screen.cutscene_pos = 0
   dif_time = 0.12
   mouse_position.dragging = -1
   mouse_position.character = -1	
@@ -207,6 +212,8 @@ function render() {
   draw_items()
   draw_frontground()
   
+  if(game_screen.cutscene)
+    draw_cutscene()
   
   ctxt.restore()
   ctxt.save()

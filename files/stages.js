@@ -104,21 +104,32 @@ function set_up_sceen1(){
  function clean_scene1(){
     for(var i=0; i<items.length; i++){
       if(items[i].status == 0)
-        items[i].posx = 10000
+        items[i].posx = 10000 //send to china unused items
+      else{
+        items[i].posx += 120 // move the items to the right
+        items[i].posY += 20 // move the items to the right
+        }
     }
-  }
-
-//This will include the basic stages
-function set_up_scene2(){
+    
   //Setting up background
   game_screen.backgroundurl ="files/pictures/Shettler.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
 
-  items.push(new DrawableBox(400,(game_screen.height - 300),250,70,"I will reason with the zombies!", 0, 5, 0, 0))
-  items.push(new DrawableBox(100,(game_screen.height - 400),140,70,"I want to cry...", 0, 5, 0, 0))
-  items.push(new DrawableBox(200,(game_screen.height - 250),220,80,"I'm blocking the windows!", 0, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 300),180,70,"I have to call mum...", 0, 5, 0, 0))
-  items.push(new DrawableBox(100,(game_screen.height - 200),200,70,"I'm gonna kill 'em all!", 0, 5, 0, 0))
+  for(var i=0; i<characters.length; i++){
+    characters[i].posx += 120
+    characters[i].posy += 20
+    }
+    
+    story = 
+  }
+
+//This will include the basic stages
+function set_up_scene2(){
+  items.push(new DrawableBox(650,(game_screen.height - 390),250,70,"I will reason with the zombies!", 0, 5, 0, 0))
+  items.push(new DrawableBox(100,(game_screen.height - 410),140,70,"I want to cry...", 0, 5, 0, 0))
+  items.push(new DrawableBox(500,(game_screen.height - 450),220,80,"I'm blocking the windows!", 0, 5, 0, 0))
+  items.push(new DrawableBox(350,(game_screen.height - 350),180,70,"I have to call mum...", 0, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 420),180,70,"I'm gonna kill 'em all!", 0, 5, 0, 0))
 }
 
 // this function needs to be called in pick scenario in GGJ.js
@@ -142,8 +153,6 @@ function resolve_characters_equip_2_plan(){
   //At the end of this. Will call to set_up_sceen2
   //Delete things from scene1
   clean_scene1()
-  //Draw  scene
-  set_up_scene2()
 }
 
 function get_story_opening(){
