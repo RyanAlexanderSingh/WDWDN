@@ -24,6 +24,7 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
   this.status = status //will represent so many different things...
   this.type = type //will represent so many different things...
   this.drawable = true
+  this.url = -1
 }
 
 function DrawingInfo(colorA, colorB, colorC, colorD, colorE){
@@ -70,6 +71,14 @@ function Equipment(num_avalaible){
 //This function draws a box on the screen. Receives a context (where to draw) and a box
 function DrawBox (screen, box){
   var ctxt = screen.context
+  if(box.colour == -1){
+    var hat_image = new Image()
+    hat_image.src = box.url
+    ctxt.save()
+    ctxt.drawImage(hat_image, box.posx - box.sizex, box.posy - box.sizey,box.sizex*2, box.sizey*2)
+    ctxt.restore()
+  }
+  else{
   ctxt.save()
   ctxt.translate(box.posx, box.posy)
   ctxt.beginPath()
@@ -82,11 +91,13 @@ function DrawBox (screen, box){
   ctxt.fill()
   ctxt.stroke()
   ctxt.restore()
+  }
 }
 
 //This function draws a box on the screen. Receives a context (where to draw) and a box
 function DrawCharacter (screen, box){
   var ctxt = screen.context
+  if(box.url == -1){
   ctxt.save()
   ctxt.translate(box.posx, box.posy)
   ctxt.beginPath()
@@ -98,6 +109,15 @@ function DrawCharacter (screen, box){
   ctxt.fillStyle = box.colour.a
   ctxt.fill()
   ctxt.stroke()
+  }else{
+    var hat_image = new Image()
+    hat_image.src = box.url
+    ctxt.save()
+    ctxt.drawImage(hat_image, box.posx - box.sizex/2, box.posy - box.sizey,box.sizex, box.sizey/2)
+    ctxt.restore()
+  ctxt.save()
+  ctxt.translate(box.posx, box.posy)
+  }
   ctxt.beginPath()
   ctxt.moveTo(box.sizex, -box.sizey/2)
   ctxt.lineTo(-box.sizex, -box.sizey/2)
@@ -137,4 +157,35 @@ function DrawCharacter (screen, box){
   ctxt.fill()
   ctxt.stroke()
   ctxt.restore()
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+//Draw characters
+function draw_characters(){
+  var num_characters = characters.length;
+  for(var i = 0; i < num_characters; i++){
+    if(characters[i].drawable)
+      DrawCharacter(game_screen,characters[i])
+  }
+}
+
+//Draw items
+function draw_items(){
+  var num_items = items.length;
+  for(var i = 0; i < num_items; i++){
+    if(items[i].drawable)
+      DrawBox(game_screen,items[i])
+  }
 }

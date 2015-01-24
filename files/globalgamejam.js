@@ -17,7 +17,7 @@ function releasing_click_up() {
       if(item.type == 0){ //head
         if(character.type.num_avalaible > 0 && character.type.head == -1){
           item.posx = character.posx
-          item.posy = character.posy - character.sizey
+          item.posy = character.posy - character.sizey - 10
           character.type.head = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -75,7 +75,7 @@ function releasing_click_up() {
         }
       }
       else if(item.type == 5){ //balloon
-        if(character.type.num_avalaible > 0 && character.type.balloon == -1){
+        if(character.type.balloon == -1){
           item.posx = character.posx + character.sizex/2
           item.posy = character.posy - character.sizey - 55
           character.type.balloon = 1
@@ -187,6 +187,9 @@ function init_game() {
   // Pick type of story
   // Then load the appropriate level1
   set_up_sceen1()
+  
+  // start the music
+  play_single_sound('in_the_back_room')
 }
 
 
@@ -204,6 +207,6 @@ function render() {
   ctxt.save()
   ctxt.font = "14px Arial"
   viewportwidth = window.innerWidth
-  ctxt.fillText(mouse_position.x + " " + mouse_position.y, 20, 20)
+  ctxt.fillText("Char1.head => " + characters[1].type.head, 20, 20)
   
 }
