@@ -18,6 +18,8 @@ function ItemInfo (id, url, type){
   this.id = id
   this.url = url
   this.type = type
+  this.offsetx = 0
+  this.offsety = 0
 }
 
 //This function is going to be something that can be draw
