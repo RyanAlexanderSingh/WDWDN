@@ -6,6 +6,8 @@
      <!-- this script lives in a file -->
 	 <body bgcolor="#748386"> 
     <script type="text/javascript" src="./files/template.js"></script>
+	<script type="text/javascript" src="./files/globalgamejam.js"></script>
+
 	<style type="text/css">
 		canvas{
 		padding-left: 0;
@@ -34,9 +36,7 @@
 	<canvas id="ui_canvas" width="800" height="100"></canvas>
     <script>
       var ui_canvas = document.getElementById("ui_canvas");
-	  var ui_context = ui_canvas.getContext("2d");
-	
-	  
+	  var ui_context = ui_canvas.getContext("2d");  
 		ui_context.font = "20px Georgia";
 		ui_context.fillStyle = '#3B0D11';
 		ui_context.fillText("Trial 'N Error - What Do We Do Now?!", ui_canvas.width/4+40, ui_canvas.height/2);

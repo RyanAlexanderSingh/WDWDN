@@ -174,6 +174,9 @@ function dragging_around_things(){
 //This function is the one starting up the game
 //This function will only load the game the first time
 function init_game() {
+  clock_init()
+  game_screen.story = "Zombie"
+  game_screen.level = 1
   dif_time = 0.12
   mouse_position.dragging = -1
   mouse_position.character = -1	
@@ -229,5 +232,21 @@ function draw_frontground(){
     ctxt.drawImage(background_image, 0, 0,800, 500)
     ctxt.restore()
   }
+}
+
+//IF TIMER HAS STOPPED OR BUTTON CLICKED
+function pickScenario(clicked_id){
+	if(clicked_id == '1')
+	{
+		window.location.href = "./equipment.html";
+	}	
+	if(clicked_id == '2')
+	{
+		window.location.href = "./prepare.html";
+	}	
+	if(clicked_id == '3')
+	{
+		window.location.href = "./outcome.html";
+	}	
 }
 

@@ -18,38 +18,25 @@ function update(){
 	canvas_context.fillRect(x_pos, 10, 5, 30);
 	x_pos = x_pos + 10;
 	if(x_pos >= timer_canvas.width){
-		alert("Times up");
 		endTimer();
 	}
 }
 
 //OUR ACTUAL TIMER
 function doTimer(){
-	timerID = setInterval("update()", 2000);
+	timerID = setInterval("update()", 200);
 	update();
 }
 
 //END THE TIMER AND RUN PREPARE
 function endTimer(){
 	clearInterval(timerID);
-	prepare();
+	//Go to next screen
+	 game_screen.level++
+	pickScenario(game_screen.level)
+   
 }
 
-//STOP TIMER WHEN WE NEED TO PROGRESS TO NEXT LEVEL
-function pickScenario(clicked_id){
-	if(clicked_id == '1')
-	{
-		window.location.href = "zombies/equipment.html";
-	}	
-	if(clicked_id == '2')
-	{
-		window.location.href = "./prepare.html";
-	}	
-	if(clicked_id == '3')
-	{
-		window.location.href = "./outcome.html";
-	}	
-}
 
 function make_splash_img(){
 	base_image = new Image();
