@@ -10,16 +10,19 @@ var time = {}
 var items = []
 var characters = []
 var aux_pos = {}
+var balloon_image
 
 
 //To create 'classes' in javascript an easy way is to create classes
 
-function ItemInfo (id, url, type){
+function ItemInfo (id, url, type, sizex, sizey, offsetx, offsety){
   this.id = id
   this.url = url
   this.type = type
-  this.offsetx = 0
-  this.offsety = 0
+  this.sizex = sizex
+  this.sizey = sizey
+  this.offsetx = offsetx
+  this.offsety = offsety
   this.selected = false
 }
 
@@ -31,8 +34,6 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type, url, id){
   this.sizey = sizey 
   this.colour = colour //colour? Maybe not used later!
   this.status = status //will represent so many different things...
-  this.id = -1
-  this.item_list = []
   this.type = type //will represent so many different things...
   this.drawable = true
   this.id = id
@@ -67,7 +68,7 @@ function Equipment(num_avalaible){
 // 3 : out
 // 4 : stressed
 //Type for character
-// some info about who he is 
+// Has the info of the equipment of the character
 
 //Status for items
 // 0 : draggable
@@ -198,6 +199,31 @@ function draw_items(){
   var num_items = items.length;
   for(var i = 0; i < num_items; i++){
     if(items[i].drawable)
+    {
+     if(items[i].type == 5)
+      draw_balloon(items[i].posx,items[i].posy,items[i].sizex,items[i].sizey, items[i].colour)
+     else
       DrawBox(game_screen,items[i])
+    }
   }
+}
+
+function draw_balloon(x,y,sizex,sizey,text){
+    balloon_image = new Image()
+    balloon_image.src = "files/pictures/balloon.png"
+    var ctxt = game_screen.context
+  
+    ctxt.save()
+    ctxt.drawImage(balloon_image, x - sizex/2, y -sizey/2 , sizex, sizey)
+    ctxt.restore()
+    
+		// colour the story text
+		ctxt.font = "18px Calibri";
+		ctxt.fillStyle = "#000000"
+    ctxt.save()
+    var text_lines = getLines(ctxt, text, sizex-5)
+		for (i = 0; i < text_lines.length; i++){
+			ctxt.fillText(text_lines[i], x - sizex/2 + 10, y + 35 * i)
+			}
+    ctxt.restore()
 }
