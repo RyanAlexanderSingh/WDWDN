@@ -107,7 +107,24 @@ function set_up_sceen1(){
   items.push(new DrawableBox(100,(game_screen.height - 200),200,70,"I'm gonna kill 'em all!", 0, 5, 0, 0))
 }
 
-
+// this function needs to be called in pick scenario in GGJ.js
+function resolve_characters_equip_2_plan(){
+	// this function will take each character and evaluate their chance of living
+	// for each character
+	var equipment_array = []
+	for (i=0; i < characters.length; i++){
+		// check what equipment they have
+		equipment_array[1] = character[i].type.head;
+		equipment_array[2] = character[i].type.lefth;
+		equipment_array[3] = character[i].type.righth;
+		equipment_array[4] = character[i].type.torso;
+		equipment_array[5] = character[i].type.feet;
+		}
+		// evaluate whether they die or not
+		// affect other characters
+		// set the text to be read out next scene
+	}
+}
 
 function get_story_opening(){
 	var story_part =
