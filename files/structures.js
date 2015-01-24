@@ -24,6 +24,16 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
   this.type = type //will represent so many different things...
 }
 
+function Equipment(num_avalaible){
+  this.head = 0
+  this.lefth = 0
+  this.righth = 0
+  this.torso = 0
+  this.feet = 0
+  this.balloon = 0
+  this.num_avalaible = num_avalaible
+}
+
 //Status for character
 // 0 : sad
 // 1 : happy
@@ -42,6 +52,7 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
 // 2 : righthand
 // 3 : torso
 // 4 : feet
+// 5 : balloon
 
 //This function draws a box on the screen. Receives a context (where to draw) and a box
 function DrawBox (screen, box){
