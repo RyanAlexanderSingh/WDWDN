@@ -171,24 +171,6 @@ function dragging_around_things(){
   }
 }
 
-//Draw characters
-function draw_characters(){
-  var num_characters = characters.length;
-  for(var i = 0; i < num_characters; i++){
-    if(characters[i].drawable)
-      DrawBox(game_screen,characters[i])
-  }
-}
-
-//Draw items
-function draw_items(){
-  var num_items = items.length;
-  for(var i = 0; i < num_items; i++){
-    if(items[i].drawable)
-      DrawBox(game_screen,items[i])
-  }
-}
-
 //This function is the one starting up the game
 //This function will only load the game the first time
 function init_game() {
