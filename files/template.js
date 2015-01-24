@@ -55,11 +55,39 @@ function getLines(ctx, text, maxWidth) {
     return lines;
 }
 
+
+var fadePct = 0;
+
+function animateFade(){
+	if(fadePct > 100){
+		return;
+	}
+	requestAnimationFrame(animateFade);
+	draw(fade_image, fadePct / 100);
+    draw(base_image, (1 - fadePct / 100));
+    fadePct++;
+}
+
+function draw(img, opacity) {
+	var con = document.getElementById("index").getContext('2d');
+    con.save();
+    con.globalAlpha = opacity;
+    con.drawImage(img, 0, 0);
+    con.restore();
+}
+
+function load_intro(){
+	fadePct = 0;
+    animateFade();
+}
+
 function make_splash_img(){
 	base_image = new Image();
 	base_image.src = './files/pictures/intro_screen.png'
+	fade_image = new Image();
+	fade_image.src = './files/pictures/black_bg.jpg'
 	var can = document.getElementById('index');
-    var con = can.getContext('2d');
+	var con = can.getContext('2d');
 	var x = can.width;
 	var y = can.height;
 	
@@ -86,7 +114,6 @@ function make_splash_img(){
 		for (i = 0; i < text_lines.length; i++){
 			con.fillText(text_lines[i], 50, 300 + 40 * i)
 			}
-			
 		};
 }
 

@@ -11,8 +11,6 @@
     <script type="text/javascript" src="./files/structures.js"></script>
     <script type="text/javascript" src="./files/stages.js"></script>
     <script type="text/javascript" src="./files/audio_handler.js"></script>
-    <script type="text/javascript" src="./files/template.js"></script>
-	<body bgcolor="#748386"> 
 	<style type="text/css">
 		canvas{
 		padding-left: 0;
@@ -42,7 +40,7 @@
 
 		ui_context.font = "20px Georgia";
 		ui_context.fillStyle = '#3B0D11';
-		ui_context.fillText("Prepare yourself! Who knows what you've got to do...",30, ui_canvas.height/2);
+		ui_context.fillText("Take arms! Equip the nerds with items...if you dare 		                   Items left:	NaN		",30, ui_canvas.height/2);
     </script>
 	<canvas id="timer_canvas" width="800" height="50"></canvas>
 	<script>
@@ -51,6 +49,6 @@
 
     </script>
 	<center>
-    <input type="submit" id="progress" value="Are you ready?" class="buttons" onclick="pickScenario(this.value)"/>
+    <input type="submit" id="2" value="Proceed" class="buttons" onclick="pickScenario(this.id)"/>
 	</center>
 </body></html>
