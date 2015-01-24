@@ -29,7 +29,7 @@ function releasing_click_up() {
       else if(item.type == 1){ //lefthand
         if(character.type.num_avalaible > 0 && character.type.lefth == -1){
           item.posx = character.posx + character.sizex
-          item.posy = character.posy
+          item.posy = character.posy + 15
           character.type.lefth = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -41,7 +41,7 @@ function releasing_click_up() {
       else if(item.type == 2){ //righthand
         if(character.type.num_avalaible > 0 && character.type.righth == -1){
           item.posx = character.posx - character.sizex
-          item.posy = character.posy
+          item.posy = character.posy + 15
           character.type.righth = mouse_position.dragging
           character.type.num_avalaible--
         } else{
