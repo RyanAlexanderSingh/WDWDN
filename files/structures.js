@@ -3,12 +3,13 @@
 //To create 'classes' in javascript an easy way is to create classes
 
 //This function is going to be something that can be draw
-function DrawableBox (posx, posy, sizex, sizey, colour){
+function DrawableBox (posx, posy, sizex, sizey, colour, status){
   this.posx = posx
   this.posy = posy
   this.sizex = sizex
-  this.sizey = sizey
-  this.colour = colour
+  this.sizey = sizey 
+  this.colour = colour //colour? Maybe not used later!
+  this.status = status //will represent so many different things...
 }
 
 //This function draws a box on the screen. Receives a context (where to draw) and a box
