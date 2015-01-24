@@ -3,19 +3,19 @@
 
 var x_pos = 0;
 //COUNTDOWN FOR THE UI
-function countownOnTimer() {
+function init() {
   //obtain total time
-  var ui_canvas = document.getElementById("ui_canvas");
-  if(ui_canvas.getContext){
-	canvas_context = ui_canvas.getContext("2d");
+  var timer_canvas = document.getElementById("timer_canvas");
+  if(timer_canvas.getContext){
+	canvas_context = timer_canvas.getContext("2d");
 	doTimer();
   }
 }
-//UPDATE LOOP BASED ON THE TIMER
+//UPDATE LOOP
 function update(){
-	canvas_context.fillRect(x_pos, 25, 5, 30);
+	canvas_context.fillRect(x_pos, 10, 5, 30);
 	x_pos = x_pos + 10;
-	if(x_pos >= ui_canvas.width){
+	if(x_pos >= timer_canvas.width){
 		alert("Times up");
 		stopTimer();
 	}
@@ -30,3 +30,5 @@ function stopTimer(){
 	clearInterval(timerID);
 	window.location.href = "globalgamejam.html";
 }
+
+
