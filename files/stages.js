@@ -1,3 +1,11 @@
+function init_items(){
+  var all_items = []
+  //Generate the whole list
+  all_items.push(new ItemInfo(10, "files/pictures/BigTestHat.png", 0))
+  //Randomize a subset and add it to items
+  
+}
+
 
 //This will include the basic stages
 function set_up_sceen1(){
@@ -26,4 +34,8 @@ function set_up_sceen1(){
   items.push(new DrawableBox(400,  (game_screen.height - 50), 30,10,"#00ff00",0,3))
   items.push(new DrawableBox(300,  (game_screen.height - 50), 30,10 ,"#00ff00",0,3))
   items.push(new DrawableBox(150,  (game_screen.height - 222), 30,10 ,"#ff5500",0,4))
+}
+
+function analyze_situation(){
+
 }
