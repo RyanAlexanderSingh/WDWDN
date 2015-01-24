@@ -20,10 +20,11 @@ function ItemInfo (id, url, type){
   this.type = type
   this.offsetx = 0
   this.offsety = 0
+  this.selected = false
 }
 
 //This function is going to be something that can be draw
-function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
+function DrawableBox (posx, posy, sizex, sizey, colour, status, type, url, id){
   this.posx = posx
   this.posy = posy
   this.sizex = sizex
@@ -34,7 +35,8 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
   this.item_list = []
   this.type = type //will represent so many different things...
   this.drawable = true
-  this.url = -1
+  this.id = id
+  this.url = url
 }
 
 function DrawingInfo(colorA, colorB, colorC, colorD, colorE){
