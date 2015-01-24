@@ -243,6 +243,7 @@ function pickScenario(clicked_value){
 	}	
 	if(clicked_value == "Prepare Yourself")
 	{
+  alert("JAJAJAJA")
       resolve_characters_equip_2_plan()
 	}	
 	if(clicked_value == "Are you ready?")

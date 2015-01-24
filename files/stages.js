@@ -102,8 +102,9 @@ function set_up_sceen1(){
 }
 
 //This will include the basic stages
-function set_up_sceen1(){
+function set_up_scene2(){
   //Setting up background
+  alert("and this?")
   game_screen.backgroundurl ="files/pictures/Shettler.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
 
@@ -121,11 +122,11 @@ function resolve_characters_equip_2_plan(){
 	var equipment_array = []
 	for (i=0; i < characters.length; i++){
 		// check what equipment they have
-		equipment_array[1] = character[i].type.head;
-		equipment_array[2] = character[i].type.lefth;
-		equipment_array[3] = character[i].type.righth;
-		equipment_array[4] = character[i].type.torso;
-		equipment_array[5] = character[i].type.feet;
+		equipment_array[1] = characters[i].type.head;
+		equipment_array[2] = characters[i].type.lefth;
+		equipment_array[3] = characters[i].type.righth;
+		equipment_array[4] = characters[i].type.torso;
+		equipment_array[5] = characters[i].type.feet;
 		}
 		// evaluate whether they die or not
 		// affect other characters
@@ -135,6 +136,9 @@ function resolve_characters_equip_2_plan(){
   //At the end of this. Will call to set_up_sceen2
   //Delete things from scene1
   
+  alert("and this?")
+  //Draw  scene
+  set_up_scene2()
 }
 
 function get_story_opening(){
