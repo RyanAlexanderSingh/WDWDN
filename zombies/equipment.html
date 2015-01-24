@@ -5,7 +5,7 @@
     <title>What Do We Do Now?</title>
      <!-- this script lives in a file -->
 	 <body bgcolor="#748386"> 
-    <script type="text/javascript" src="./files/template.js"></script>
+    <script type="text/javascript" src="../files/template.js"></script>
 	<style type="text/css">
 		canvas{
 		padding-left: 0;
@@ -16,15 +16,25 @@
         border-width: 2;
 		display : block;
       }	  
+	  #buttons {
+		width: 20em;  height: 2em;
+		}
     </style>
   <style type="text/css"></style></head>
-	<canvas id="splash_canvas" width="800" height="500" style="border:4px solid #000000;">
-		Your browser does not support the HTML5 canvas tag. You cannot play this game!</canvas>
-	<script>
-      var canvas = document.getElementById('splash_canvas');
+  <body onload="clock_init()">
+    <canvas id="Screen 1 of 3" width="800" height="500 style="border:4px solid #000000;">">
+	Your browser does not support the HTML5 canvas tag. You cannot play this game!</canvas>
+    <script>
+      var canvas = document.getElementById('Screen 1 of 3');
       var context = canvas.getContext('2d');
-	  var img = document.getElementById("splash_img");
-	  context.drawImage(img, context.width, context.height);
+		
+      context.beginPath();
+      context.rect(188, 50, 200, 100);
+      context.fillStyle = 'red';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
     </script>
 	<canvas id="ui_canvas" width="800" height="100"></canvas>
     <script>
@@ -46,6 +56,6 @@
 
     </script>
 	<center>
-    <button id="2" onClick="prepare()">Next Level</button>
+    <input type="submit" id="2" value="Proceed" class="buttons" onclick="pickScenario(this.id)"/>
 	</center>
 </body></html>
