@@ -83,7 +83,6 @@ function init_items(){
 
 //This will include the basic stages
 function set_up_sceen1(){
-
   //Setting up background
   game_screen.backgroundurl ="files/pictures/forest.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
@@ -99,7 +98,15 @@ function set_up_sceen1(){
   characters.push(new DrawableBox(500, (game_screen.height - 150), getRandomInt(40,50), getRandomInt(90,100), colour4,0,new Equipment(2),"files/pictures/Face2.png", "Mike"))
   
   //Setting up items
-  //init_items()
+  init_items()
+}
+
+//This will include the basic stages
+function set_up_sceen1(){
+  //Setting up background
+  game_screen.backgroundurl ="files/pictures/Shettler.png" //"files/pictures/pub_back.png"
+  game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
+
   items.push(new DrawableBox(400,(game_screen.height - 300),250,70,"I will reason with the zombies!", 0, 5, 0, 0))
   items.push(new DrawableBox(100,(game_screen.height - 400),140,70,"I want to cry...", 0, 5, 0, 0))
   items.push(new DrawableBox(200,(game_screen.height - 250),220,80,"I'm blocking the windows!", 0, 5, 0, 0))
@@ -124,6 +131,10 @@ function resolve_characters_equip_2_plan(){
 		// affect other characters
 		// set the text to be read out next scene
 	
+  
+  //At the end of this. Will call to set_up_sceen2
+  //Delete things from scene1
+  
 }
 
 function get_story_opening(){
