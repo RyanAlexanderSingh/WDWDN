@@ -4,6 +4,7 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>What Do We Do Now?</title>
      <!-- this script lives in a file -->
+	 <body bgcolor="#748386"> 
     <script type="text/javascript" src="./files/template.js"></script>
 	<style type="text/css">
 		canvas{
@@ -17,19 +18,15 @@
       }	  
     </style>
   <style type="text/css"></style></head>
-  <body onload="init()">
-    <canvas id="Screen 1 of 3" width="800" height="500"></canvas>
-    <script>
-      var canvas = document.getElementById('Screen 1 of 3');
+    <img id="splash_img" src="./files/splash.jpg" alt="Splash Screen"> 
+	<canvas id="splash_canvas" width="800" height="500" style="border:4px solid #000000;">
+		Your browser does not support the HTML5 canvas tag. You cannot play this game!</canvas>
+	<script>
+      var canvas = document.getElementById('splash_canvas');
       var context = canvas.getContext('2d');
+	  var img = document.getElementById("splash_img");
+	  context.drawImage(img, context.width, context.height);
 		
-      context.beginPath();
-      context.rect(188, 50, 200, 100);
-      context.fillStyle = 'red';
-      context.fill();
-      context.lineWidth = 7;
-      context.strokeStyle = 'black';
-      context.stroke();
     </script>
 	<canvas id="ui_canvas" width="800" height="100"></canvas>
     <script>
@@ -40,6 +37,7 @@
 	  
 	  if(document.getElementById('Screen 1 of 3')){
 		ui_context.font = "20px Georgia";
+		ui_context.fillStyle = '#3B0D11';
 		ui_context.fillText("TEST SCREEN: 1 OF 3          NUM OF ITEMS LEFT:	NaN		", x/2, y);
 	  }
     </script>
