@@ -107,7 +107,7 @@ function set_up_sceen1(){
         items[i].posx = 10000 //send to china unused items
       else{
         items[i].posx += 120 // move the items to the right
-        items[i].posY += 20 // move the items to the right
+        items[i].posy += 20 // move the items to the right
         }
     }
     
@@ -120,7 +120,7 @@ function set_up_sceen1(){
     characters[i].posy += 20
     }
     
-    story = 
+    game_screen.cutscene = true
   }
 
 //This will include the basic stages
