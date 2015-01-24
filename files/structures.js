@@ -24,6 +24,7 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
   this.status = status //will represent so many different things...
   this.type = type //will represent so many different things...
   this.drawable = true
+  this.url = -1
 }
 
 function DrawingInfo(colorA, colorB, colorC, colorD, colorE){
@@ -72,7 +73,7 @@ function DrawBox (screen, box){
   var ctxt = screen.context
   if(box.colour == -1){
     var hat_image = new Image()
-    hat_image.src = "files/pictures/BigTestHat.png"
+    hat_image.src = box.url
     ctxt.save()
     ctxt.drawImage(hat_image, box.posx - box.sizex, box.posy - box.sizey,box.sizex*2, box.sizey*2)
     ctxt.restore()
