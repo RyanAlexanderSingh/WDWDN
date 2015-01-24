@@ -64,8 +64,7 @@ function init_items(){
   all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4)) 
   all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4)) 
   
-  
-  
+ 
   //Randomize a subset and add it to items
   for (var a = 0; a < 12; a++)
   {
@@ -101,10 +100,17 @@ function set_up_sceen1(){
   init_items()
 }
 
+
+ function clean_scene1(){
+    for(var i=0; i<items.length; i++){
+      if(items[i].status == 0)
+        items[i].posx = 10000
+    }
+  }
+
 //This will include the basic stages
 function set_up_scene2(){
   //Setting up background
-  alert("and this?")
   game_screen.backgroundurl ="files/pictures/Shettler.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
 
@@ -135,8 +141,7 @@ function resolve_characters_equip_2_plan(){
   
   //At the end of this. Will call to set_up_sceen2
   //Delete things from scene1
-  
-  alert("and this?")
+  clean_scene1()
   //Draw  scene
   set_up_scene2()
 }
