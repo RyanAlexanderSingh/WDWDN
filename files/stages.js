@@ -120,7 +120,6 @@ function set_up_sceen1(){
     characters[i].posy += 20
     }
     
-    game_screen.cutscene = true
   }
 
 //This will include the basic stages
@@ -152,7 +151,7 @@ function resolve_characters_equip_2_plan(){
   
   //At the end of this. Will call to set_up_sceen2
   //Delete things from scene1
-  clean_scene1()
+  game_screen.cutscene = true
 }
 
 function get_story_opening(){
