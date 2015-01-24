@@ -192,7 +192,6 @@ function init_game() {
   play_single_sound('in_the_back_room')
 }
 
-
 //This is the render function. It will be called each frame
 function render() {
   var ctxt = game_screen.context
@@ -200,13 +199,35 @@ function render() {
   ctxt.clearRect(0, 0, game_screen.width, game_screen.height)
   ctxt.save()
   
+  draw_background()
   draw_characters()
   draw_items()
+  draw_frontground()
   
   ctxt.restore()
   ctxt.save()
-  ctxt.font = "14px Arial"
+  /*ctxt.font = "14px Arial"
   viewportwidth = window.innerWidth
-  ctxt.fillText("Char1.head => " + characters[1].type.head, 20, 20)
-  
+  ctxt.fillText("Char1.head => " + characters[1].type.head, 20, 20)*/
 }
+
+function draw_background(){
+  var ctxt = game_screen.context
+    var background_image = new Image()
+    background_image.src = game_screen.backgroundurl
+    ctxt.save()
+    ctxt.drawImage(background_image, 0, 0,800, 500)
+    ctxt.restore()
+}
+
+function draw_frontground(){
+  if(game_screen.backgroundurl2 != -1){
+  var ctxt = game_screen.context
+    var background_image = new Image()
+    background_image.src = game_screen.backgroundurl2
+    ctxt.save()
+    ctxt.drawImage(background_image, 0, 0,800, 500)
+    ctxt.restore()
+  }
+}
+
