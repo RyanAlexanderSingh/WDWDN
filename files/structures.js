@@ -8,7 +8,6 @@ var control = {}
 var mouse_position = {}
 var time = {}
 var items = []
-var num_items
 var characters = []
 var aux_pos = {}
 
@@ -24,6 +23,25 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
   this.status = status //will represent so many different things...
   this.type = type //will represent so many different things...
 }
+
+//Status for character
+// 0 : sad
+// 1 : happy
+// 2 : neutral
+// 3 : out
+// 4 : stressed
+//Type for character
+// some info about who he is 
+
+//Status for items
+// 0 : draggable
+// 1 : not_draggable
+//Status for items
+// 0 : head
+// 1 : lefthand
+// 2 : righthand
+// 3 : torso
+// 4 : feet
 
 //This function draws a box on the screen. Receives a context (where to draw) and a box
 function DrawBox (screen, box){

@@ -6,9 +6,15 @@ function releasing_click_up() {
   var intensity = time*2
   
   if(mouse_position.dragging > -1){
+    //check that effectively is over some character
+    check_picked_charactert()
+    if(mouse_position.character != -1){
     //check that it can be assigned that item
+    alert("JAJA!")
     items[mouse_position.dragging].status = 1
+    }
     mouse_position.dragging = -1
+    mouse_position.character = -1
   }
   
   control.move = true
@@ -53,6 +59,30 @@ function check_picked_object(){
         }
   }
 }
+//This is to pick a character
+function check_picked_charactert(){
+  var num_characters = characters.length
+  var character
+  for(var i = 0; i < num_characters; i++){
+    character = characters[i]
+    var x1 = character.posx - (character.sizex) - 5
+    var x2 = character.posx + (character.sizex) +5
+    var y1 = game_screen.height - character.posy - (character.sizey) - 5
+    var y2 = game_screen.height - character.posy + (character.sizey) + 5
+    //alert(y1 + "..." + mouse_position.y + "..." + y2 + "..." )
+    //Check if the object is pickable
+   if(character.status == 0)
+      if(mouse_position.x > x1 && 
+         mouse_position.x < x2 &&
+         mouse_position.y > y1 &&
+         mouse_position.y < y2 ){
+          mouse_position.character = i
+          aux_pos.x = character.posx
+          aux_pos.y = character.posy
+          return
+        }
+  }
+}
 
 //move objects
 function dragging_around_things(){
@@ -87,16 +117,18 @@ function draw_items(){
 //This function will only load the game the first time
 function init_game() {
   dif_time = 0.12
+  mouse_position.dragging = -1
+  mouse_position.character = -1
   console.log("the body has loaded")
   game_screen.context = document.getElementById("mycanvas").getContext("2d")
   game_screen.width = 800
   game_screen.height = 500
   setInterval(render,  20)
   
-  characters.push(new DrawableBox(100, (game_screen.height - 200), 30 ,80, "#ff0000"),0)
-  characters.push(new DrawableBox(200, (game_screen.height - 150), 30 ,70, "#ff5500"),0)
-  characters.push(new DrawableBox(400, (game_screen.height - 200), 30 ,80, "#ff5500"),0)
-  characters.push(new DrawableBox(500, (game_screen.height - 150), 30 ,70, "#ff5500"),0)
+  characters.push(new DrawableBox(100, (game_screen.height - 200), 30 ,80, "#ff0000",0,0))
+  characters.push(new DrawableBox(200, (game_screen.height - 150), 30 ,70, "#ff5500",0,0))
+  characters.push(new DrawableBox(400, (game_screen.height - 200), 30 ,80, "#ff5500",0,0))
+  characters.push(new DrawableBox(500, (game_screen.height - 150), 30 ,70, "#ff5500",0,0))
   
   items.push(new DrawableBox(50,  (game_screen.height - 20), 10,5 ,"#0000ff",0,0))
   items.push(new DrawableBox(500,  (game_screen.height - 400), 5,10 ,"#0000ff",0,0))
