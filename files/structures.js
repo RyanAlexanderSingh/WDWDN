@@ -70,6 +70,14 @@ function Equipment(num_avalaible){
 //This function draws a box on the screen. Receives a context (where to draw) and a box
 function DrawBox (screen, box){
   var ctxt = screen.context
+  if(box.colour == -1){
+    var hat_image = new Image()
+    hat_image.src = "files/pictures/BigTestHat.png"
+    ctxt.save()
+    ctxt.drawImage(hat_image, box.posx - box.sizex, box.posy - box.sizey,box.sizex*2, box.sizey*2)
+    ctxt.restore()
+  }
+  else{
   ctxt.save()
   ctxt.translate(box.posx, box.posy)
   ctxt.beginPath()
@@ -82,6 +90,7 @@ function DrawBox (screen, box){
   ctxt.fill()
   ctxt.stroke()
   ctxt.restore()
+  }
 }
 
 //This function draws a box on the screen. Receives a context (where to draw) and a box
