@@ -123,7 +123,7 @@ function resolve_characters_equip_2_plan(){
 		// evaluate whether they die or not
 		// affect other characters
 		// set the text to be read out next scene
-	}
+	
 }
 
 function get_story_opening(){
