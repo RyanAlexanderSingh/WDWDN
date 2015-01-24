@@ -5,7 +5,12 @@
     <title>What Do We Do Now?</title>
      <!-- this script lives in a file -->
 	 <body bgcolor="#748386"> 
-    <script type="text/javascript" src="../files/template.js"></script>
+	 <!-- template.js needs to change -->
+    <script type="text/javascript" src="./files/template.js"></script> 
+	<script type="text/javascript" src="./files/globalgamejam.js"></script>
+    <script type="text/javascript" src="./files/structures.js"></script>
+    <script type="text/javascript" src="./files/stages.js"></script>
+    <script type="text/javascript" src="./files/audio_handler.js"></script>
 	<style type="text/css">
 		canvas{
 		padding-left: 0;
@@ -21,30 +26,29 @@
 		}
     </style>
   <style type="text/css"></style></head>
-    <canvas id="index" width="800" height="500 style="border:4px solid #000000;">">
+  <body onload="init_game()">
+    <canvas id="mycanvas" width="800" height="500 style="border:4px solid #000000"  onmousedown="clicking_down_button()" onmouseup="releasing_click_up()" onmousemove="dragging_around_things()">
 	Your browser does not support the HTML5 canvas tag. You cannot play this game!</canvas>
     <script>
-      var canvas = document.getElementById("index");
-      var context = canvas.getContext("2d");
-	  var x = canvas.width;
-	  var y = canvas.height;
+      var canvas = document.getElementById('mycanvas');
+      var context = canvas.getContext('2d');
     </script>
-	<canvas id="ui_canvas" width="800" height="100"></canvas>
+	<canvas id="ui_canvas" width="800" height="100"></canvas> 
     <script>
       var ui_canvas = document.getElementById("ui_canvas");
 	  var ui_context = ui_canvas.getContext("2d");
-	  
+
 		ui_context.font = "20px Georgia";
 		ui_context.fillStyle = '#3B0D11';
-		ui_context.fillText("Prepare yourself! Who knows what you've got to do...       ",ui_canvas.width/4, ui_canvas.height/2);
+		ui_context.fillText("Prepare yourself! Who knows what you've got to do...",30, ui_canvas.height/2);
     </script>
 	<canvas id="timer_canvas" width="800" height="50"></canvas>
 	<script>
       var canvas = document.getElementById('timer_canvas');
-      var context = canvas.getContext('timer_2d');	  
+      var context = canvas.getContext('2d');	  
 
     </script>
 	<center>
-    <input type="submit" id="3" value="Check the outcome..." class="buttons" onclick="pickScenario(this.id)"/>
+    <input type="submit" id="progress" value="Are you ready?" class="buttons" onclick="pickScenario(this.value)"/>
 	</center>
 </body></html>

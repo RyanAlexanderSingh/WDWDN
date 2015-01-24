@@ -24,17 +24,16 @@ function update(){
 
 //OUR ACTUAL TIMER
 function doTimer(){
-	timerID = setInterval("update()", 200);
+	timerID = setInterval("update()", 20);
 	update();
+	
 }
 
 //END THE TIMER AND RUN PREPARE
 function endTimer(){
 	clearInterval(timerID);
 	//Go to next screen
-	 game_screen.level++
-	pickScenario(game_screen.level)
-   
+	pickScenario(game_screen.name)
 }
 
 function getLines(ctx, text, maxWidth) {
