@@ -105,6 +105,9 @@ function clicking_down_button() {
     
     //Check object!
     check_picked_object()
+	
+	// play single sound
+	play_single_sound()
 }
 
 //Other functions
