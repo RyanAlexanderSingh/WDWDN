@@ -14,6 +14,12 @@ var aux_pos = {}
 
 //To create 'classes' in javascript an easy way is to create classes
 
+function ItemInfo (id, url, type){
+  this.id = id
+  this.url = url
+  this.type = type
+}
+
 //This function is going to be something that can be draw
 function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
   this.posx = posx
@@ -22,6 +28,8 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
   this.sizey = sizey 
   this.colour = colour //colour? Maybe not used later!
   this.status = status //will represent so many different things...
+  this.id = -1
+  this.item_list = []
   this.type = type //will represent so many different things...
   this.drawable = true
   this.url = -1
@@ -60,7 +68,7 @@ function Equipment(num_avalaible){
 //Status for items
 // 0 : draggable
 // 1 : not_draggable
-//Status for items
+//type for items
 // 0 : head
 // 1 : lefthand
 // 2 : righthand
