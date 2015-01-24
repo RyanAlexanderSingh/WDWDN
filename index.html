@@ -23,16 +23,17 @@
   <style type="text/css"></style></head>
     <canvas id="index" width="800" height="500 style="border:4px solid #000000;">">
 	Your browser does not support the HTML5 canvas tag. You cannot play this game!</canvas>
+	<img id="splash_screen" src="./files/pictures/Forest.png" alt="The splash screen" width="0" height="0">
     <script>
-      var canvas = document.getElementById('index');
-      var context = canvas.getContext('2d');
-	 
-      var imageObj = new Image();
+	window.onload = function(){
+      var canvas = document.getElementById("index");
+      var context = canvas.getContext("2d");
+	  var x = canvas.width;
+	  var y = canvas.height;
 
-      imageObj.onload = function() {
-        context.drawImage(imageObj, 50, 50);
-      };
-      imageObj.src = './files/pictures/Forest.png';	
+	  var splash = document.getElementById("splash_screen");
+	  context.drawImage(splash, 0, 0, x, y);
+	  };
     </script>
 	<canvas id="ui_canvas" width="800" height="100"></canvas>
     <script>
