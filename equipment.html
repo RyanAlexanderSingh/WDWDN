@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<!-- Global Game Jam 2015 Game by Juanmi Huertas Delgado, Ryan Singh and Sam Hayhurst -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>What Do We Do Now?</title>
+     <!-- this script lives in a file -->
+	 <body bgcolor="#748386"> 
+	 <!-- template.js needs to change -->
+    <script type="text/javascript" src="./files/template.js"></script> 
+	<script type="text/javascript" src="./files/globalgamejam.js"></script>
+    <script type="text/javascript" src="./files/structures.js"></script>
+    <script type="text/javascript" src="./files/stages.js"></script>
+    <script type="text/javascript" src="./files/audio_handler.js"></script>
+    <audio id="randomise" src="./files/randomise.wav" preload="auto"></audio>
+    <audio id="Bounce" src="./files/Bounce.wav" preload="auto"></audio>
+    <audio id="Ding" src="./files/Ding.wav" preload="auto"></audio>
+    <audio id="Pop" src="./files/Pop.wav" preload="auto"></audio>
+	<audio id="in_the_back_room" src="./files/music/in_the_back_room.wav" preload="auto"></audio>
+	<audio id="out_of_place" src="./files/music/out_of_place.wav" preload="auto"></audio>
+	<style type="text/css">
+		canvas{
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: auto;
+		margin-right: auto;
+        border-style: solid;
+        border-width: 2;
+		display : block;
+      }	  
+	  #buttons {
+		width: 20em;  height: 2em;
+		}
+    </style>
+  <style type="text/css"></style></head>
+  <body onload="init_game()">
+  <!-- <body onload="clock_init()"> -->
+    <canvas id="mycanvas" width="800" height="500 style="border:4px solid #000000"  onmousedown="clicking_down_button()" onmouseup="releasing_click_up()" onmousemove="dragging_around_things()">
+	Your browser does not support the HTML5 canvas tag. You cannot play this game!</canvas>
+    <script>
+      var canvas = document.getElementById('mycanvas');
+      var context = canvas.getContext('2d');
+		
+    </script>
+	<canvas id="ui_canvas" width="800" height="100"</canvas> 
+    <script>
+      var ui_canvas = document.getElementById("ui_canvas");
+	  var ui_context = ui_canvas.getContext("2d");
+
+		ui_context.font = "20px Georgia";
+		ui_context.fillStyle = '#3B0D11';
+		ui_context.fillText("Take arms! Equip the nerds with items...if you dare 		                   Items left:	NaN		",30, ui_canvas.height/2);
+    </script>
+	<canvas id="timer_canvas" width="800" height="50"></canvas>
+	<script>
+      var canvas = document.getElementById('timer_canvas');
+      var context = canvas.getContext('timer_2d');	  
+
+    </script>
+	<center>
+    <input type="submit" id="2" value="Proceed" class="buttons" onclick="pickScenario(this.id)"/>
+	</center>
+</body></html>
