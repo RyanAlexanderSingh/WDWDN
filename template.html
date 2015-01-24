@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!-- Global Game Jam 2015 Game by Juanmi Huertas Delgado, Ryan Singh and Sam Hayhurst -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>What Do We Do Now?</title>
+    <!-- this script lives in a file -->
+	<style type="text/css">
+		canvas{
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: auto;
+		margin-right: auto;
+        border-style: solid;
+        border-width: 2;
+		display : block;
+      }
+    </style>
+  <style type="text/css"></style></head>
+  <body onload="body_has_loaded()">
+    <canvas id="myCanvas" width="800" height="500"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+	  var x = canvas.width / 2;
+      var y = canvas.height / 2;
+
+      context.beginPath();
+      context.rect(188, 50, 200, 100);
+      context.fillStyle = 'red';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
+    </script>
+    <br><input type="button" value="" onclick="countdownOnTimer()">
+    <p> <a href="globalgamejam.html"> Next Level (button placeholder)  </p>
+    </div>
+
+</body></html>
