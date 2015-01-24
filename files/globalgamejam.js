@@ -176,7 +176,7 @@ function dragging_around_things(){
 function init_game() {
   dif_time = 0.12
   mouse_position.dragging = -1
-  mouse_position.character = -1
+  mouse_position.character = -1	
   console.log("the body has loaded")
   game_screen.context = document.getElementById("mycanvas").getContext("2d")
   game_screen.width = 800
