@@ -76,8 +76,8 @@ function releasing_click_up() {
       }
       else if(item.type == 5){ //balloon
         if(character.type.balloon == -1){
-          item.posx = character.posx + character.sizex/2
-          item.posy = character.posy - character.sizey - 55
+          item.posx = character.posx + character.sizex/2 + 40
+          item.posy = character.posy - character.sizey - 30
           character.type.balloon = 1
         } else{
           item.status = 0
@@ -206,6 +206,7 @@ function render() {
   draw_characters()
   draw_items()
   draw_frontground()
+  
   
   ctxt.restore()
   ctxt.save()

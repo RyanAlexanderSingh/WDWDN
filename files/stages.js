@@ -1,5 +1,43 @@
 function init_items(){
   var all_items = []
+  var item_posx = []
+  var item_posy = []
+  item_posx.push(220)
+  item_posy.push(25)
+  
+  item_posx.push(450)
+  item_posy.push(40)
+  
+  item_posx.push(300)
+  item_posy.push(30)
+  
+  item_posx.push(100)
+  item_posy.push(60)
+  
+  item_posx.push(350)
+  item_posy.push(70)
+ 
+  item_posx.push(600)
+  item_posy.push(90)
+  
+  item_posx.push(40)
+  item_posy.push(45)
+  
+  item_posx.push(657)
+  item_posy.push(75)
+  
+  item_posx.push(670)
+  item_posy.push(180)
+  
+  item_posx.push(300)
+  item_posy.push(205)
+  
+  item_posx.push(600)
+  item_posy.push(205)
+  
+  item_posx.push(640)
+  item_posy.push(140)
+  
   //Generate the whole list
   // ItemInfo(id, url, item type)
   // HATS //
@@ -26,6 +64,8 @@ function init_items(){
   all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4)) 
   all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4)) 
   
+  
+  
   //Randomize a subset and add it to items
   for (var a = 0; a < 12; a++)
   {
@@ -36,7 +76,7 @@ function init_items(){
       i = i+1
     }
     all_items[i].selected = true
-    items.push(new DrawableBox(40 * (a+1),  (game_screen.height - 30), 20, 20 ,-1,0,all_items[i].type, all_items[i].url, all_items[i].id))
+    items.push(new DrawableBox(item_posx[a],  (game_screen.height - item_posy[a]), 20, 20 ,-1,0,all_items[i].type, all_items[i].url, all_items[i].id))
   }
 }
 
@@ -55,12 +95,16 @@ function set_up_sceen1(){
   var colour4 = new DrawingInfo(getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor())
   characters.push(new DrawableBox(100, (game_screen.height - 200), getRandomInt(40,50), getRandomInt(90,100), colour1,0,new Equipment(2),"files/pictures/Face1.png", "Mike"))
   characters.push(new DrawableBox(200, (game_screen.height - 150), getRandomInt(40,50), getRandomInt(90,100), colour2,0,new Equipment(2),"files/pictures/Face2.png", "Mike"))
-  characters[1].url = "files/pictures/Face2.png"
   characters.push(new DrawableBox(400, (game_screen.height - 200), getRandomInt(40,50), getRandomInt(90,100), colour3,0,new Equipment(2),"files/pictures/Face1.png", "Mike"))
   characters.push(new DrawableBox(500, (game_screen.height - 150), getRandomInt(40,50), getRandomInt(90,100), colour4,0,new Equipment(2),"files/pictures/Face2.png", "Mike"))
   
   //Setting up items
-  init_items()
+  //init_items()
+  items.push(new DrawableBox(400,(game_screen.height - 300),250,70,"I will reason with the zombies!", 0, 5, 0, 0))
+  items.push(new DrawableBox(100,(game_screen.height - 400),140,70,"I want to cry...", 0, 5, 0, 0))
+  items.push(new DrawableBox(200,(game_screen.height - 250),220,80,"I'm blocking the windows!", 0, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 300),180,70,"I have to call mum...", 0, 5, 0, 0))
+  items.push(new DrawableBox(100,(game_screen.height - 200),200,70,"I'm gonna kill 'em all!", 0, 5, 0, 0))
 }
 
 
