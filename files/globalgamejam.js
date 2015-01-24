@@ -187,6 +187,9 @@ function init_game() {
   // Pick type of story
   // Then load the appropriate level1
   set_up_sceen1()
+  
+  // start the music
+  play_single_sound('in_the_back_room')
 }
 
 
