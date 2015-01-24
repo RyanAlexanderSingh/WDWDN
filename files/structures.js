@@ -24,13 +24,16 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
   this.type = type //will represent so many different things...
 }
 
+//-1 means that he can receive that object. 
+//-2 means that he cannot receive object of that type
+// num_avalaible is the number of items that you can receive
 function Equipment(num_avalaible){
-  this.head = 0
-  this.lefth = 0
-  this.righth = 0
-  this.torso = 0
-  this.feet = 0
-  this.balloon = 0
+  this.head = -1
+  this.lefth = -1
+  this.righth = -1
+  this.torso = -1
+  this.feet = -1
+  this.balloon = -1
   this.num_avalaible = num_avalaible
 }
 

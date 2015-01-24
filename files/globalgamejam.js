@@ -15,10 +15,10 @@ function releasing_click_up() {
       item.status = 1
       //Check what type of object is
       if(item.type == 0){ //head
-        if(character.type.num_avalaible > 0 && character.type.head == 0){
+        if(character.type.num_avalaible > 0 && character.type.head == -1){
           item.posx = character.posx
           item.posy = character.posy - character.sizey
-          character.type.head = 1
+          character.type.head = mouse_position.dragging
           character.type.num_avalaible--
         } else{
           item.status = 0
@@ -27,10 +27,10 @@ function releasing_click_up() {
         }
       }
       else if(item.type == 1){ //lefthand
-        if(character.type.num_avalaible > 0 && character.type.lefth == 0){
+        if(character.type.num_avalaible > 0 && character.type.lefth == -1){
           item.posx = character.posx + character.sizex
           item.posy = character.posy
-          character.type.lefth = 1
+          character.type.lefth = mouse_position.dragging
           character.type.num_avalaible--
         } else{
           item.status = 0
@@ -39,10 +39,10 @@ function releasing_click_up() {
         }
       }
       else if(item.type == 2){ //righthand
-        if(character.type.num_avalaible > 0 && character.type.righth == 0){
+        if(character.type.num_avalaible > 0 && character.type.righth == -1){
           item.posx = character.posx - character.sizex
           item.posy = character.posy
-          character.type.righth = 1
+          character.type.righth = mouse_position.dragging
           character.type.num_avalaible--
         } else{
           item.status = 0
@@ -51,10 +51,10 @@ function releasing_click_up() {
         }
       }
       else if(item.type == 3){ //torso
-        if(character.type.num_avalaible > 0 && character.type.torso == 0){
+        if(character.type.num_avalaible > 0 && character.type.torso == -1){
           item.posx = character.posx
           item.posy = character.posy - character.sizey/2 + 10
-          character.type.torso = 1
+          character.type.torso = mouse_position.dragging
           character.type.num_avalaible--
         } else{
           item.status = 0
@@ -63,10 +63,10 @@ function releasing_click_up() {
         }
       }
       else if(item.type == 4){ //feet
-        if(character.type.num_avalaible > 0 && character.type.feet == 0){
+        if(character.type.num_avalaible > 0 && character.type.feet == -1){
           item.posx = character.posx
           item.posy = character.posy + character.sizey
-          character.type.feet = 1
+          character.type.feet = mouse_position.dragging
           character.type.num_avalaible--
         } else{
           item.status = 0
@@ -75,7 +75,7 @@ function releasing_click_up() {
         }
       }
       else if(item.type == 5){ //balloon
-        if(character.type.num_avalaible > 0 && character.type.balloon == 0){
+        if(character.type.num_avalaible > 0 && character.type.balloon == -1){
           item.posx = character.posx + character.sizex/2
           item.posy = character.posy - character.sizey - 55
           character.type.balloon = 1
