@@ -56,9 +56,12 @@ function getLines(ctx, text, maxWidth) {
 }
 
 
-var fadePct = 0;
+var fadePct = 0
+var posInCutscene = 0;
 
 function animateFade(){
+	var can = document.getElementById('index');
+	var con = can.getContext('2d');
 	if(fadePct > 100){
 		return;
 	}
@@ -66,6 +69,48 @@ function animateFade(){
 	draw(fade_image, fadePct / 100);
     draw(base_image, (1 - fadePct / 100));
     fadePct++;
+}
+
+function intro_text(){
+	var can = document.getElementById('index');
+	var con = can.getContext('2d');
+
+	con.font = "18px Calibri";
+		con.fillStyle = "#FFFFFF"
+		// print the first part of the story
+		if(posInCutscene == 1){
+		var string =  get_story_opening()
+		var text_lines = getLines(con, string, 700)
+		for (i = 0; i < text_lines.length; i++){
+			con.fillText(text_lines[i], 50, 100 + 40 * i)
+			}
+		// print the story change
+		var string =  get_story_change()
+		var text_lines = getLines(con, string, 700)
+		for (i = 0; i < text_lines.length; i++){
+			con.fillText(text_lines[i], 50, 200 + 40 * i)
+			}
+		// print the story development blah blah blah
+		var string =  get_story_development()
+		var text_lines = getLines(con, string, 700)
+		for (i = 0; i < text_lines.length; i++){
+			con.fillText(text_lines[i], 50, 300 + 40 * i)
+			}
+	}
+	if(posInCutscene == 2){
+		var string =  get_prepared_1()
+		var text_lines = getLines(con, string, 700)
+		for (i = 0; i < text_lines.length; i++){
+			con.fillText(text_lines[i], 50, 100 + 40 * i)
+			}
+		// print the story change
+		var string =  get_prepared_2()
+		var text_lines = getLines(con, string, 700)
+		for (i = 0; i < text_lines.length; i++){
+			con.fillText(text_lines[i], 50, 200 + 40 * i)
+			}
+	}
+	
 }
 
 function draw(img, opacity) {
@@ -77,8 +122,13 @@ function draw(img, opacity) {
 }
 
 function load_intro(){
-	fadePct = 0;
+	if(posInCutscene == 0){
     animateFade();
+	}
+	else{
+		intro_text();
+	}
+	posInCutscene++;
 }
 
 function make_splash_img(){

@@ -172,3 +172,15 @@ function get_story_development(){
 	"36 and a half outrageous hours later our four nerds found themselves resting deep (so deep) in Hampstead Heath. One nerd looks to the others and asks 'What do we do now?'"
 	return story_part
 }
+
+function get_prepared_1(){
+	var story_part =
+	"So...What do we do now?"
+	return story_part
+}
+
+function get_prepared_2(){
+	var story_part =
+	"Are you ready?"
+	return story_part
+}
