@@ -1,14 +1,3 @@
-//VARIABLES
-var viewportwidth
-var game_screen = {}
-var distance = {}
-var control = {}
-var mouse_position = {}
-var time = {}
-var items = []
-var num_items
-var characters = []
-
 
 //RELEASING THE BUTTON OF THE MOUSE
 function releasing_click_up() {
@@ -17,6 +6,7 @@ function releasing_click_up() {
   var intensity = time*2
   
   if(mouse_position.dragging > -1){
+    //check that it can be assigned that item
     items[mouse_position.dragging].status = 1
     mouse_position.dragging = -1
   }
@@ -55,8 +45,12 @@ function check_picked_object(){
       if(mouse_position.x > x1 && 
          mouse_position.x < x2 &&
          mouse_position.y > y1 &&
-         mouse_position.y < y2 )
+         mouse_position.y < y2 ){
           mouse_position.dragging = i
+          aux_pos.x = item.posx
+          aux_pos.y = item.posy
+          return
+        }
   }
 }
 
@@ -104,11 +98,11 @@ function init_game() {
   characters.push(new DrawableBox(400, (game_screen.height - 200), 30 ,80, "#ff5500"),0)
   characters.push(new DrawableBox(500, (game_screen.height - 150), 30 ,70, "#ff5500"),0)
   
-  items.push(new DrawableBox(50,  (game_screen.height - 20), 10,5 ,"#ff5500",0))
-  items.push(new DrawableBox(500,  (game_screen.height - 400), 5,10 ,"#ff5500",0))
-  items.push(new DrawableBox(30,  (game_screen.height - 10), 7,7 ,"#ff5500",0))
-  items.push(new DrawableBox(400,  (game_screen.height - 50), 5,5 ,"#ff5500",0))
-  items.push(new DrawableBox(150,  (game_screen.height - 222), 20,5 ,"#ff5500",0))
+  items.push(new DrawableBox(50,  (game_screen.height - 20), 10,5 ,"#0000ff",0,0))
+  items.push(new DrawableBox(500,  (game_screen.height - 400), 5,10 ,"#0000ff",0,0))
+  items.push(new DrawableBox(30,  (game_screen.height - 10), 7,7 ,"#00ff00",0,1))
+  items.push(new DrawableBox(400,  (game_screen.height - 50), 5,5 ,"#00ff00",0,1))
+  items.push(new DrawableBox(150,  (game_screen.height - 222), 20,5 ,"#ff5500",0,2))
   
 }
 
