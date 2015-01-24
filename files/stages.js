@@ -24,6 +24,10 @@ function set_up_sceen1(){
   
   items.push(new DrawableBox(50,  (game_screen.height - 20), 25,20 ,"#0000ff",0,0))
   items[0].colour = -1
+  items.push(new DrawableBox(70,  (game_screen.height - 200), 25,20 ,"#0000ff",0,0))
+  items[1].colour = -1
+  items.push(new DrawableBox(90,  (game_screen.height - 100), 25,20 ,"#0000ff",0,0))
+  items[2].colour = -1
   items.push(new DrawableBox(500,  (game_screen.height - 400), 5,10 ,"#0000ff",0,1))
   items.push(new DrawableBox(30,  (game_screen.height - 10), 7,7 ,"#00ff00",0,2))
   items.push(new DrawableBox(400,  (game_screen.height - 50), 30,10,"#00ff00",0,3))
