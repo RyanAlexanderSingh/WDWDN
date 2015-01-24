@@ -19,7 +19,7 @@ function update(){
 	x_pos = x_pos + 10;
 	if(x_pos >= timer_canvas.width){
 		alert("Times up");
-		stopTimer();
+		nextLevel();
 	}
 }
 //OUR ACTUAL TIMER
@@ -27,10 +27,24 @@ function doTimer(){
 	timerID = setInterval("update()", 200);
 	update();
 }
-//STOP TIMER WHEN THE RECTANGLE HAS HIT THE CANVAS
-function stopTimer(){
+//STOP TIMER WHEN WE NEED TO PROGRESS TO NEXT LEVEL
+function nextLevel(clicked_id){
 	clearInterval(timerID);
-	window.location.href = "globalgamejam.html";
+	alert(clicked_id);	
+	if(clicked_id == '1'){
+		window.location.href = "equipment.html";
+	}	
+	if(clicked_id == '2'){
+		window.location.href = "prepare.html";
+	}	
+	if(clicked_id == '3'){
+		window.location.href = "outcome.html";
+	}
 }
+
+function prepare(){
+		window.location.href = "prepare.html";
+}
+
 
 
