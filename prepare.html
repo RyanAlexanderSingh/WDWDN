@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!-- Global Game Jam 2015 Game by Juanmi Huertas Delgado, Ryan Singh and Sam Hayhurst -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>What Do We Do Now?</title>
+     <!-- this script lives in a file -->
+	 <body bgcolor="#748386"> 
+    <script type="text/javascript" src="../files/template.js"></script>
+	<style type="text/css">
+		canvas{
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: auto;
+		margin-right: auto;
+        border-style: solid;
+        border-width: 2;
+		display : block;
+      }	  
+	  #buttons {
+		width: 20em;  height: 2em;
+		}
+    </style>
+  <style type="text/css"></style></head>
+    <canvas id="index" width="800" height="500 style="border:4px solid #000000;">">
+	Your browser does not support the HTML5 canvas tag. You cannot play this game!</canvas>
+    <script>
+      var canvas = document.getElementById("index");
+      var context = canvas.getContext("2d");
+	  var x = canvas.width;
+	  var y = canvas.height;
+    </script>
+	<canvas id="ui_canvas" width="800" height="100"></canvas>
+    <script>
+      var ui_canvas = document.getElementById("ui_canvas");
+	  var ui_context = ui_canvas.getContext("2d");
+	  
+		ui_context.font = "20px Georgia";
+		ui_context.fillStyle = '#3B0D11';
+		ui_context.fillText("Prepare yourself! Who knows what you've got to do...       ",ui_canvas.width/4, ui_canvas.height/2);
+    </script>
+	<canvas id="timer_canvas" width="800" height="50"></canvas>
+	<script>
+      var canvas = document.getElementById('timer_canvas');
+      var context = canvas.getContext('timer_2d');	  
+
+    </script>
+	<center>
+    <input type="submit" id="3" value="Check the outcome..." class="buttons" onclick="pickScenario(this.id)"/>
+	</center>
+</body></html>
