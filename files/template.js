@@ -51,6 +51,25 @@ function pickScenario(clicked_id){
 	}	
 }
 
+function getLines(ctx, text, maxWidth) {
+    var words = text.split(" ");
+    var lines = [];
+    var currentLine = words[0];
+
+    for (var i = 1; i < words.length; i++) {
+        var word = words[i];
+        var width = ctx.measureText(currentLine + " " + word).width;
+        if (width < maxWidth) {
+            currentLine += " " + word;
+        } else {
+            lines.push(currentLine);
+            currentLine = word;
+        }
+    }
+    lines.push(currentLine);
+    return lines;
+}
+
 function make_splash_img(){
 	base_image = new Image();
 	base_image.src = './files/pictures/Forest.png'
@@ -58,9 +77,32 @@ function make_splash_img(){
     var con = can.getContext('2d');
 	var x = can.width;
 	var y = can.height;
-	base_image.onload = function(){
+	
+		base_image.onload = function(){
 		con.drawImage(base_image, 0, 0, can.width, can.height);
-	};
+		// colour the story text
+		con.font = "18px Calibri";
+		con.fillStyle = "#FFFFFF"
+		// print the first part of the story
+		var string =  get_story_opening()
+		var text_lines = getLines(con, string, 700)
+		for (i = 0; i < text_lines.length; i++){
+			con.fillText(text_lines[i], 50, 100 + 40 * i)
+			}
+		// print the story change
+		var string =  get_story_change()
+		var text_lines = getLines(con, string, 700)
+		for (i = 0; i < text_lines.length; i++){
+			con.fillText(text_lines[i], 50, 200 + 40 * i)
+			}
+		// print the story development blah blah blah
+		var string =  get_story_development()
+		var text_lines = getLines(con, string, 700)
+		for (i = 0; i < text_lines.length; i++){
+			con.fillText(text_lines[i], 50, 300 + 40 * i)
+			}
+			
+		};
 }
 
 
