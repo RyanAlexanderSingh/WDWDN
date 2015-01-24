@@ -11,6 +11,7 @@ var items = []
 var characters = []
 var aux_pos = {}
 
+
 //To create 'classes' in javascript an easy way is to create classes
 
 //This function is going to be something that can be draw
@@ -23,6 +24,14 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
   this.status = status //will represent so many different things...
   this.type = type //will represent so many different things...
   this.drawable = true
+}
+
+function DrawingInfo(colorA, colorB, colorC, colorD, colorE){
+  this.a = colorA
+  this.b = colorB
+  this.c = colorC
+  this.d = colorD
+  this.e = colorE
 }
 
 //-1 means that he can receive that object. 
@@ -70,6 +79,61 @@ function DrawBox (screen, box){
   ctxt.lineTo(-box.sizex,  box.sizey)
   ctxt.closePath()
   ctxt.fillStyle = box.colour
+  ctxt.fill()
+  ctxt.stroke()
+  ctxt.restore()
+}
+
+//This function draws a box on the screen. Receives a context (where to draw) and a box
+function DrawCharacter (screen, box){
+  var ctxt = screen.context
+  ctxt.save()
+  ctxt.translate(box.posx, box.posy)
+  ctxt.beginPath()
+  ctxt.moveTo(-box.sizex/2, - box.sizey)
+  ctxt.lineTo( box.sizex/2, -box.sizey)
+  ctxt.lineTo( box.sizex/2, -box.sizey/2)
+  ctxt.lineTo(-box.sizex/2, -box.sizey/2)
+  ctxt.closePath()
+  ctxt.fillStyle = box.colour.a
+  ctxt.fill()
+  ctxt.stroke()
+  ctxt.beginPath()
+  ctxt.moveTo(box.sizex, -box.sizey/2)
+  ctxt.lineTo(-box.sizex, -box.sizey/2)
+  ctxt.lineTo(-box.sizex,  box.sizey/4)
+  ctxt.lineTo(-3*box.sizex/4,  box.sizey/4)
+  ctxt.lineTo(-3*box.sizex/4,  -box.sizey/3)
+  ctxt.lineTo(-2*box.sizex/3,  -box.sizey/3)
+  ctxt.lineTo(-2*box.sizex/3,  box.sizey/4)
+  ctxt.lineTo(2*box.sizex/3,  box.sizey/4)
+  ctxt.lineTo(2*box.sizex/3,  -box.sizey/3)
+  ctxt.lineTo(3*box.sizex/4,  -box.sizey/3)
+  ctxt.lineTo(3*box.sizex/4,  box.sizey/4)
+  ctxt.lineTo( box.sizex,  box.sizey/4)
+  ctxt.closePath()
+  ctxt.fillStyle = box.colour.b
+  ctxt.fill()
+  ctxt.stroke()
+  ctxt.beginPath()
+  ctxt.moveTo(box.sizex/5, -box.sizey/2)
+  ctxt.lineTo(-box.sizex/5, -box.sizey/2)
+  ctxt.lineTo(-box.sizex/6,  box.sizey/4)
+  ctxt.lineTo( box.sizex/6,  box.sizey/4)
+  ctxt.closePath()
+  ctxt.fillStyle = box.colour.c
+  ctxt.fill()
+  ctxt.stroke()
+  ctxt.beginPath()
+  ctxt.moveTo(-3*box.sizex/5,  box.sizey/4)
+  ctxt.lineTo( 3*box.sizex/5,  box.sizey/4)
+  ctxt.lineTo( 3*box.sizex/5,  box.sizey)
+  ctxt.lineTo( 2*box.sizex/6,  box.sizey)
+  ctxt.lineTo( 0, box.sizey/4+20)
+  ctxt.lineTo(-box.sizex/3,  box.sizey)
+  ctxt.lineTo(-3*box.sizex/5,  box.sizey)
+  ctxt.closePath()
+  ctxt.fillStyle = box.colour.d
   ctxt.fill()
   ctxt.stroke()
   ctxt.restore()

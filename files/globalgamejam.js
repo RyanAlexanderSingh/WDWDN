@@ -29,7 +29,7 @@ function releasing_click_up() {
       else if(item.type == 1){ //lefthand
         if(character.type.num_avalaible > 0 && character.type.lefth == -1){
           item.posx = character.posx + character.sizex
-          item.posy = character.posy
+          item.posy = character.posy + 15
           character.type.lefth = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -41,7 +41,7 @@ function releasing_click_up() {
       else if(item.type == 2){ //righthand
         if(character.type.num_avalaible > 0 && character.type.righth == -1){
           item.posx = character.posx - character.sizex
-          item.posy = character.posy
+          item.posy = character.posy + 15
           character.type.righth = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -105,9 +105,6 @@ function clicking_down_button() {
     
     //Check object!
     check_picked_object()
-	
-	// play single sound
-	play_single_sound()
 }
 
 //Other functions
@@ -129,9 +126,11 @@ function check_picked_object(){
          mouse_position.y > y1 &&
          mouse_position.y < y2 ){
           mouse_position.dragging = i
+		  play_single_sound('Ding')
           return
         }
   }
+  play_single_sound('Bounce')
 }
 //This is to pick a character
 function check_picked_charactert(){
@@ -152,7 +151,8 @@ function check_picked_charactert(){
          mouse_position.y < y2 ){
           mouse_position.character = i
           aux_pos.x = character.posx
-          aux_pos.y = character.posy
+          aux_pos.y = character.posy	
+		  play_single_sound('Pop')
           return
         }
   }
