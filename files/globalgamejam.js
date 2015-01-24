@@ -237,7 +237,6 @@ function draw_frontground(){
 
 //IF TIMER HAS STOPPED OR BUTTON CLICKED
 function pickScenario(clicked_value){
-	alert("HI THERE" + clicked_value);
 	if(clicked_value == "Prepare Equipment")
 	{
 		window.location.href = "./equipment.html";
