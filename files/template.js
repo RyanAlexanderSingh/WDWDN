@@ -53,7 +53,7 @@ function pickScenario(clicked_id){
 
 function make_splash_img(){
 	base_image = new Image();
-	base_image.src = './files/pictures/Forest.png'
+	base_image.src = './files/pictures/intro_screen.png'
 	var can = document.getElementById('index');
     var con = can.getContext('2d');
 	var x = can.width;
