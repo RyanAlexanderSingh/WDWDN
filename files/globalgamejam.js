@@ -9,9 +9,82 @@ function releasing_click_up() {
     //check that effectively is over some character
     check_picked_charactert()
     if(mouse_position.character != -1){
-    //check that it can be assigned that item
-    alert("JAJA!")
-    items[mouse_position.dragging].status = 1
+      //check that it can be assigned that item
+      var item = items[mouse_position.dragging]
+      var character = characters[mouse_position.character]
+      item.status = 1
+      //Check what type of object is
+      if(item.type == 0){ //head
+        if(character.type.num_avalaible > 0 && character.type.head == -1){
+          item.posx = character.posx
+          item.posy = character.posy - character.sizey
+          character.type.head = mouse_position.dragging
+          character.type.num_avalaible--
+        } else{
+          item.status = 0
+          item.posx = 50 + mouse_position.dragging*50
+          item.posy = 450
+        }
+      }
+      else if(item.type == 1){ //lefthand
+        if(character.type.num_avalaible > 0 && character.type.lefth == -1){
+          item.posx = character.posx + character.sizex
+          item.posy = character.posy
+          character.type.lefth = mouse_position.dragging
+          character.type.num_avalaible--
+        } else{
+          item.status = 0
+          item.posx = 50 + mouse_position.dragging*50
+          item.posy = 450
+        }
+      }
+      else if(item.type == 2){ //righthand
+        if(character.type.num_avalaible > 0 && character.type.righth == -1){
+          item.posx = character.posx - character.sizex
+          item.posy = character.posy
+          character.type.righth = mouse_position.dragging
+          character.type.num_avalaible--
+        } else{
+          item.status = 0
+          item.posx = 50 + mouse_position.dragging*50
+          item.posy = 450
+        }
+      }
+      else if(item.type == 3){ //torso
+        if(character.type.num_avalaible > 0 && character.type.torso == -1){
+          item.posx = character.posx
+          item.posy = character.posy - character.sizey/2 + 10
+          character.type.torso = mouse_position.dragging
+          character.type.num_avalaible--
+        } else{
+          item.status = 0
+          item.posx = 50 + mouse_position.dragging*50
+          item.posy = 450
+        }
+      }
+      else if(item.type == 4){ //feet
+        if(character.type.num_avalaible > 0 && character.type.feet == -1){
+          item.posx = character.posx
+          item.posy = character.posy + character.sizey
+          character.type.feet = mouse_position.dragging
+          character.type.num_avalaible--
+        } else{
+          item.status = 0
+          item.posx = 50 + mouse_position.dragging*50
+          item.posy = 450
+        }
+      }
+      else if(item.type == 5){ //balloon
+        if(character.type.num_avalaible > 0 && character.type.balloon == -1){
+          item.posx = character.posx + character.sizex/2
+          item.posy = character.posy - character.sizey - 55
+          character.type.balloon = 1
+        } else{
+          item.status = 0
+          item.posx = 50 + mouse_position.dragging*50
+          item.posy = 450
+        }
+      }
     }
     mouse_position.dragging = -1
     mouse_position.character = -1
@@ -53,8 +126,6 @@ function check_picked_object(){
          mouse_position.y > y1 &&
          mouse_position.y < y2 ){
           mouse_position.dragging = i
-          aux_pos.x = item.posx
-          aux_pos.y = item.posy
           return
         }
   }
@@ -97,22 +168,6 @@ function dragging_around_things(){
   }
 }
 
-//Draw characters
-function draw_characters(){
-  var num_characters = characters.length;
-  for(var i = 0; i < num_characters; i++){
-    DrawBox(game_screen,characters[i])
-  }
-}
-
-//Draw items
-function draw_items(){
-  var num_items = items.length;
-  for(var i = 0; i < num_items; i++){
-    DrawBox(game_screen,items[i])
-  }
-}
-
 //This function is the one starting up the game
 //This function will only load the game the first time
 function init_game() {
@@ -125,17 +180,10 @@ function init_game() {
   game_screen.height = 500
   setInterval(render,  20)
   
-  characters.push(new DrawableBox(100, (game_screen.height - 200), 30 ,80, "#ff0000",0,0))
-  characters.push(new DrawableBox(200, (game_screen.height - 150), 30 ,70, "#ff5500",0,0))
-  characters.push(new DrawableBox(400, (game_screen.height - 200), 30 ,80, "#ff5500",0,0))
-  characters.push(new DrawableBox(500, (game_screen.height - 150), 30 ,70, "#ff5500",0,0))
-  
-  items.push(new DrawableBox(50,  (game_screen.height - 20), 10,5 ,"#0000ff",0,0))
-  items.push(new DrawableBox(500,  (game_screen.height - 400), 5,10 ,"#0000ff",0,0))
-  items.push(new DrawableBox(30,  (game_screen.height - 10), 7,7 ,"#00ff00",0,1))
-  items.push(new DrawableBox(400,  (game_screen.height - 50), 5,5 ,"#00ff00",0,1))
-  items.push(new DrawableBox(150,  (game_screen.height - 222), 20,5 ,"#ff5500",0,2))
-  
+  //Start up screen
+  // Pick type of story
+  // Then load the appropriate level1
+  set_up_sceen1()
 }
 
 

@@ -8,8 +8,8 @@ ToDo list:
     - Draw characters (almost)
     - Draw objects (almost)
   - Interact with things
-    - Pick item ( item )   (Item: object, choice)
-    - Apply item to container ( container )     (Container: character, place)
+    - Pick item ( item )   (Item: object, choice)      (DONE!)
+    - Apply item to container ( container )     (Container: character, place)   (DONE!)
   - Control game-flow
     - Start screen
       - WHAT DO WE DO NOW?! 
@@ -31,7 +31,7 @@ ToDo list:
     - UI
   - Sound
     - Music
-    - SFX
+    - SFX (we can play sounds!)
       - Picking and applying objects
       - WHAT DO WE DO NOW?
   - "Story"

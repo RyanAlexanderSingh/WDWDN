@@ -22,6 +22,20 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
   this.colour = colour //colour? Maybe not used later!
   this.status = status //will represent so many different things...
   this.type = type //will represent so many different things...
+  this.drawable = true
+}
+
+//-1 means that he can receive that object. 
+//-2 means that he cannot receive object of that type
+// num_avalaible is the number of items that you can receive
+function Equipment(num_avalaible){
+  this.head = -1
+  this.lefth = -1
+  this.righth = -1
+  this.torso = -1
+  this.feet = -1
+  this.balloon = -1
+  this.num_avalaible = num_avalaible
 }
 
 //Status for character
@@ -42,6 +56,7 @@ function DrawableBox (posx, posy, sizex, sizey, colour, status, type){
 // 2 : righthand
 // 3 : torso
 // 4 : feet
+// 5 : balloon
 
 //This function draws a box on the screen. Receives a context (where to draw) and a box
 function DrawBox (screen, box){
