@@ -122,7 +122,6 @@ function intro_text(){
 	if(posInCutscene == 3){
 		window.location.href = "./game.html";
 	}
-	
 }
 
 function draw(img, opacity) {
