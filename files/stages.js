@@ -10,6 +10,7 @@ var message_pos_0 = []
 var message_pos_1 = []
 
 var num_rest_items = {}
+var char_hps = []
 
 
 function init_items(){
@@ -334,26 +335,51 @@ function resolve_characters_plan_2_outcome(){
      message_array = []
 	// this function will take each character left and evaluate their chances according to their idea.
 	for (i = 0; i < characters.length; i++){
+	alert("character hp: " + char_hps[i])
+	alert("character balloon: " + characters[i].type.balloon)
 	if ( characters[i].type.balloon != -1){
 		index = items[characters[i].type.balloon].id
+		// this is story 1
       if(index == 1){
-        if (characters[i].hp < 10){
-			alert("character hp: " + characters[i].hp)
+        if (char_hps[i] < 10){
 			characters[i].drawable = false
 			kill_individual(characters[i])
 			message_array.push("character dies")
 		} else {
 			message_array.push("character lives")
 		}
-		
+	// this is story 2
       }else if (index == 2){
-		alert("this is story 1")
+		alert("this is story 2")
+		if (char_hps[i] > 10){
+			characters[i].drawable = false
+			kill_individual(characters[i])
+			message_array.push("character dies")
+		} else {
+			message_array.push("character lives")
+		}
+		// this is story 2
       }else if (index == 3){
-		alert("this is story 1")
+		alert("this is story 3")
+		if (char_hps[i] > 30){
+			characters[i].drawable = false
+			kill_individual(characters[i])
+			message_array.push("character dies")
+		} else {
+			message_array.push("character lives")
+		}
+		// this is story 2
       }else if (index == 4){
-		alert("this is story 1")
+		alert("this is story 3")
+		if (char_hps[i] > 20){
+			characters[i].drawable = false
+			kill_individual(characters[i])
+			message_array.push("character dies")
+		} else {
+			message_array.push("character lives")
+		}
       }else{
-		alert("this is story 1")
+		alert("fancoolo")
       }
 		}
 	}
@@ -364,7 +390,7 @@ function resolve_characters_equip_2_plan(){
 	// this function will take each character and evaluate their chance of living
 	// for each character
 	for (i=0; i < characters.length; i++){
-		var hp = -1
+		char_hps[i] = 0
 		var number = 0
 		var first_item = ""
 		var second_item = ""
@@ -379,7 +405,7 @@ function resolve_characters_equip_2_plan(){
 			} else {
 				second_item =  all_items[number].id
 			}
-			hp = hp + all_items[number].hp
+			char_hps[i] = char_hps[i] + all_items[number].hp
 		}
 		
 		if (characters[i].type.lefth != -1){
@@ -391,7 +417,7 @@ function resolve_characters_equip_2_plan(){
 			} else {
 				second_item =  all_items[number].id
 			}
-			hp = hp + all_items[number].hp
+			char_hps[i] = char_hps[i] + all_items[number].hp
 		}
 		
 		if (characters[i].type.righth != -1){
@@ -403,7 +429,7 @@ function resolve_characters_equip_2_plan(){
 			} else {
 				second_item =  all_items[number].id
 			}
-			hp = hp + all_items[number].hp
+			char_hps[i] = char_hps[i] + all_items[number].hp
 		}
 		
 		if (characters[i].type.torso != -1){
@@ -415,7 +441,7 @@ function resolve_characters_equip_2_plan(){
 			} else {
 				second_item = all_items[number].id
 			}
-			hp = hp + all_items[number].hp
+			char_hps[i] = char_hps[i] + all_items[number].hp
 		}
 		
 		if (characters[i].type.feet != -1){
@@ -427,11 +453,11 @@ function resolve_characters_equip_2_plan(){
 			} else {
 				second_item = all_items[number].id
 			}
-			hp = hp + all_items[number].hp
+			char_hps[i] = char_hps[i] + all_items[number].hp
 		}
 		
 		// the char should die unless all the others are dead
-		if (hp < 0 && (characters[0].drawable == true || characters[1].drawable == true || characters[2].drawable == true)){
+		if (char_hps[i] < 0 && (characters[0].drawable == true || characters[1].drawable == true || characters[2].drawable == true)){
 			// kill the character
 			characters[i].drawable = false
 			kill_individual(characters[i])
