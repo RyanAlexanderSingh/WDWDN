@@ -245,10 +245,10 @@ function set_up_sceen1(){
  
  function set_up_scene1point5(){
   
-  items.push(new DrawableBox(100,(game_screen.height - 100),300,150,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(200,(game_screen.height - 200),300,150,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 300),300,150,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(400,(game_screen.height - 400),300,150,message_array[3], 1, 5, 0, 0))
+  items.push(new DrawableBox(100,(game_screen.height - 100),180,150,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(200,(game_screen.height - 200),180,150,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 300),180,150,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(400,(game_screen.height - 400),180,150,message_array[3], 1, 5, 0, 0))
 
 }
   
@@ -272,18 +272,18 @@ function set_up_scene2(){
 function set_up_scene1point5(){
   if(we_dont_want_dancing_boxes){
     we_dont_want_dancing_boxes = false
-    items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),220,150,message_array[0], 1, 5, 0, 0))
-    items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),220,150,message_array[1], 1, 5, 0, 0))
-    items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),220,150,message_array[2], 1, 5, 0, 0))
-    items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),220,150,message_array[3], 1, 5, 0, 0))
+    items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[0], 1, 5, 0, 0))
+    items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[1], 1, 5, 0, 0))
+    items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[2], 1, 5, 0, 0))
+    items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[3], 1, 5, 0, 0))
   }
 }
  
 function set_up_scenePUB(){
-  items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[3], 1, 5, 0, 0))
+  items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,180,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,180,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,180,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,180,message_array[3], 1, 5, 0, 0))
 }
 
  
@@ -363,7 +363,6 @@ function resolve_characters_plan_2_outcome(){
 	for (i = 0; i < characters.length; i++){	
 	if ( characters[i].type.balloon != -1){
 		index = characters[i].type.balloon
-		alert("the index: " + index)
 		// this is story 1
       if(index == 1){
         if (char_hps[i] < 10){
