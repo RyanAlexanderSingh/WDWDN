@@ -41,10 +41,9 @@ function draw_cutscene(){
 	game_screen.cutscene = false
   }
   else if(game_screen.cutscene_pos==6){
-  alert("HERE OR HERE!!!")
   set_up_scene3();
   game_screen.end_credits = true;
-game_screen.cutscene = false
+  game_screen.cutscene = false
   //instead of drawing background - draw background and foreground
 	
   }
