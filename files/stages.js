@@ -23,18 +23,22 @@ function init_items(){
   message_neg_0[0] = " bit the dust, hard. Apparently the "
   message_neg_0[1] = " died as he lived: stupidly. It seems that the "
   message_neg_0[2] = " is now an ex-Nerd. For some reason the "
+  message_neg_0[3] = " has ceased to be because of the stupid "
   
-  message_neg_1[0] = " not such a good idea"
-  message_neg_1[1] = " $%&@ing &£%$"
-  message_neg_1[2] = " as useful as a engine made of bacon"
+  message_neg_1[0] = " not such a good idea."
+  message_neg_1[1] = " $%&@ing &£%$."
+  message_neg_1[2] = " as useful as a engine made of bacon."
+  message_neg_1[3] = " only was useful to attract more zombies."
   
   message_pos_0[0] = " kicked serious zombie ass, using the "
   message_pos_0[1] = " ran for hours, thanks to the "
   message_pos_0[2] = " opened a can of whoop ass with their "
+  message_pos_0[3] = " is now a level 3 barbarian thanks to his "
   
   message_pos_1[0] = " totally awesome dude!"
-  message_pos_1[1] = " almost as good as an ak"
+  message_pos_1[1] = " almost as good as an ak."
   message_pos_1[2] = " pretty much the best thing ever!"
+  message_pos_1[3] = ", that he will adopt as his new family!"
 
   var item_posx = []
   var item_posy = []
@@ -79,8 +83,7 @@ function init_items(){
   // HATS // (id, url, type, sizex, sizey, offsetx, offsety, hp )
   all_items.push(new ItemInfo("Plastic bag", "files/pictures/Plastic_bag_down.png", 0, 40, 40, 0, 0, -5)) 
   all_items[all_items.length-1].url_up = "files/pictures/plastic_bag_on.png"
-  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/sauce_pan_down.png", 0, 28, 28, -7, -15, 10)) 
-  all_items[all_items.length-1].url_up = "files/pictures/Sauce_pan_on.png"
+  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/Sauce_pan_on.png", 0, 28, 13, -7, -15, 10)) 
   all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_down.png", 0, 20, 20, 5, 5, 7)) 
   all_items[all_items.length-1].url_up = "files/pictures/Make_up_up.png"
   all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 25, 25, 0, -35, 3)) 
@@ -99,12 +102,12 @@ function init_items(){
   all_items[all_items.length-1].url_up = "files/pictures/hammer_down.png"
   all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 20, 20, 0, 0, 3))  
   // Torso
-  all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 20, -2, 15, -6))  
+  all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 25, -2, 30, -6))  
   // Feet
-  all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 20, 20, 0, 0, -8)) 
-  all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 20, 20, 0, 0, -14)) 
-  all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 40, 20, 0, 0, 6)) 
-  all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 40, 20, 0, 0, 14))  
+  all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 35, 20, 0, -5, -8)) 
+  all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 35, 12, 0, 0, -14)) 
+  all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 35, 20, 0, 0, 6)) 
+  all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 35, 18, 0, 0, 14))  
   
  
   //Randomize a subset and add it to items
@@ -243,11 +246,11 @@ function set_up_scene2(){
      }
   }
   
-  items.push(new DrawableBox(650,(game_screen.height - 390),250,70,"I will reason with the zombies!", 0, 5, 0, 1))	
-  items.push(new DrawableBox(100,(game_screen.height - 410),140,70,"I want to cry...", 0, 5, 0, 2))
-  items.push(new DrawableBox(500,(game_screen.height - 450),220,80,"I'm blocking the windows!", 0, 5, 0, 3))
-  items.push(new DrawableBox(350,(game_screen.height - 350),180,70,"I have to call mum...", 0, 5, 0, 4))
-  items.push(new DrawableBox(300,(game_screen.height - 420),180,70,"I'm gonna kill 'em all!", 0, 5, 0, 5))
+  items.push(new DrawableBox(650,(game_screen.height - 390),250,50,"I will reason with the zombies!", 0, 5, 0, 1))	
+  items.push(new DrawableBox(100,(game_screen.height - 410),140,50,"I want to cry...", 0, 5, 0, 2))
+  items.push(new DrawableBox(500,(game_screen.height - 450),220,60,"I'm blocking the windows!", 0, 5, 0, 3))
+  items.push(new DrawableBox(350,(game_screen.height - 350),180,50,"I have to call mum...", 0, 5, 0, 4))
+  items.push(new DrawableBox(300,(game_screen.height - 420),180,50,"I'm gonna kill 'em all!", 0, 5, 0, 5))
 }
  
 function set_up_scene1point5(){
@@ -258,10 +261,6 @@ function set_up_scene1point5(){
 }
  
 function set_up_scenePUB(){
-  items.push(new DrawableBox(100,(game_screen.height - 400),180,150,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 400),180,150,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(500,(game_screen.height - 400),180,150,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(700,(game_screen.height - 400),180,150,message_array[3], 1, 5, 0, 0))
 }
 
 function set_up_scene3(){
@@ -475,16 +474,16 @@ function resolve_characters_equip_2_plan(){
 			characters[i].drawable = false
 			kill_individual(characters[i])
 			if ( second_item == "") {
-				message = character_names[i] + message_neg_0[getRandomInt(0, 2)] + first_item + " was " + message_neg_1[getRandomInt(0, 2)]
+				message = character_names[i] + message_neg_0[getRandomInt(0, character_names.length-1)] + first_item + " was " + message_neg_1[getRandomInt(0, character_names.length-1)]
 			} else {
-				message = character_names[i] + message_neg_0[getRandomInt(0, 2)] + first_item + " and the " + second_item + " were " + message_neg_1[getRandomInt(0, 2)]
+				message = character_names[i] + message_neg_0[getRandomInt(0, character_names.length-1)] + first_item + " and the " + second_item + " were " + message_neg_1[getRandomInt(0, character_names.length-1)]
 			}
 			message_array.push(message)
 		} else {
 			if ( second_item == "") {
-				message = character_names[i] + message_pos_0[getRandomInt(0, 2)] + first_item + " that was " + message_pos_1[getRandomInt(0, 2)]
+				message = character_names[i] + message_pos_0[getRandomInt(0, character_names.length-1)] + first_item + " that was " + message_pos_1[getRandomInt(0, character_names.length-1)]
 			} else {
-				message = character_names[i] + message_pos_0[getRandomInt(0, 2)] + first_item + " and the " + second_item + " which were " + message_pos_1[getRandomInt(0, 2)]
+				message = character_names[i] + message_pos_0[getRandomInt(0, character_names.length-1)] + first_item + " and the " + second_item + " which were " + message_pos_1[getRandomInt(0, character_names.length-1)]
 			}
 			message_array.push(message)
 		}
