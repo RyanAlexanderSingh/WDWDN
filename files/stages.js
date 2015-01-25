@@ -52,28 +52,28 @@ function init_items(){
   //Generate the whole list
   // ItemInfo(id, url, item type)
   // HATS // (id, url, type, sizex, sizey, offsetx, offsety, hp )
-  all_items.push(new ItemInfo("Plastic bag", "files/pictures/Plastig_bag_down.png", 0, 0, 0, 0, 0, -5)) 
-  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/Sauce_pan_on.png", 0, 0, 0, 0, 0, 10)) 
-  all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_up.png", 0, 0, 0, 0, 0, 7)) 
-  all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 0, 0, 0, 0, 3)) 
+  all_items.push(new ItemInfo("Plastic bag", "files/pictures/plastic_bag_on.png", 0, 40, 40, 0, 0, -5)) 
+  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/sauce_pan_down.png", 0, 20, 20, 0, 0, 10)) 
+  all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_down.png", 0, 20, 20, 0, 0, 7)) 
+  all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 20, 20, 0, 0, 3)) 
+  all_items.push(new ItemInfo("Jugernaut", "files/pictures/jugernaut.png", 0, 45, 28, 0, 0, 50)) 
   // Left Hands
-  all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 0, 0, 0, 0, -15)) 
-  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1, 0, 0, 0, 0, 14))  
-  all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1, 0, 0, 0, 0, -20)) 
-  // right arm
-  all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 2, 0, 0, 0, 0, 5)) 
-  all_items.push(new ItemInfo("Cricket Bat", "files/pictures/CriketBat.png", 2, 0, 0, 0, 0, 25))  
-  all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 2, 0, 0, 0, 0, 3))  
+  all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 20, 20, 0, 0, -15)) 
+  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1, 20, 20, 0, 0, 14))  
+  all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1, 20, 20, 0, 0, -20)) 
+  all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 1, 20, 20, 0, 0, 5)) 
+  all_items.push(new ItemInfo("Cricket Bat", "files/pictures/CriketBat.png", 1, 20, 20, 0, 0, 25))  
+  all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 20, 20, 0, 0, 3))  
   // Torso
-  all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 0, 0, 0, 0, -6))  
-  all_items.push(new ItemInfo("Spiky Bra", "files/pictures/Bra.png", 3, 0, 0, 0, 0, 2))  
-  all_items.push(new ItemInfo("Shoulder Pads", "files/pictures/shoulders.png", 3, 0, 0, 0, 0, 8))  
-  all_items.push(new ItemInfo("Bullet-Proof Vest", "files/pictures/bulletproofvest.png", 3, 0, 0, 0, 0, 12))  
+  all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 20, 0, 0, -6))  
+  all_items.push(new ItemInfo("Spiky Bra", "files/pictures/Bra.png", 3, 20, 20, 0, 0, 2))  
+  all_items.push(new ItemInfo("Shoulder Pads", "files/pictures/shoulders.png", 3, 20, 20, 0, 0, 8))  
+  all_items.push(new ItemInfo("Bullet-Proof Vest", "files/pictures/bulletproofvest.png", 3, 20, 20, 0, 0, 12))  
   // Feet
-  all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 0, 0, 0, 0, -8)) 
-  all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 0, 0, 0, 0, -14)) 
-  all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 0, 0, 0, 0, 6)) 
-  all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 0, 0, 0, 0, 14))  
+  all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 20, 20, 0, 0, -8)) 
+  all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 20, 20, 0, 0, -14)) 
+  all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 20, 20, 0, 0, 6)) 
+  all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 20, 20, 0, 0, 14))  
   
  
   //Randomize a subset and add it to items
@@ -86,7 +86,7 @@ function init_items(){
       i = i+1
     }
     all_items[i].selected = true
-    items.push(new DrawableBox(item_posx[a],  (game_screen.height - item_posy[a]), 20, 20 ,-1,0,all_items[i].type, all_items[i].url, i))
+    items.push(new DrawableBox(item_posx[a],  (game_screen.height - item_posy[a]), all_items[i].sizex,all_items[i].sizey,-1,0,all_items[i].type, all_items[i].url, i))
   }
 }
 
