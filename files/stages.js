@@ -63,11 +63,13 @@ function init_items(){
   all_items.push(new ItemInfo("Jugernaut", "files/pictures/jugernaut.png", 0, 45, 28, 0, 0, 50)) 
   // Left Hands
   all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 20, 20, 0, 0, -15)) 
-  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1, 20, 20, 0, 0, 14))  
+  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1, 10, 20, 0, -10, 14))  
   all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1, 20, 20, 0, 0, -20)) 
   all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 1, 20, 20, 0, 0, 5)) 
-  all_items.push(new ItemInfo("Sword", "files/pictures/sword_down.png", 1, 18, 50, -4, -49, 25))  
+  all_items.push(new ItemInfo("Sword", "files/pictures/sword_down.png", 1, 18, 50, -4, -49, 15))  
   all_items[all_items.length-1].url_up = "files/pictures/sword_up.png"
+  all_items.push(new ItemInfo("Crowbar", "files/pictures/crowbar_down.png", 1, 18, 50, -1, -31, 25))  
+  all_items[all_items.length-1].url_up = "files/pictures/crowbar_on.png"
   all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 20, 20, 0, 0, 3))  
   // Torso
   all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 20, 0, 0, -6))  
