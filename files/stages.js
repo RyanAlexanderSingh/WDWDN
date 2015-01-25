@@ -241,12 +241,6 @@ function set_up_scene2(){
         items[i].drawable = false;
      }
   }
-   for(var i = 0; i < characters.length; i++){
-		if(!characters[i].drawable){
-			characters[i].drawable = true;
-		}
-  }
-  
   
   items.push(new DrawableBox(650,(game_screen.height - 390),250,70,"I will reason with the zombies!", 0, 5, 0, 1))	
   items.push(new DrawableBox(100,(game_screen.height - 410),140,70,"I want to cry...", 0, 5, 0, 2))

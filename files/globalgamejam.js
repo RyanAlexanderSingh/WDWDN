@@ -1,10 +1,11 @@
 //RELEASING THE BUTTON OF THE MOUSE
+var balloon_clicked = 0
+
 function releasing_click_up() {
   //obtain total time
   var angle = Math.atan(mouse_position.y/mouse_position.x)
   var intensity = time*2
   var set_up_characters = {}
-  var set_up_balloons = 0
   
   if(mouse_position.dragging > -1){
     //check that effectively is over some character
@@ -82,13 +83,23 @@ function releasing_click_up() {
       }
       else if(item.type == 5){ //balloon
         if(character.type.balloon == -1){
-          item.posx = character.posx + character.sizex/2 + 40
-          item.posy = character.posy - character.sizey - 30
-          character.type.balloon = 1
+          item.posx = character.posx + character.sizex/2 + 40;
+          item.posy = character.posy - character.sizey - 30;
+          character.type.balloon = 1;
+          
+          balloon_clicked += 1;
+          var count = 0;
+          for(var a = 0; a < characters.length; a++){
+            if(characters[a].drawable)
+              count++
+          }
+          
+          if(count == balloon_clicked)
+            alert("JUMP OUT!");
         } else{
-          item.status = 0
-          item.posx = 50 + mouse_position.dragging*50
-          item.posy = 450
+          item.status = 0;
+          item.posx = 50 + mouse_position.dragging*50;
+          item.posy = 450;
         }
       }
     }
@@ -144,7 +155,7 @@ function check_picked_object(){
          mouse_position.y > y1 &&
          mouse_position.y < y2 ){
           mouse_position.dragging = i
-		  play_single_sound('Ding')
+          play_single_sound('Ding')
           return
         }
   }
