@@ -3,6 +3,7 @@ var message_array = []
 var character_names = []
 var all_items = []
 
+
 var message_neg_0 = []
 var message_neg_1 = []
 var message_pos_0 = []
@@ -266,7 +267,6 @@ function hide_characters(){
 		}
   }
 } 
-
 
 function kill_individual(x){
 			x.drawable = false
