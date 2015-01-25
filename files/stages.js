@@ -272,10 +272,10 @@ function set_up_scene2(){
 function set_up_scene1point5(){
   if(we_dont_want_dancing_boxes){
     we_dont_want_dancing_boxes = false
-    items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[0], 1, 5, 0, 0))
-    items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[1], 1, 5, 0, 0))
-    items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[2], 1, 5, 0, 0))
-    items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[3], 1, 5, 0, 0))
+    items.push(new DrawableBox(100+getRandomInt(-5,5),(game_screen.height - getRandomInt(395,405)),210,180,message_array[0], 1, 5, 0, 0))
+    items.push(new DrawableBox(300+getRandomInt(-5,5),(game_screen.height - getRandomInt(395,405)),210,180,message_array[1], 1, 5, 0, 0))
+    items.push(new DrawableBox(500+getRandomInt(-5,5),(game_screen.height - getRandomInt(395,405)),210,180,message_array[2], 1, 5, 0, 0))
+    items.push(new DrawableBox(700+getRandomInt(-5,5),(game_screen.height - getRandomInt(395,405)),210,180,message_array[3], 1, 5, 0, 0))
   }
 }
  
