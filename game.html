@@ -42,12 +42,13 @@
     </script>
 	<canvas id="ui_canvas" width="800" height="100"></canvas> 
     <script>
+    var num_rest_items = 8
       var ui_canvas = document.getElementById("ui_canvas");
 	  var ui_context = ui_canvas.getContext("2d");
 
 		ui_context.font = "20px Georgia";
 		ui_context.fillStyle = '#3B0D11';
-		ui_context.fillText("Take arms! Equip the nerds with items...if you dare 		                   Items left:	NaN		",30, ui_canvas.height/2);
+		ui_context.fillText("Take arms! Equip the nerds with items...if you dare 		               Items left:" + num_rest_items ,30, ui_canvas.height/2);
     </script>
 	<canvas id="timer_canvas" width="800" height="50"></canvas>
 	<script>
