@@ -27,8 +27,8 @@ function releasing_click_up() {
       }
       else if(item.type == 1){ //lefthand
         if(character.type.num_avalaible > 0 && character.type.lefth == -1){
-          item.posx = character.posx + character.sizex
-          item.posy = character.posy + 15
+          item.posx = character.posx + character.sizex + all_items[item.id].offsetx
+          item.posy = character.posy + 15+ all_items[item.id].offsety
           character.type.lefth = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -39,8 +39,8 @@ function releasing_click_up() {
       }
       else if(item.type == 2){ //righthand
         if(character.type.num_avalaible > 0 && character.type.righth == -1){
-          item.posx = character.posx - character.sizex
-          item.posy = character.posy + 15
+          item.posx = character.posx - character.sizex + all_items[item.id].offsetx
+          item.posy = character.posy + 15+ all_items[item.id].offsety
           character.type.righth = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -51,8 +51,8 @@ function releasing_click_up() {
       }
       else if(item.type == 3){ //torso
         if(character.type.num_avalaible > 0 && character.type.torso == -1){
-          item.posx = character.posx
-          item.posy = character.posy - character.sizey/2 + 10
+          item.posx = character.posx + all_items[item.id].offsetx
+          item.posy = character.posy - character.sizey/2 + 10+ all_items[item.id].offsety
           character.type.torso = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -63,8 +63,8 @@ function releasing_click_up() {
       }
       else if(item.type == 4){ //feet
         if(character.type.num_avalaible > 0 && character.type.feet == -1){
-          item.posx = character.posx - 5
-          item.posy = character.posy + character.sizey + 14
+          item.posx = character.posx - 5 + all_items[item.id].offsetx
+          item.posy = character.posy + character.sizey + 14+ all_items[item.id].offsety
           character.type.feet = mouse_position.dragging
           character.type.num_avalaible--
         } else{

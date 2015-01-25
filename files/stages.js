@@ -62,7 +62,8 @@ function init_items(){
   all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1, 20, 20, 0, 0, 14))  
   all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1, 20, 20, 0, 0, -20)) 
   all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 1, 20, 20, 0, 0, 5)) 
-  all_items.push(new ItemInfo("Cricket Bat", "files/pictures/CriketBat.png", 1, 20, 20, 0, 0, 25))  
+  all_items.push(new ItemInfo("Sword", "files/pictures/sword_down.png", 1, 18, 50, 0, 10, 25))  
+  all_items[all_items.length-1].url_up = "files/pictures/sword_up.png"
   all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 20, 20, 0, 0, 3))  
   // Torso
   all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 20, 0, 0, -6))  
