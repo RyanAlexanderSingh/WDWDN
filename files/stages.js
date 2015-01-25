@@ -53,9 +53,12 @@ function init_items(){
   //Generate the whole list
   // ItemInfo(id, url, item type)
   // HATS // (id, url, type, sizex, sizey, offsetx, offsety, hp )
-  all_items.push(new ItemInfo("Plastic bag", "files/pictures/plastic_bag_on.png", 0, 40, 40, 0, 0, -5)) 
-  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/sauce_pan_down.png", 0, 20, 20, 0, 0, 10)) 
-  all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_down.png", 0, 20, 20, 0, 0, 7)) 
+  all_items.push(new ItemInfo("Plastic bag", "files/pictures/Plastic_bag_down.png", 0, 40, 40, 0, 0, -5)) 
+  all_items[all_items.length-1].url_up = "files/pictures/plastic_bag_on.png"
+  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/sauce_pan_down.png", 0, 28, 28, -7, -15, 10)) 
+  all_items[all_items.length-1].url_up = "files/pictures/Sauce_pan_on.png"
+  all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_down.png", 0, 20, 20, 5, 5, 7)) 
+  all_items[all_items.length-1].url_up = "files/pictures/Make_up_up.png"
   all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 25, 25, 0, -35, 3)) 
   all_items.push(new ItemInfo("Jugernaut", "files/pictures/jugernaut.png", 0, 45, 28, 0, 0, 50)) 
   // Left Hands
@@ -63,7 +66,7 @@ function init_items(){
   all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1, 20, 20, 0, 0, 14))  
   all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1, 20, 20, 0, 0, -20)) 
   all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 1, 20, 20, 0, 0, 5)) 
-  all_items.push(new ItemInfo("Sword", "files/pictures/sword_down.png", 1, 18, 50, 0, 10, 25))  
+  all_items.push(new ItemInfo("Sword", "files/pictures/sword_down.png", 1, 18, 50, -4, -49, 25))  
   all_items[all_items.length-1].url_up = "files/pictures/sword_up.png"
   all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 20, 20, 0, 0, 3))  
   // Torso
