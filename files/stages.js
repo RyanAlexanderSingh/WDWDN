@@ -214,13 +214,6 @@ function set_up_sceen1(){
     }
   }
 } 
-
-// function prepare_scene3(){
-	 // for(var i=0; i<items.length; i++){
-        // items[i].drawable = false;
-// }
-// }
-  
   
   function scene_two(){
 	for(var i=0; i<items.length; i++){
