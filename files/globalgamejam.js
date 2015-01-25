@@ -98,9 +98,7 @@ function releasing_click_up() {
 function clicking_down_button() {
   if(game_screen.cutscene){
     game_screen.cutscene_pos++
-    alert(game_screen.cutscene_pos)
-    
-    
+    process_cutscene()
   }else{
     mouse_position.launching = true
     var e = window.event;
@@ -253,7 +251,8 @@ function pickScenario(clicked_value){
 	}	
 	if(clicked_value == "Prepare Yourself")
 	{
-      resolve_characters_equip_2_plan()
+    game_screen.cutscene_pos=1
+    resolve_characters_equip_2_plan()
 	}	
 	if(clicked_value == "Are you ready?")
 	{
