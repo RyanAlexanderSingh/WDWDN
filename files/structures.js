@@ -110,27 +110,13 @@ function DrawBox (screen, box){
 //This function draws a box on the screen. Receives a context (where to draw) and a box
 function DrawCharacter (screen, box){
   var ctxt = screen.context
-  if(box.url == -1){
+  var head_image = new Image()
+  head_image.src = box.url
+  ctxt.save()
+  ctxt.drawImage(head_image, box.posx - box.sizex*1.5/2, box.posy - box.sizey,box.sizex*1.5, box.sizey)
+  ctxt.restore()
   ctxt.save()
   ctxt.translate(box.posx, box.posy)
-  ctxt.beginPath()
-  ctxt.moveTo(-box.sizex/2, - box.sizey)
-  ctxt.lineTo( box.sizex/2, -box.sizey)
-  ctxt.lineTo( box.sizex/2, -box.sizey/2)
-  ctxt.lineTo(-box.sizex/2, -box.sizey/2)
-  ctxt.closePath()
-  ctxt.fillStyle = box.colour.a
-  ctxt.fill()
-  ctxt.stroke()
-  }else{
-    var hat_image = new Image()
-    hat_image.src = box.url
-    ctxt.save()
-    ctxt.drawImage(hat_image, box.posx - box.sizex/2, box.posy - box.sizey,box.sizex, box.sizey/2)
-    ctxt.restore()
-  ctxt.save()
-  ctxt.translate(box.posx, box.posy)
-  }
   ctxt.beginPath()
   ctxt.moveTo(box.sizex, -box.sizey/2)
   ctxt.lineTo(-box.sizex, -box.sizey/2)
