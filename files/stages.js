@@ -20,8 +20,8 @@ function init_items(){
   character_names[3] = "Angry Andrea"
   
   message_neg_0[0] = " bit the dust, hard. Apparently the "
-  message_neg_0[1] = " died as he lived: stupidly. It seems that the"
-  message_neg_0[2] = " is now an ex-Nerd. For some reason the"
+  message_neg_0[1] = " died as he lived: stupidly. It seems that the "
+  message_neg_0[2] = " is now an ex-Nerd. For some reason the "
   
   message_neg_1[0] = " not such a good idea"
   message_neg_1[1] = " $%&@ing &£%$"
