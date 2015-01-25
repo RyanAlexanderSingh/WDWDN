@@ -1,4 +1,5 @@
 var fadePct = 0;
+var end_credits = false;
 
 dayslater2 = new Image();
 dayslater2.src = './files/pictures/2dayslater.png'
@@ -35,12 +36,14 @@ function draw_cutscene(){
   }
   //5 show balloons  
   else if(game_screen.cutscene_pos==5){
-	//clean_scene() //clean the scene of the speech bubbles
+	clean_scene() //clean the scene of the speech bubbles
 	set_up_scene2() //show the balloons for scene 2
+	
   }
   else if(game_screen.cutscene_pos==6){
-  alert("hi");
+  end_credits = true;
   clean_scene()
+ 
   con.drawImage(pub_image, 0, 0);
 	
   }
