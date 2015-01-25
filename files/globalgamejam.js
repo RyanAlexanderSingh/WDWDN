@@ -3,6 +3,7 @@ function releasing_click_up() {
   //obtain total time
   var angle = Math.atan(mouse_position.y/mouse_position.x)
   var intensity = time*2
+  var set_up_characters = {}
   
   if(mouse_position.dragging > -1){
     //check that effectively is over some character
@@ -189,6 +190,7 @@ function dragging_around_things(){
 //This function is the one starting up the game
 //This function will only load the game the first time
 function init_game() {
+set_up_characters = true
   clock_init()
   game_screen.story = "Zombie"
   game_screen.name = document.getElementById("progress").value
