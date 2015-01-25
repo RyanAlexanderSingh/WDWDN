@@ -334,61 +334,70 @@ function kill_individual(x){
       if(x.type.feet != -1){
         items[x.type.feet].drawable = false
       }
-      
 }
-
+//---------------------------------------------------------------------------------------------------------//
 // this function should resolve the planning stage in a similar function
 function resolve_characters_plan_2_outcome(){
-     message_array = []
 	// this function will take each character left and evaluate their chances according to their idea.
 	for (i = 0; i < characters.length; i++){
 	alert("character hp: " + char_hps[i])
 	alert("character balloon: " + characters[i].type.balloon)
+	
 	if ( characters[i].type.balloon != -1){
 		index = items[characters[i].type.balloon].id
 		// this is story 1
       if(index == 1){
+		alert("story index 1")
         if (char_hps[i] < 10){
 			characters[i].drawable = false
 			kill_individual(characters[i])
-			message_array.push("character dies")
+			message_array[i] = character_names[i] + " joined the retched ranks after their reasonable arguments were rebutted by the horde"
 		} else {
-			message_array.push("character lives")
+			message_array[i] = character_names[i] + "'s reasonable remarks turned and routed the stinking zombie ranks"
 		}
 	// this is story 2
       }else if (index == 2){
-		alert("this is story 2")
-		if (char_hps[i] > 10){
+		alert("story index 2")
+		if (char_hps[i] > 5 && char_hps[i] < 15){
+			message_array[i] = character_names[i] + " didn't realise that crying was the zombies only weakness, it took weeks to clear the corpses"
+		} else {
 			characters[i].drawable = false
 			kill_individual(characters[i])
-			message_array.push("character dies")
-		} else {
-			message_array.push("character lives")
+			message_array[i] = character_names[i] + "'s tears served only to make the zombies meal more moist"
 		}
 		// this is story 2
       }else if (index == 3){
-		alert("this is story 3")
-		if (char_hps[i] > 30){
+		alert("story index 3")
+		if (char_hps[i] > 15){
+			message_array[i] = character_names[i] + "'s quick thinking allowed him to sit out the tragedy playing Trial 'n Error"
+		} else {
 			characters[i].drawable = false
 			kill_individual(characters[i])
-			message_array.push("character dies")
-		} else {
-			message_array.push("character lives")
+			message_array[i] = character_names[i] + " did a great job boarding the windows, alas they were eaten by zombie moles"
 		}
 		// this is story 2
       }else if (index == 4){
-		alert("this is story 3")
-		if (char_hps[i] > 20){
+		alert("story index 4")
+		if (char_hps[i] % 2 == 0){
+			message_array[i] = character_names[i] + "'s call for help reached the A-TEAM there were explosions and beer, many fools were pitied"
+		} else {
 			characters[i].drawable = false
 			kill_individual(characters[i])
-			message_array.push("character dies")
+			message_array[i] = "While searching for signal " + character_names[i] + " was mistaken for a zombie by a super awesome attack choppa"
+		}
+		}else if (index == 5){
+		alert("story index 5")
+		if (char_hps[i] > 25){
+			message_array[i] = character_names[i] + " went an a super awesome killing spree, earning themselves a place among the most famous zombie slayers"
 		} else {
-			message_array.push("character lives")
+			characters[i].drawable = false
+			kill_individual(characters[i])
+			message_array[i] = character_names[i] + " only experience in combat was playing Call of BattleField; when confronted by the horde the obvious happened"
 		}
       }else{
-		alert("fancoolo")
+		// do something to the array
       }
-		}
+	}
 	}
 }
 
