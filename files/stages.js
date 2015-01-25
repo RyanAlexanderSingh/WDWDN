@@ -264,8 +264,9 @@ function set_up_scene3(){
         items[i].drawable = false;
      }
   }
-  
-			characters[2].posy += 20;
+      move_individual(characters[1], 0, -80);
+      move_individual(characters[2], -100, 0);
+      move_individual(characters[3], -100, 0);
 }
  
 function hide_characters(){
@@ -275,6 +276,31 @@ function hide_characters(){
 		}
   }
 } 
+
+function move_individual(x, posx, posy){
+      x.posx += posx
+      x.posy += posy
+      if(x.type.head != -1){
+        items[x.type.head].posx += posx
+        items[x.type.head].posy += posy
+      }
+      if(x.type.lefth != -1){
+        items[x.type.lefth].posx += posx
+        items[x.type.lefth].posy += posy
+      }
+      if(x.type.righth != -1){
+        items[x.type.righth].posx += posx
+        items[x.type.righth].posy += posy
+      }
+      if(x.type.torso != -1){
+        items[x.type.torso].posx += posx
+        items[x.type.torso].posy += posy
+      }
+      if(x.type.feet != -1){
+        items[x.type.feet].posx += posx
+        items[x.type.feet].posy += posy
+      }
+}
 
 function kill_individual(x){
 			x.drawable = false
