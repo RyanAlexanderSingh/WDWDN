@@ -38,7 +38,6 @@ function draw_cutscene(){
   //5 show balloons  
   else if(game_screen.cutscene_pos==5){
 	set_up_scene2() //show the balloons for scene 2
-	
   }
   else if(game_screen.cutscene_pos==6){
   set_up_scene3();

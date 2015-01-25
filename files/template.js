@@ -14,7 +14,7 @@ function clock_init() {
 
 //UPDATE LOOP
 function update(){
-    canvas_context.fillStyle = 'red';
+    canvas_context.fillStyle = '#ED8400';
 	canvas_context.fillRect(x_pos, 10, 5, 30);
 	x_pos = x_pos + 10;
 	if(x_pos >= timer_canvas.width){
@@ -24,16 +24,24 @@ function update(){
 
 //OUR ACTUAL TIMER
 function doTimer(){
-	timerID = setInterval("update()", 2000);
+	timerID = setInterval("update()", 200);
 	update();
 	
 }
 
 //END THE TIMER AND RUN PREPARE
 function endTimer(){
+	var ui_canvas = document.getElementById("ui_canvas");
+	  var ui_context = ui_canvas.getContext("2d");
+        ui_context.clearRect(0, 0, ui_canvas.width, ui_canvas.height);
+		ui_context.font = "20px Georgia";
+		ui_context.fillStyle = '#3B0D11';
+		ui_context.fillText("Click on the main window to proceed ",30, ui_canvas.height/2);
+	
 	clearInterval(timerID);
 	//Go to next screen
-	pickScenario(game_screen.name)
+	game_screen.cutscene_pos++;
+    resolve_characters_equip_2_plan();
 }
 
 function getLines(ctx, text, maxWidth) {
@@ -75,7 +83,7 @@ function intro_text(){
 	var can = document.getElementById('index');
 	var con = can.getContext('2d');
 
-	con.font = "18px Calibri";
+		con.font = "18px Calibri";
 		con.fillStyle = "#FFFFFF"
 		// print the first part of the story
 		if(posInCutscene == 1){

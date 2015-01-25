@@ -191,7 +191,6 @@ function dragging_around_things(){
 function init_game() {
   clock_init()
   game_screen.story = "Zombie"
-  game_screen.name = document.getElementById("progress").value
   game_screen.cutscene = false
   game_screen.ending = false
   game_screen.cutscene_pos = 0
@@ -265,24 +264,5 @@ if(!game_screen.end_credits){
     ctxt.drawImage(background_image, 0, 0,800, 500)
     ctxt.restore()
   }
-}
-
-//IF TIMER HAS STOPPED OR BUTTON CLICKED
-function pickScenario(clicked_value){
-	if(clicked_value == "Prepare Equipment")
-	{
-		window.location.href = "./game.html";
-	}
-	
-	if(clicked_value == "Prepare Yourself")
-	{
-	if(!game_screen.end_credits){
-    game_screen.cutscene_pos=1
-    resolve_characters_equip_2_plan();
-	}
-	}
-	else{
-		window.location.href = "./index.html";
-	}
 }
 
