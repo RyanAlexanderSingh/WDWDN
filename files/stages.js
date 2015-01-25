@@ -163,7 +163,7 @@ function kill_individual(x){
 // this function should resolve the planning stage in a similar function
 function resolve_characters_plan_2_outcome(){
 	// this function will take each character left and evaluate their chances according to their idea.
-	for (i = 0; i < 
+
 }
 
 // this function needs to be called in pick scenario in GGJ.js
