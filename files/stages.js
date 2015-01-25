@@ -104,7 +104,7 @@ function set_up_sceen1(){
   var colour4 = new DrawingInfo(getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor())
   characters.push(new DrawableBox(100, (game_screen.height - 200), 40, 90, colour1,0,new Equipment(2),"files/pictures/Face1.png", "Mike"))
   characters.push(new DrawableBox(200, (game_screen.height - 150), 40, 90, colour2,0,new Equipment(2),"files/pictures/Face2.png", "Mike"))
-  characters.push(new DrawableBox(400, (game_screen.height - 200), 40, 90, colour3,0,new Equipment(2),"files/pictures/Face3.png", "Mike"))
+  characters.push(new DrawableBox(400, (game_screen.height - 200), 40, 90, colour3,0,new Equipment(2),"files/pictures/Face5.png", "Mike"))
   characters.push(new DrawableBox(500, (game_screen.height - 150), 40, 90, colour4,0,new Equipment(2),"files/pictures/Face4.png", "Mike"))
   
   //Setting up items

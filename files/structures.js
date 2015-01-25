@@ -113,9 +113,6 @@ function DrawCharacter (screen, box){
   var head_image = new Image()
   head_image.src = box.url
   ctxt.save()
-  ctxt.drawImage(head_image, box.posx - box.sizex*1.5/2, box.posy - box.sizey,box.sizex*1.5, box.sizey)
-  ctxt.restore()
-  ctxt.save()
   ctxt.translate(box.posx, box.posy)
   ctxt.beginPath()
   ctxt.moveTo(box.sizex, -box.sizey/2)
@@ -155,6 +152,9 @@ function DrawCharacter (screen, box){
   ctxt.fillStyle = box.colour.d
   ctxt.fill()
   ctxt.stroke()
+  ctxt.restore()
+  ctxt.save()
+  ctxt.drawImage(head_image, box.posx - box.sizex*1.5/2, box.posy - box.sizey,box.sizex*1.5, box.sizey)
   ctxt.restore()
 }
 
