@@ -203,7 +203,7 @@ function dragging_around_things(){
 }
 
 function randStory(){
-  var rand = getRandomInt(0, 1)
+  var rand = 0;
   if(rand == 0){
   game_screen.story = "Zombie"
   }
