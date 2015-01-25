@@ -2,6 +2,7 @@
 var message_array = []
 var character_names = []
 var all_items = []
+var num_rest_items = {}
 
 
 function init_items(){
@@ -116,7 +117,7 @@ function set_up_sceen1(){
   //Setting up background
   game_screen.backgroundurl ="files/pictures/forest.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
-
+  num_rest_items = 8
   //Setting up characters
   var urlHeads = []
   var urlBodies = []
