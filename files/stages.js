@@ -263,7 +263,7 @@ function set_up_scene1point5(){
   
 }
 function set_up_scene3(){
-	
+	resolve_characters_plan_2_outcome()
   for(var i=0; i<items.length; i++){
 	 if(items[i].status == 0 && items[i].type == 5){
         items[i].drawable = false;
