@@ -20,7 +20,7 @@ function init_items(){
   character_names[3] = "Angry Andrea"
   
   message_neg_0[0] = " bit the dust, hard. Apparently the "
-  message_neg_0[1] = " died as they lived: stupidly. It seems that the"
+  message_neg_0[1] = " died as he lived: stupidly. It seems that the"
   message_neg_0[2] = " is now an ex-Nerd. For some reason the"
   
   message_neg_1[0] = " not such a good idea"
@@ -29,7 +29,7 @@ function init_items(){
   
   message_pos_0[0] = " kicked serious zombie ass, using the "
   message_pos_0[1] = " ran for hours, thanks to the "
-  message_pos_0[2] = " opened a can of whup ass with their "
+  message_pos_0[2] = " opened a can of whoop ass with their "
   
   message_pos_1[0] = " totally awesome dude!"
   message_pos_1[1] = " almost as good as an ak"
@@ -224,10 +224,10 @@ function set_up_sceen1(){
  
  function set_up_scene1point5(){
   
-  items.push(new DrawableBox(100,(game_screen.height - 100),160,140,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(200,(game_screen.height - 200),160,140,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 300),160,140,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(400,(game_screen.height - 400),160,140,message_array[3], 1, 5, 0, 0))
+  items.push(new DrawableBox(100,(game_screen.height - 100),300,150,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(200,(game_screen.height - 200),300,150,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 300),300,150,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(400,(game_screen.height - 400),300,150,message_array[3], 1, 5, 0, 0))
 
 }
   
