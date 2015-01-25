@@ -103,7 +103,7 @@ function init_items(){
   all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 20, 20, 0, 0, -8)) 
   all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 20, 20, 0, 0, -14)) 
   all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 40, 20, 0, 0, 6)) 
-  all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 20, 20, 0, 0, 14))  
+  all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 40, 20, 0, 0, 14))  
   
  
   //Randomize a subset and add it to items
