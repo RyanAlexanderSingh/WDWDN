@@ -2,6 +2,10 @@
 var message_array = []
 var character_names = []
 var all_items = []
+var message_neg_0 = []
+var message_neg_1 = []
+var message_pos_0 = []
+var message_pos_1 = []
 
 function init_items(){
 
@@ -9,7 +13,22 @@ function init_items(){
   character_names[1] = "Juanmi"
   character_names[2] = "Sam"
   character_names[3] = "Angry Andrea"
-
+  
+  message_neg_0[0] = " bit the dust, hard. Apparently the "
+  message_neg_0[1] = " died as they lived: stupidly. It seems that the"
+  message_neg_0[2] = " is now an ex-Nerd. For some reason the"
+  
+  message_neg_1[0] = " not such a good idea"
+  message_neg_1[1] = " $%&@ing &£%$"
+  message_neg_1[2] = " as useful as a engine made of bacon"
+  
+  message_pos_0[0] = " kicked serious zombie ass, using the "
+  message_pos_0[1] = " ran for hours, thanks to the "
+  message_pos_0[2] = " opened a can of whup ass with their "
+  
+  message_pos_1[0] = " totally awesome dude!"
+  message_pos_1[1] = " almost as good as an ak"
+  message_pos_1[2] = " pretty much the best thing ever!"
 
   var item_posx = []
   var item_posy = []
@@ -190,10 +209,10 @@ function set_up_scene2(){
  
 function set_up_scene1point5(){
 
-  items.push(new DrawableBox(100,(game_screen.height - 100),160,140,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(200,(game_screen.height - 200),160,140,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 300),160,140,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(400,(game_screen.height - 400),160,140,message_array[3], 1, 5, 0, 0))
+  items.push(new DrawableBox(100,(game_screen.height - 400),180,150,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 400),180,150,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(500,(game_screen.height - 400),180,150,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(700,(game_screen.height - 400),180,150,message_array[3], 1, 5, 0, 0))
 
 }
 
@@ -236,87 +255,68 @@ function resolve_characters_equip_2_plan(){
 	for (i=0; i < characters.length; i++){
 		var hp = -1
 		var number = 0
-		var item_name = ""
+		var first_item = ""
+		var second_item = ""
 		var message = ""
 		// check what equipment they have
 		if (characters[i].type.head != -1){
 			// id of the item
 			number = items[characters[i].type.head].id
 			// is it the first item, add to the item string depending on result
-			if (item_name == ""){
-				item_name = all_items[number].id
+			if (first_item == ""){
+				first_item = all_items[number].id
 			} else {
-				item_name += " and the " + all_items[number].id
+				second_item =  all_items[number].id
 			}
-			// this is debug yo
-			//alert(character_names[i] + " has " + item_name)
-			// alter dat hp yo!
 			hp = hp + all_items[number].hp
-			//alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.lefth != -1){
 			// id of the item
 			number = items[characters[i].type.lefth].id
 			// is it the first item, add to the item string depending on result
-			if (item_name == ""){
-				item_name = all_items[number].id
+			if (first_item == ""){
+				first_item = all_items[number].id
 			} else {
-				item_name += " and the " + all_items[number].id
+				second_item =  all_items[number].id
 			}
-			// this is debug yo
-			//alert(character_names[i] + " has " + item_name)
-			// alter dat hp yo!
 			hp = hp + all_items[number].hp
-			//alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.righth != -1){
 			// id of the item
 			number = items[characters[i].type.righth].id
 			// is it the first item, add to the item string depending on result
-			if (item_name == ""){
-				item_name = all_items[number].id
+			if (first_item == ""){
+				first_item = all_items[number].id
 			} else {
-				item_name += " and the " + all_items[number].id
+				second_item =  all_items[number].id
 			}
-			// this is debug yo
-			//alert(character_names[i] + " has " + item_name)
-			// alter dat hp yo!
 			hp = hp + all_items[number].hp
-			//alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.torso != -1){
 			// id of the item
 			number = items[characters[i].type.torso].id
 			// is it the first item, add to the item string depending on result
-			if (item_name == ""){
-				item_name = all_items[number].id
+			if (first_item == ""){
+				first_item = all_items[number].id
 			} else {
-				item_name += " and the " + all_items[number].id
+				second_item = all_items[number].id
 			}
-			// this is debug yo
-			//alert(character_names[i] + " has " + item_name)
-			// alter dat hp yo!
 			hp = hp + all_items[number].hp
-			//alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.feet != -1){
 			// id of the item
 			number = items[characters[i].type.feet].id
 			// is it the first item, add to the item string depending on result
-			if (item_name == ""){
-				item_name = all_items[number].id
+			if (first_item == ""){
+				first_item = all_items[number].id
 			} else {
-				item_name += " and the " + all_items[number].id
+				second_item = all_items[number].id
 			}
-			// this is debug yo
-			//alert(character_names[i] + " has " + item_name)
-			// alter dat hp yo!
 			hp = hp + all_items[number].hp
-			//alert("hp is now: " + hp)
 		}
 		
 		// the char should die unless all the others are dead
@@ -324,10 +324,18 @@ function resolve_characters_equip_2_plan(){
 			// kill the character
 			characters[i].drawable = false
 			kill_individual(characters[i])
-			message = character_names[i] + " didn't make it; turns out the " + item_name + " weren't that useful!"
+			if ( second_item == "") {
+				message = character_names[i] + message_neg_0[getRandomInt(0, 2)] + first_item + " was " + message_neg_1[getRandomInt(0, 2)]
+			} else {
+				message = character_names[i] + message_neg_0[getRandomInt(0, 2)] + first_item + " and the " + second_item + " were " + message_neg_1[getRandomInt(0, 2)]
+			}
 			message_array.push(message)
 		} else {
-			message = character_names[i] + " survived; turns out the " + item_name + " were really useful!"
+			if ( second_item == "") {
+				message = character_names[i] + message_pos_0[getRandomInt(0, 2)] + first_item + " that was " + message_pos_1[getRandomInt(0, 2)]
+			} else {
+				message = character_names[i] + message_pos_0[getRandomInt(0, 2)] + first_item + " and the " + second_item + " which were " + message_pos_1[getRandomInt(0, 2)]
+			}
 			message_array.push(message)
 		}
 	}

@@ -176,9 +176,8 @@ function draw_balloon(x,y,sizex,sizey,text){
 	ctxt.font = "18px Calibri";
 	ctxt.fillStyle = "#000000"
     ctxt.save()
-    var text_lines = getLines(ctxt, text, sizex)
+    var text_lines = getLines(ctxt, text, sizex - 5)
 	for (i = 0; i < text_lines.length; i++){
-		ctxt.fillText(text_lines[i], x - sizex/2 + 5, y + 20 * i)
 		ctxt.fillText(text_lines[i], x - sizex/2 + 5, y + 20 * i)
 		}
     ctxt.restore()
