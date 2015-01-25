@@ -164,9 +164,10 @@ function set_up_sceen1(){
 
  function clean_scene1(){
     for(var i=0; i<items.length; i++){
-      if(items[i].status == 0)
-        items[i].posx = 10000 //send to china unused items
-      else{
+      if(items[i].status == 0){
+        items[i].drawable = false;
+		items[i].posx = 10000 //send to china unused items
+     } else{
         items[i].posx += 120
         items[i].posy += 20
       }
@@ -189,6 +190,14 @@ function set_up_scene2(){
   items.push(new DrawableBox(500,(game_screen.height - 450),220,80,"I'm blocking the windows!", 0, 5, 0, 0))
   items.push(new DrawableBox(350,(game_screen.height - 350),180,70,"I have to call mum...", 0, 5, 0, 0))
   items.push(new DrawableBox(300,(game_screen.height - 420),180,70,"I'm gonna kill 'em all!", 0, 5, 0, 0))
+}
+ 
+function set_up_scene1point5(){
+  items.push(new DrawableBox(650,(game_screen.height - 390),290, 140,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(130,(game_screen.height - 280),290,140,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(500,(game_screen.height - 450),290,140,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(350,(game_screen.height - 350),290,140,message_array[3], 1, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 420),290,140,message_array[4], 1, 5, 0, 0))
 }
 
 function kill_individual(x){
