@@ -161,15 +161,15 @@ function draw_balloon(x,y,sizex,sizey,text){
     var ctxt = game_screen.context
   
     ctxt.save()
-    ctxt.drawImage(balloon_image, x - sizex/2, y -sizey/4 -2, sizex, sizey)
+    ctxt.drawImage(balloon_image, x - sizex/2 - 10 , y -sizey/4 -2, sizex, sizey+10)
     ctxt.restore()
     
 	// colour the story text
 	
-	ctxt.font = "18px Calibri";
+	ctxt.font = "14px Calibri";
 	ctxt.fillStyle = "#000000"
     ctxt.save()
-    var text_lines = getLines(ctxt, text, sizex - 5)
+    var text_lines = getLines(ctxt, text, sizex - 25)
 	for (i = 0; i < text_lines.length; i++){
 		ctxt.fillText(text_lines[i], x - sizex/2 + 5, y + 20 * i)
 		}

@@ -24,7 +24,7 @@ function update(){
 
 //OUR ACTUAL TIMER
 function doTimer(){
-	timerID = setInterval("update()", 500);
+	timerID = setInterval("update()", 200);
 	update();
 }
 
