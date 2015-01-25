@@ -90,6 +90,20 @@ function init_items(){
   }
 }
 
+function shuffle(array) {
+  var m = array.length, t, i;
+  // While there remain elements to shuffle…
+  while (m) {
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+    // And swap it with the current element.
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+  return array;
+}
+
 //This will include the basic stages
 function set_up_sceen1(){
   //Setting up background
@@ -97,27 +111,53 @@ function set_up_sceen1(){
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
 
   //Setting up characters
-  var urlHead1 = "files/pictures/Face1.png"
-  var urlHead2 = "files/pictures/Face2.png"
-  var urlHead3 = "files/pictures/Face4.png"
-  var urlHead4 = "files/pictures/Face5.png"
-  var urlBody1 = "files/pictures/Body1.png"
-  var urlBody2 = "files/pictures/Body2.png"
-  var urlBody3 = "files/pictures/Body3.png"
-  var urlBody4 = "files/pictures/Body4.png"
-  var urlLegs1 = "files/pictures/Legs3.png"
-  var urlLegs2 = "files/pictures/Legs2.png"
-  var urlLegs3 = "files/pictures/Legs1.png"
-  var urlLegs4 = "files/pictures/Legs4.png"
-  var colour1 = new DrawingInfo(urlHead1,urlBody1,urlLegs1,getRandomColor(),-1)
-  var colour2 = new DrawingInfo(urlHead2,urlBody2,urlLegs2,getRandomColor(),-1)
-  var colour3 = new DrawingInfo(urlHead3,urlBody3,urlLegs3,getRandomColor(),-1)
-  var colour4 = new DrawingInfo(urlHead4,urlBody4,urlLegs4,getRandomColor(),-1)
-  characters.push(new DrawableBox(100, (game_screen.height - 200), 40, 90, colour1,0,new Equipment(2),-1, character_names[0]))
-  characters.push(new DrawableBox(200, (game_screen.height - 150), 40, 90, colour2,0,new Equipment(2),-1, character_names[1]))
-  characters.push(new DrawableBox(400, (game_screen.height - 200), 40, 90, colour3,0,new Equipment(2),-1, character_names[2]))
-  characters.push(new DrawableBox(500, (game_screen.height - 150), 40, 90, colour4,0,new Equipment(2),-1, character_names[3]))
-  
+  var urlHeads = []
+  var urlBodies = []
+  var urlLegs = []
+  var selectedH = []
+  var selectedB = []
+  var selectedL = []
+  var colours = []
+  urlHeads.push("files/pictures/Face1.png")
+  urlHeads.push("files/pictures/Face2.png")
+  urlHeads.push("files/pictures/Face4.png")
+  urlHeads.push("files/pictures/Face5.png")
+  urlBodies.push("files/pictures/Body1.png")
+  urlBodies.push("files/pictures/Body2.png")
+  urlBodies.push("files/pictures/Body3.png")
+  urlBodies.push("files/pictures/Body4.png")
+  urlLegs.push("files/pictures/Legs3.png")
+  urlLegs.push("files/pictures/Legs2.png")
+  urlLegs.push("files/pictures/Legs1.png")
+  urlLegs.push("files/pictures/Legs4.png")
+  for(var i=0; i< 4; i++){
+    selectedH[i] = i
+    selectedB[i] = i
+    selectedL[i] = i
+  }
+  shuffle(selectedH)
+  shuffle(selectedB)
+  shuffle(selectedL)
+  var random = getRandomInt(0,100)
+  var otherRandom
+  if(random < 30){
+    otherRandom = getRandomInt(0,3)
+    urlHeads[otherRandom] = "files/pictures/Face3.png"
+  }
+  random = getRandomInt(0,100)
+  if(random < 30){
+    otherRandom = getRandomInt(0,3)
+    urlBodies[otherRandom] = "files/pictures/Dress.png"
+  }
+  for(var i = 0; i < 4; i++){
+    var n_colour = new DrawingInfo(urlHeads[selectedH[i]],urlBodies[selectedB[i]],urlLegs[selectedL[i]],getRandomColor(),-1)
+    colours.push(n_colour)
+  }
+  characters.push(new DrawableBox(100, (game_screen.height - 200), 40, 90, colours[0],0,new Equipment(2),-1, character_names[0]))
+  characters.push(new DrawableBox(200, (game_screen.height - 150), 40, 90, colours[1],0,new Equipment(2),-1, character_names[1]))
+  characters.push(new DrawableBox(400, (game_screen.height - 200), 40, 90, colours[2],0,new Equipment(2),-1, character_names[2]))
+  characters.push(new DrawableBox(500, (game_screen.height - 150), 40, 90, colours[3],0,new Equipment(2),-1, character_names[3]))
+  characters[otherRandom].url = 1
   //Setting up items
   init_items()
 }
@@ -143,20 +183,22 @@ function set_up_sceen1(){
   }
 
 //This will set up the second scene
-// posx, posy, sizex, sizey, colour, status, type, url, id)
+// posx, posy, sizex, sizey, colour, status, type, url, id
 function set_up_scene2(){
-  items.push(new DrawableBox(650,(game_screen.height - 390),250,70,"I will reason with the zombies!", 0, 5, 0, 0))
-  items.push(new DrawableBox(100,(game_screen.height - 410),140,70,"I want to cry...", 0, 5, 0, 0))
-  items.push(new DrawableBox(500,(game_screen.height - 450),220,80,"I'm blocking the windows!", 0, 5, 0, 0))
-  items.push(new DrawableBox(350,(game_screen.height - 350),180,70,"I have to call mum...", 0, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 420),180,70,"I'm gonna kill 'em all!", 0, 5, 0, 0))
+  items.push(new DrawableBox(650,(game_screen.height - 390),250,70,"I will reason with the zombies!", 0, 5, 0, 1))	
+  items.push(new DrawableBox(100,(game_screen.height - 410),140,70,"I want to cry...", 0, 5, 0, 2))
+  items.push(new DrawableBox(500,(game_screen.height - 450),220,80,"I'm blocking the windows!", 0, 5, 0, 3))
+  items.push(new DrawableBox(350,(game_screen.height - 350),180,70,"I have to call mum...", 0, 5, 0, 4))
+  items.push(new DrawableBox(300,(game_screen.height - 420),180,70,"I'm gonna kill 'em all!", 0, 5, 0, 5))
 }
  
 function set_up_scene1point5(){
-  items.push(new DrawableBox(670,(game_screen.height - 390),240, 190,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(130,(game_screen.height - 180),240,190,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(500,(game_screen.height - 450),240,190,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(350,(game_screen.height - 350),240,190,message_array[3], 1, 5, 0, 0))
+
+  items.push(new DrawableBox(100,(game_screen.height - 100),160,140,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(200,(game_screen.height - 200),160,140,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 300),160,140,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(400,(game_screen.height - 400),160,140,message_array[3], 1, 5, 0, 0))
+
 }
 
 function kill_individual(x){
@@ -281,14 +323,13 @@ function resolve_characters_equip_2_plan(){
 			//alert("hp is now: " + hp)
 		}
 		
-		if (hp < 0){
+		// the char should die unless all the others are dead
+		if (hp < 0 && (characters[0].drawable == true || characters[1].drawable == true || characters[2].drawable == true)){
 			// kill the character
-			if ( characters[0].drawable == true || characters[1].drawable == true || characters[2].drawable == true){
 			characters[i].drawable = false
 			kill_individual(characters[i])
 			message = character_names[i] + " didn't make it; turns out the " + item_name + " weren't that useful!"
 			message_array.push(message)
-			}
 		} else {
 			message = character_names[i] + " survived; turns out the " + item_name + " were really useful!"
 			message_array.push(message)
