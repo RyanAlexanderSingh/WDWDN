@@ -200,19 +200,20 @@ function set_up_sceen1(){
   game_screen.backgroundurl ="files/pictures/Shettler.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
   
+    
   
   if(set_up_characters){
     set_up_characters = false
     for(var i = 0; i < items.length; i++){
-			items[i].posx += 100;
+			items[i].posx += 120;
 			items[i].posy += 20;
     }
     for(var i = 0; i < characters.length; i++){
-			characters[i].posx += 100;
+			characters[i].posx += 120;
 			characters[i].posy += 20;
     }
   }
-  } 
+} 
   
   function scene_two(){
 	for(var i=0; i<items.length; i++){
@@ -235,7 +236,6 @@ function set_up_sceen1(){
 //This will set up the second scene
 // posx, posy, sizex, sizey, colour, status, type, url, id
 function set_up_scene2(){
-	
   for(var i=0; i<items.length; i++){
 	 if(items[i].status == 1 && items[i].type == 5){
         items[i].drawable = false;
@@ -246,6 +246,7 @@ function set_up_scene2(){
 			characters[i].drawable = true;
 		}
   }
+  
   
   items.push(new DrawableBox(650,(game_screen.height - 390),250,70,"I will reason with the zombies!", 0, 5, 0, 1))	
   items.push(new DrawableBox(100,(game_screen.height - 410),140,70,"I want to cry...", 0, 5, 0, 2))

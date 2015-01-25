@@ -37,11 +37,11 @@ function draw_cutscene(){
   }
   //5 show balloons  
   else if(game_screen.cutscene_pos==5){
-  alert("HERE!!!")
 	set_up_scene2() //show the balloons for scene 2
-	
+	game_screen.cutscene = false
   }
   else if(game_screen.cutscene_pos==6){
+  alert("HERE OR HERE!!!")
   set_up_scene3();
   game_screen.end_credits = true;
 game_screen.cutscene = false

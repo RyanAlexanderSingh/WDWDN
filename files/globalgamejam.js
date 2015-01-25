@@ -4,6 +4,7 @@ function releasing_click_up() {
   var angle = Math.atan(mouse_position.y/mouse_position.x)
   var intensity = time*2
   var set_up_characters = {}
+  var set_up_balloons = 0
   
   if(mouse_position.dragging > -1){
     //check that effectively is over some character
@@ -200,6 +201,7 @@ set_up_characters = true
   dif_time = 0.12
   mouse_position.dragging = -1
   mouse_position.character = -1	
+  set_up_balloons = 4
   console.log("the body has loaded")
   game_screen.context = document.getElementById("mycanvas").getContext("2d")
   game_screen.width = 800
