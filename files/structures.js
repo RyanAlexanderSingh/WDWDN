@@ -12,10 +12,9 @@ var characters = []
 var aux_pos = {}
 var balloon_image
 
-
 //To create 'classes' in javascript an easy way is to create classes
 
-function ItemInfo (id, url, type, sizex, sizey, offsetx, offsety){
+function ItemInfo (id, url, type, sizex, sizey, offsetx, offsety, _morale, _survive, _live, _die ){
   this.id = id
   this.url = url
   this.type = type
@@ -24,6 +23,10 @@ function ItemInfo (id, url, type, sizex, sizey, offsetx, offsety){
   this.offsetx = offsetx
   this.offsety = offsety
   this.selected = false
+  this.morale = _morale
+  this.survive = _survive
+  this.msg_live = _live
+  this.msg_dead = _die
 }
 
 //This function is going to be something that can be draw

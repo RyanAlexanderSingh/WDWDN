@@ -1,4 +1,14 @@
+// variables
+var message_array = []
+var character_names = []
+
 function init_items(){
+
+  character_names[0] = "Jessica"
+  character_names[1] = "John"
+  character_names[2] = "Jennifer"
+  character_names[3] = "James"
+
   var all_items = []
   var item_posx = []
   var item_posy = []
@@ -40,8 +50,8 @@ function init_items(){
   
   //Generate the whole list
   // ItemInfo(id, url, item type)
-  // HATS //
-  all_items.push(new ItemInfo("Plastic bag", "files/pictures/Plastig_bag_down.png", 0)) 
+  // HATS // (id, url, type, sizex, sizey, offsetx, offsety, _morale, _survive, _live, _die )
+  all_items.push(new ItemInfo("Plastic bag", "files/pictures/Plastig_bag_down.png", 0, 0, 0, 0, 0, -10, 5, "felt a bit stupid but it served its purpose", "felt stupid and was right")) 
   all_items.push(new ItemInfo("Sauce Pan", "files/pictures/Sauce_pan_on.png", 0)) 
   all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_up.png", 0))
   all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0)) 
@@ -138,12 +148,10 @@ function resolve_characters_equip_2_plan(){
 	var equipment_array = []
 	for (i=0; i < characters.length; i++){
 		// check what equipment they have
-		equipment_array[1] = characters[i].type.head;
-		equipment_array[2] = characters[i].type.lefth;
-		equipment_array[3] = characters[i].type.righth;
-		equipment_array[4] = characters[i].type.torso;
-		equipment_array[5] = characters[i].type.feet;
+		if (characters[i].type.head != -1){
+			equipment_array.push(characters[i].type.head)
 		}
+		
 		// evaluate whether they die or not
 		// affect other characters
 		// set the text to be read out next scene
@@ -152,6 +160,7 @@ function resolve_characters_equip_2_plan(){
   //At the end of this. Will call to set_up_sceen2
   //Delete things from scene1
   game_screen.cutscene = true
+}
 }
 
 function get_story_opening(){
