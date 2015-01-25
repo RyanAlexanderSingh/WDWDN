@@ -94,8 +94,11 @@ function init_items(){
   all_items.push(new ItemInfo("Jugernaut", "files/pictures/jugernaut.png", 0, 45, 28, 0, 0, 50)) 
   all_items.push(new ItemInfo("Helmet", "files/pictures/helmet.png", 0, 23, 42, 0, 0, 50)) 
   all_items.push(new ItemInfo("Clown mask", "files/pictures/ClownFace.png", 0, 23, 42, 0, 10, 50)) 
+  all_items.push(new ItemInfo("Cone", "files/pictures/cone.png", 0, 30, 35, 0, -35, 50)) 
+  all_items.push(new ItemInfo("Wizard hat", "files/pictures/Wizzard.png", 0, 30, 35, 0, -40, 50)) 
   // Left Hands
   all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 20, 20, 0, 0, -15)) 
+  all_items.push(new ItemInfo("Dustbin lid", "files/pictures/shield.png", 1, 15, 30, 0, 0, -15)) 
   all_items.push(new ItemInfo("Clock", "files/pictures/clock_off.png", 1, 15, 42, -3, 17, 5)) 
   all_items[all_items.length-1].url_up = "files/pictures/clock_on.png"
   all_items.push(new ItemInfo("Microphone", "files/pictures/Microphone_down.png", 1, 25, 35, -3, -25, 5)) 
