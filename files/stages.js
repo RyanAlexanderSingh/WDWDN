@@ -248,7 +248,8 @@ function set_up_scene1point5(){
   items.push(new DrawableBox(300,(game_screen.height - 400),180,150,message_array[1], 1, 5, 0, 0))
   items.push(new DrawableBox(500,(game_screen.height - 400),180,150,message_array[2], 1, 5, 0, 0))
   items.push(new DrawableBox(700,(game_screen.height - 400),180,150,message_array[3], 1, 5, 0, 0))
-
+  
+}
 function set_up_scene3(){
 	
   for(var i=0; i<items.length; i++){
