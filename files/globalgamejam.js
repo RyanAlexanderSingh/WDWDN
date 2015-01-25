@@ -202,12 +202,24 @@ function dragging_around_things(){
   }
 }
 
+function randStory(){
+  var rand = getRandomInt(0, 1)
+  alert(rand);
+  if(rand == 0){
+  game_screen.story = "Zombie"
+  }
+  else{
+  game_screen.story = "Heist"
+  }
+  }
+
 //This function is the one starting up the game
 //This function will only load the game the first time
 function init_game() {
 set_up_characters = true
   clock_init()
-  game_screen.story = "Zombie"
+  //generate the random story
+  
   game_screen.cutscene = false
   game_screen.ending = false
   game_screen.cutscene_pos = 0

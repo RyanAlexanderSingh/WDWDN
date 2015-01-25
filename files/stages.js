@@ -505,21 +505,42 @@ function resolve_characters_equip_2_plan(){
 
 
 function get_story_opening(){
+	if(game_screen.story == "Zombie"){
 	var story_part =
 	"The night was neither dark, and nor was it stormy. In fact it was just cold and raining; for it was the first night of the 2015 Global Game Jam."
 	return story_part
+	}
+	else{
+	var story_part =
+	"The 42nd floor of the Huertas Delgado Group Skyscraper holds 20 Million in diamonds, owned by Mr. Huertas Delgado."
+	return story_part
+	}
 }
 
 function get_story_change(){
+if(game_screen.story == "Zombie"){
 	var story_part =
 	"At roughly one in the morning, one of our four nerds see a tweet stating that zombies had broken out in London (or vice versa) and were now rampaging!"
 	return story_part
+	}
+	else{
+	var story_part =
+	"Luckily for us, there is also some 'Celebration' in progress..."
+	return story_part
+	}
 }
 
 function get_story_development(){
+if(game_screen.story == "Zombie"){
 	var story_part =
 	"36 and a half outrageous hours later our four nerds found themselves resting deep (so deep) in Hampstead Heath. One nerd looks to the others and asks 'What do we do now?'"
 	return story_part
+    }
+	else{
+	var story_part =
+	"If we can get to all the alarm boxes without being detected, the vault will open and will relieve Mr. Huertas Delgado of his wealth without having to fire a shot"
+	return story_part
+	}
 }
 
 function get_prepared_1(){
