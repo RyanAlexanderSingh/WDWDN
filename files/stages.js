@@ -1,6 +1,7 @@
 // variables
 var message_array = []
 var character_names = []
+var all_items = []
 
 function init_items(){
 
@@ -9,7 +10,7 @@ function init_items(){
   character_names[2] = "Jennifer"
   character_names[3] = "James"
 
-  var all_items = []
+
   var item_posx = []
   var item_posy = []
   item_posx.push(220)
@@ -50,11 +51,11 @@ function init_items(){
   
   //Generate the whole list
   // ItemInfo(id, url, item type)
-  // HATS // (id, url, type, sizex, sizey, offsetx, offsety, _morale, _survive, _live, _die )
-  all_items.push(new ItemInfo("Plastic bag", "files/pictures/Plastig_bag_down.png", 0, 0, 0, 0, 0, -10, 5, "felt a bit stupid but it served its purpose", "felt stupid and was right")) 
-  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/Sauce_pan_on.png", 0)) 
-  all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_up.png", 0))
-  all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0)) 
+  // HATS // (id, url, type, sizex, sizey, offsetx, offsety, hp )
+  all_items.push(new ItemInfo("Plastic bag", "files/pictures/Plastig_bag_down.png", 0, 0, 0, 0, 0, -5)) 
+  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/Sauce_pan_on.png", 0, 0, 0, 0, 0, 5)) 
+  all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_up.png", 0, 0, 0, 0, 0, 15)) 
+  all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 0, 0, 0, 0, 20)) 
   // Left Hands
   all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1)) 
   all_items.push(new ItemInfo("Bin Lid", "files/pictures/bulletproofvest.png", 1)) 
@@ -85,7 +86,7 @@ function init_items(){
       i = i+1
     }
     all_items[i].selected = true
-    items.push(new DrawableBox(item_posx[a],  (game_screen.height - item_posy[a]), 20, 20 ,-1,0,all_items[i].type, all_items[i].url, all_items[i].id))
+    items.push(new DrawableBox(item_posx[a],  (game_screen.height - item_posy[a]), 20, 20 ,-1,0,all_items[i].type, all_items[i].url, i))
   }
 }
 
@@ -144,12 +145,25 @@ function set_up_scene2(){
 function resolve_characters_equip_2_plan(){
 	// this function will take each character and evaluate their chance of living
 	// for each character
-	var equipment_array = []
 	for (i=0; i < characters.length; i++){
+		var hp = 0
 		// check what equipment they have
 		if (characters[i].type.head != -1){
-			equipment_array.push(characters[i].type.head)
+			alert("this is the item id" + characters[i].type.head)
+			alert("this is the items id" + items[characters[i].type.head].id)
+			var number = items[characters[i].type.head].id
+			var item_name = all_items[number].id
+			alert("this is the all_items id" + item_name)
+			alert("hp was now: " + hp)
+			hp = hp + all_items[number].hp
+			alert("hp is now: " + hp)
 		}
+		
+		if (hp < 0){
+			// kill the character
+			characters[i].drawable = false
+		}		
+		
 		
 		// evaluate whether they die or not
 		// affect other characters
