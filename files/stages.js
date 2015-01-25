@@ -97,14 +97,26 @@ function set_up_sceen1(){
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
 
   //Setting up characters
-  var colour1 = new DrawingInfo(getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor())
-  var colour2 = new DrawingInfo(getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor())
-  var colour3 = new DrawingInfo(getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor())
-  var colour4 = new DrawingInfo(getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor())
-  characters.push(new DrawableBox(100, (game_screen.height - 200), 40, 90, colour1,0,new Equipment(2),"files/pictures/Face1.png", "Mike"))
-  characters.push(new DrawableBox(200, (game_screen.height - 150), 40, 90, colour2,0,new Equipment(2),"files/pictures/Face2.png", "Mike"))
-  characters.push(new DrawableBox(400, (game_screen.height - 200), 40, 90, colour3,0,new Equipment(2),"files/pictures/Face5.png", "Mike"))
-  characters.push(new DrawableBox(500, (game_screen.height - 150), 40, 90, colour4,0,new Equipment(2),"files/pictures/Face4.png", "Mike"))
+  var urlHead1 = "files/pictures/Face1.png"
+  var urlHead2 = "files/pictures/Face2.png"
+  var urlHead3 = "files/pictures/Face4.png"
+  var urlHead4 = "files/pictures/Face5.png"
+  var urlBody1 = "files/pictures/Body1.png"
+  var urlBody2 = "files/pictures/Body2.png"
+  var urlBody3 = "files/pictures/Body3.png"
+  var urlBody4 = "files/pictures/Body4.png"
+  var urlLegs1 = "files/pictures/Legs3.png"
+  var urlLegs2 = "files/pictures/Legs2.png"
+  var urlLegs3 = "files/pictures/Legs1.png"
+  var urlLegs4 = "files/pictures/Legs4.png"
+  var colour1 = new DrawingInfo(urlHead1,urlBody1,urlLegs1,getRandomColor(),-1)
+  var colour2 = new DrawingInfo(urlHead2,urlBody2,urlLegs2,getRandomColor(),-1)
+  var colour3 = new DrawingInfo(urlHead3,urlBody3,urlLegs3,getRandomColor(),-1)
+  var colour4 = new DrawingInfo(urlHead4,urlBody4,urlLegs4,getRandomColor(),-1)
+  characters.push(new DrawableBox(100, (game_screen.height - 200), 40, 90, colour1,0,new Equipment(2),-1, character_names[0]))
+  characters.push(new DrawableBox(200, (game_screen.height - 150), 40, 90, colour2,0,new Equipment(2),-1, character_names[1]))
+  characters.push(new DrawableBox(400, (game_screen.height - 200), 40, 90, colour3,0,new Equipment(2),-1, character_names[2]))
+  characters.push(new DrawableBox(500, (game_screen.height - 150), 40, 90, colour4,0,new Equipment(2),-1, character_names[3]))
   
   //Setting up items
   init_items()
