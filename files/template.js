@@ -98,6 +98,8 @@ function intro_text(){
 			}
 	}
 	if(posInCutscene == 2){
+		con.clearRect(0, 0, can.width, can.height);
+		con.drawImage(fade_image, 0, 0, can.width, can.height);
 		var string =  get_prepared_1()
 		var text_lines = getLines(con, string, 700)
 		for (i = 0; i < text_lines.length; i++){
@@ -109,6 +111,9 @@ function intro_text(){
 		for (i = 0; i < text_lines.length; i++){
 			con.fillText(text_lines[i], 50, 200 + 40 * i)
 			}
+	}
+	if(posInCutscene == 3){
+		window.location.href = "./equipment.html";
 	}
 	
 }
@@ -141,30 +146,9 @@ function make_splash_img(){
 	var x = can.width;
 	var y = can.height;
 	
-		base_image.onload = function(){
-		con.drawImage(base_image, 0, 0, can.width, can.height);
-		// colour the story text
-		con.font = "18px Calibri";
-		con.fillStyle = "#FFFFFF"
-		// print the first part of the story
-		var string =  get_story_opening()
-		var text_lines = getLines(con, string, 700)
-		for (i = 0; i < text_lines.length; i++){
-			con.fillText(text_lines[i], 50, 100 + 40 * i)
-			}
-		// print the story change
-		var string =  get_story_change()
-		var text_lines = getLines(con, string, 700)
-		for (i = 0; i < text_lines.length; i++){
-			con.fillText(text_lines[i], 50, 200 + 40 * i)
-			}
-		// print the story development blah blah blah
-		var string =  get_story_development()
-		var text_lines = getLines(con, string, 700)
-		for (i = 0; i < text_lines.length; i++){
-			con.fillText(text_lines[i], 50, 300 + 40 * i)
-			}
-		};
+	base_image.onload = function(){
+	con.drawImage(base_image, 0, 0, can.width, can.height);
+	};
 }
 
 
