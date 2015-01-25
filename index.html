@@ -5,10 +5,11 @@
     <title>What Do We Do Now?</title>
      <!-- this script lives in a file -->
 	 <body bgcolor="#748386"> 
-    <script type="text/javascript" src="./files/template.js"></script>
+    <script type="text/javascript" src="./files/template.js"></script> 
+    <script type="text/javascript" src="./files/cutscene1.js"></script> 
 	<script type="text/javascript" src="./files/globalgamejam.js"></script>
-
-	<script type="text/javascript" src="./files/stages.js"></script>
+    <script type="text/javascript" src="./files/structures.js"></script>
+    <script type="text/javascript" src="./files/stages.js"></script>
 	<style type="text/css">
 		canvas{
 		padding-left: 0;
@@ -23,6 +24,7 @@
 		width: 20em;  height: 2em;
 		}
     </style>
+	<body onload="randStory()">
   <style type="text/css"></style></head>
     <canvas id="index" width="800" height="500" onmousedown="load_intro()" style="border:4px solid #000000;">>
 	Your browser does not support the HTML5 canvas tag. You cannot play this game!</canvas>
