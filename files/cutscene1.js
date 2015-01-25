@@ -28,7 +28,9 @@ function draw_cutscene(){
   }
   //4 fade to shack
     else if(game_screen.cutscene_pos==4){
-	
+	clean_scene1()
+  set_up_scene2()
+  game_screen.cutscene = false
   }
   //5 show balloons  
   else if(game_screen.cutscene_pos==5){

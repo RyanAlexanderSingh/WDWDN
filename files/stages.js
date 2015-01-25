@@ -115,19 +115,18 @@ function set_up_sceen1(){
       if(items[i].status == 0)
         items[i].posx = 10000 //send to china unused items
       else{
-        items[i].posx += 120 // move the items to the right
-        items[i].posy += 20 // move the items to the right
-        }
+        items[i].posx += 120
+        items[i].posy += 20
+      }
     }
     
+    for(var i=0; i<characters.length; i++){
+      characters[i].posx += 120
+      characters[i].posy += 20
+    }
   //Setting up background
   game_screen.backgroundurl ="files/pictures/Shettler.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
-
-  for(var i=0; i<characters.length; i++){
-    characters[i].posx += 120
-    characters[i].posy += 20
-    }
   }
 
 //This will include the basic stages
@@ -188,10 +187,10 @@ function resolve_characters_equip_2_plan(){
 				item_name += " and the " + all_items[number].id
 			}
 			// this is debug yo
-			alert(character_names[i] + " has " + item_name)
+			//alert(character_names[i] + " has " + item_name)
 			// alter dat hp yo!
 			hp = hp + all_items[number].hp
-			alert("hp is now: " + hp)
+			//alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.lefth != -1){
@@ -204,10 +203,10 @@ function resolve_characters_equip_2_plan(){
 				item_name += " and the " + all_items[number].id
 			}
 			// this is debug yo
-			alert(character_names[i] + " has " + item_name)
+			//alert(character_names[i] + " has " + item_name)
 			// alter dat hp yo!
 			hp = hp + all_items[number].hp
-			alert("hp is now: " + hp)
+			//alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.righth != -1){
@@ -220,10 +219,10 @@ function resolve_characters_equip_2_plan(){
 				item_name += " and the " + all_items[number].id
 			}
 			// this is debug yo
-			alert(character_names[i] + " has " + item_name)
+			//alert(character_names[i] + " has " + item_name)
 			// alter dat hp yo!
 			hp = hp + all_items[number].hp
-			alert("hp is now: " + hp)
+			//alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.torso != -1){
@@ -236,10 +235,10 @@ function resolve_characters_equip_2_plan(){
 				item_name += " and the " + all_items[number].id
 			}
 			// this is debug yo
-			alert(character_names[i] + " has " + item_name)
+			//alert(character_names[i] + " has " + item_name)
 			// alter dat hp yo!
 			hp = hp + all_items[number].hp
-			alert("hp is now: " + hp)
+			//alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.feet != -1){
@@ -252,10 +251,10 @@ function resolve_characters_equip_2_plan(){
 				item_name += " and the " + all_items[number].id
 			}
 			// this is debug yo
-			alert(character_names[i] + " has " + item_name)
+			//alert(character_names[i] + " has " + item_name)
 			// alter dat hp yo!
 			hp = hp + all_items[number].hp
-			alert("hp is now: " + hp)
+			//alert("hp is now: " + hp)
 		}
 		
 		if (hp < 0){
@@ -264,23 +263,15 @@ function resolve_characters_equip_2_plan(){
 			kill_individual(characters[i])
 			message = character_names[i] + " didn't make it; turns out the " + item_name + " weren't that useful!"
 			message_array.push(message)
-			alert(message)
+			//alert(message)
 		} else {
 			message = character_names[i] + " survived; turns out the " + item_name + " were really useful!"
 			message_array.push(message)
-			alert(message)
+			//alert(message)
 		}
 	}
-			
-		// evaluate whether they die or not
-		// affect other characters
-		// set the text to be read out next scene
-	
   
-  //At the end of this. Will call to set_up_sceen2
-  //Delete things from scene1
   game_screen.cutscene = true
-  process_cutscene()
 }
 
 
