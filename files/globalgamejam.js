@@ -212,13 +212,11 @@ function render() {
   draw_items()
   draw_frontground()
   
-  draw_cutscene()
+  if(game_screen.cutscene)
+    draw_cutscene()
   
   ctxt.restore()
   ctxt.save()
-  /*ctxt.font = "14px Arial"
-  viewportwidth = window.innerWidth
-  ctxt.fillText("Char1.head => " + characters[1].type.head, 20, 20)*/
 }
 
 function draw_background(){
