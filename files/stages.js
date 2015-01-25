@@ -158,7 +158,7 @@ function set_up_sceen1(){
   init_items()
 }
 
- function clean_scene1(){
+ function clean_scene(){
     for(var i=0; i<items.length; i++){
       if(items[i].status == 0){
         items[i].drawable = false;
@@ -189,10 +189,12 @@ function set_up_scene2(){
 }
  
 function set_up_scene1point5(){
+
   items.push(new DrawableBox(100,(game_screen.height - 100),160,140,message_array[0], 1, 5, 0, 0))
   items.push(new DrawableBox(200,(game_screen.height - 200),160,140,message_array[1], 1, 5, 0, 0))
   items.push(new DrawableBox(300,(game_screen.height - 300),160,140,message_array[2], 1, 5, 0, 0))
   items.push(new DrawableBox(400,(game_screen.height - 400),160,140,message_array[3], 1, 5, 0, 0))
+
 }
 
 function kill_individual(x){
