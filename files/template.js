@@ -26,7 +26,6 @@ function update(){
 function doTimer(){
 	timerID = setInterval("update()", 200);
 	update();
-	
 }
 
 //END THE TIMER AND RUN PREPARE

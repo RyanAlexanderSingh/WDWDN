@@ -45,8 +45,10 @@
 	<canvas id="timer_canvas" width="800" height="50"></canvas>
 	<script>
       var canvas = document.getElementById('timer_canvas');
-      var context = canvas.getContext('timer_2d');	  
-
+      var context = canvas.getContext("2d");	
+		context.font = "20px Georgia";
+		context.fillStyle = '#3B0D11';
+		context.fillText("A game by Juanmi Huertas Delgado, Ryan Singh and Sam Hayhurst",100, canvas.height/2);	  
     </script>
 	<center>
     <!-- <input type="submit" id="progress" value="Prepare Equipment" class="buttons" onclick="pickScenario(this.value)"/> -->

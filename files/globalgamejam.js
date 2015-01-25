@@ -98,13 +98,14 @@ function releasing_click_up() {
   control.move = true
   time = 0
   mouse_position.launching = false
-  update_counter_items()
+  if(game_screen.cutscene_pos==0){
+	update_counter_items()
+  }
 }
 
 function update_counter_items(){		
-  ui_context.clearRect(0, 0, game_screen.width, game_screen.height)
-ui_context.fillText("Take arms! Equip the nerds with items...if you dare 		               Items left:" + num_rest_items ,30, ui_canvas.height/2);
-    
+	ui_context.clearRect(0, 0, game_screen.width, game_screen.height)
+    ui_context.fillText("Take arms! Equip the nerds with items...if you dare.		               Items left:" + num_rest_items ,30, ui_canvas.height/2);
 }
 
 //CLICKING DOWN THE BUTTON FROM WEB
