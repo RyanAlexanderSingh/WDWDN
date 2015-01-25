@@ -259,20 +259,20 @@ function set_up_scene2(){
      }
   }
   
-  items.push(new DrawableBox(650,(game_screen.height - 390),200,30,"I will reason with the zombies!", 0, 5, 0, 1))	
-  items.push(new DrawableBox(100,(game_screen.height - 410),200,30,"I want to cry...", 0, 5, 0, 2))
-  items.push(new DrawableBox(500,(game_screen.height - 450),200,30,"I'm blocking the windows!", 0, 5, 0, 3))
-  items.push(new DrawableBox(350,(game_screen.height - 350),200,30,"I have to call mum...", 0, 5, 0, 4))
-  items.push(new DrawableBox(300,(game_screen.height - 420),200,30,"I'm gonna kill 'em all!", 0, 5, 0, 5))
+  items.push(new DrawableBox(650,(game_screen.height - 390),200,50,"I will reason with the zombies!", 0, 5, 0, 1))	
+  items.push(new DrawableBox(100,(game_screen.height - 410),200,50,"I want to cry...", 0, 5, 0, 2))
+  items.push(new DrawableBox(500,(game_screen.height - 450),200,50,"I'm blocking the windows!", 0, 5, 0, 3))
+  items.push(new DrawableBox(350,(game_screen.height - 350),200,50,"I have to call mum...", 0, 5, 0, 4))
+  items.push(new DrawableBox(300,(game_screen.height - 420),200,50,"I'm gonna kill 'em all!", 0, 5, 0, 5))
 }
  
 function set_up_scene1point5(){
   if(we_dont_want_dancing_boxes){
     we_dont_want_dancing_boxes = false
-    items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[0], 1, 5, 0, 0))
-    items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[1], 1, 5, 0, 0))
-    items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[2], 1, 5, 0, 0))
-    items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[3], 1, 5, 0, 0))
+    items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),220,150,message_array[0], 1, 5, 0, 0))
+    items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),220,150,message_array[1], 1, 5, 0, 0))
+    items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),220,150,message_array[2], 1, 5, 0, 0))
+    items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),220,150,message_array[3], 1, 5, 0, 0))
   }
 }
  
@@ -357,10 +357,7 @@ function kill_individual(x){
 // this function should resolve the planning stage in a similar function
 function resolve_characters_plan_2_outcome(){
 	// this function will take each character left and evaluate their chances according to their idea.
-	for (i = 0; i < characters.length; i++){
-	alert("character hp: " + char_hps[i])
-	alert("character balloon: " + characters[i].type.balloon)
-	
+	for (i = 0; i < characters.length; i++){	
 	if ( characters[i].type.balloon != -1){
 		index = items[characters[i].type.balloon].id
 		// this is story 1
