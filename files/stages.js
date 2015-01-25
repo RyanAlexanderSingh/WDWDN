@@ -334,8 +334,18 @@ function resolve_characters_plan_2_outcome(){
 	// this function will take each character left and evaluate their chances according to their idea.
 	for (i = 0; i < characters.length; i++){
 		if ( characters[i].type.balloon != -1){
-			/*index = items[characters[i].type.head].id
-			alert("the character balloon index is " + index)*/
+			index = items[characters[i].type.balloon].id
+      if(index == 1){
+        
+      }else if (index == 2){
+      
+      }else if (index == 3){
+      
+      }else if (index == 4){
+      
+      }else{
+      
+      }
 		}
 	}
 }
