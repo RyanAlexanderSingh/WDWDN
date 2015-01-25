@@ -122,7 +122,7 @@ function set_up_sceen1(){
   init_items()
 }
 
- function clean_scene1(){
+ function clean_scene(){
     for(var i=0; i<items.length; i++){
       if(items[i].status == 0){
         items[i].drawable = false;
@@ -153,11 +153,10 @@ function set_up_scene2(){
 }
  
 function set_up_scene1point5(){
-  items.push(new DrawableBox(650,(game_screen.height - 390),290, 140,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(130,(game_screen.height - 280),290,140,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(500,(game_screen.height - 450),290,140,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(350,(game_screen.height - 350),290,140,message_array[3], 1, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 420),290,140,message_array[4], 1, 5, 0, 0))
+  items.push(new DrawableBox(670,(game_screen.height - 390),240, 190,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(130,(game_screen.height - 180),240,190,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(500,(game_screen.height - 450),240,190,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(350,(game_screen.height - 350),240,190,message_array[3], 1, 5, 0, 0))
 }
 
 function kill_individual(x){
