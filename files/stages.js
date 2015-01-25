@@ -331,20 +331,29 @@ function kill_individual(x){
 
 // this function should resolve the planning stage in a similar function
 function resolve_characters_plan_2_outcome(){
+     message_array = []
 	// this function will take each character left and evaluate their chances according to their idea.
 	for (i = 0; i < characters.length; i++){
-		if ( characters[i].type.balloon != -1){
-			index = items[characters[i].type.balloon].id
+	if ( characters[i].type.balloon != -1){
+		index = items[characters[i].type.balloon].id
       if(index == 1){
-        
+        if (characters[i].hp < 10){
+			alert("character hp: " + characters[i].hp)
+			characters[i].drawable = false
+			kill_individual(characters[i])
+			message_array.push("character dies")
+		} else {
+			message_array.push("character lives")
+		}
+		
       }else if (index == 2){
-      
+		alert("this is story 1")
       }else if (index == 3){
-      
+		alert("this is story 1")
       }else if (index == 4){
-      
+		alert("this is story 1")
       }else{
-      
+		alert("this is story 1")
       }
 		}
 	}
