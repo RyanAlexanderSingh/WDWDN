@@ -42,18 +42,16 @@ function draw_cutscene(){
   }
   else if(game_screen.cutscene_pos==6){
 	con.save(); 
-    con.drawImage(black_image, 0, 0); //we'll fade the image to black
-	//prepare_scene3();
+	con.drawImage(black_image, 0, 0); //we'll fade the image to black
   }
   else if(game_screen.cutscene_pos==7){
 	
 	con.save();
 	con.clearRect(0, 0, game_screen.width, game_screen.height)
     con.drawImage(weekslater21, 0, 0);    //fade to 21 weeks later
-	
  }
   else if(game_screen.cutscene_pos==8){
-  set_up_scene3(); //fade to the final scene
+  	set_up_scene3(); //fade to the final scene
   game_screen.end_credits = true;
   game_screen.cutscene = false
   //instead of drawing background - draw background and foreground
@@ -69,10 +67,5 @@ function draw_cutscene(){
 	requestAnimationFrame(animateToBlack);
 	
     fadePct++;
-}
- 
- function draw_black(img, opacity) {
-	
-    con.restore();
 }
  
