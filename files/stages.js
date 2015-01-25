@@ -26,21 +26,34 @@ function init_items(){
   message_neg_0[1] = " died as he lived: stupidly. It seems that the "
   message_neg_0[2] = " is now an ex-Nerd. For some reason the "
   message_neg_0[3] = " has ceased to be because of the stupid "
+  message_neg_0[4] = " is gone and forgotten "
+  message_neg_0[5] = "'s level of stupidity proved Einstein right, his"
+  message_neg_0[6] = " was nominated for a darwin award, his "
+  
   
   message_neg_1[0] = " not such a good idea."
   message_neg_1[1] = " $%&@ing &£%$."
   message_neg_1[2] = " as useful as a engine made of bacon."
   message_neg_1[3] = " only was useful to attract more zombies."
+  message_neg_0[4] = " were so crap, they could have been a zombie plot."
+  message_neg_0[5] = " did nought but hinder."
+  message_neg_0[6] = " broke at just the wrong moment."
   
-  message_pos_0[0] = " kicked serious zombie ass, using the "
-  message_pos_0[1] = " ran for hours, thanks to the "
-  message_pos_0[2] = " opened a can of whoop ass with their "
+  message_pos_0[0] = " kicked serious zombie ass, using his "
+  message_pos_0[1] = " ran for hours, thanks to his "
+  message_pos_0[2] = " opened a can of whoop ass with his "
   message_pos_0[3] = " is now a level 3 barbarian thanks to his "
+  message_pos_0[4] = " incremented is badassery level, using his "
+  message_pos_0[5] = " dealt out seemingly infinite ownage using his "
+  message_pos_0[6] = " became the zombie's god of death "
   
   message_pos_1[0] = " totally awesome dude!"
-  message_pos_1[1] = " almost as good as an ak."
+  message_pos_1[1] = " almost as good as an AK47."
   message_pos_1[2] = " pretty much the best thing ever!"
-  message_pos_1[3] = ", that he will adopt as his new family!"
+  message_pos_1[3] = " that he will adopt as his new family!"
+  message_pos_1[4] = " does 9999 damage"
+  message_pos_1[5] = " will be gold plated later tonight"
+  message_pos_1[6] = " is pretty awesome!"
 
   var item_posx = []
   var item_posy = []
@@ -115,6 +128,12 @@ function init_items(){
   all_items[all_items.length-1].url_up = "files/pictures/CriketBat.png"
   all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 32, 32, 14, -33, 3))  
   all_items[all_items.length-1].url_up = "files/pictures/Rat_flailon.png"
+  all_items.push(new ItemInfo("Maze", "files/pictures/MazeOff.png", 1, 18, 33, -6, -38, 3))  
+  all_items[all_items.length-1].url_up = "files/pictures/MazeOn.png"
+  all_items.push(new ItemInfo("Signal", "files/pictures/SignalOff.png", 1, 30, 105, -6, -60, 3))  
+  all_items[all_items.length-1].url_up = "files/pictures/Signal.png"
+  all_items.push(new ItemInfo("Signal", "files/pictures/LMGOff.png", 1, 49, 92, 6, -80, 3))  
+  all_items[all_items.length-1].url_up = "files/pictures/LMGOn.png"
   // Torso
   all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 25, -2, 30, -6))  
   all_items.push(new ItemInfo("Iron bra", "files/pictures/Bra.png", 3, 30, 35, 0, 40, -6))  
@@ -124,7 +143,7 @@ function init_items(){
   all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 35, 20, 0, -5, -8)) 
   all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 35, 12, 0, 0, -14)) 
   all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 35, 20, 0, 0, 6)) 
-  all_items.push(new ItemInfo("'Big platforms", "files/pictures/HugePlatforms.png", 4, 35, 40, 0, 0, 6)) 
+  all_items.push(new ItemInfo("'Big platforms", "files/pictures/HugePlataformers.png", 4, 35, 40, 0, 20, 6)) 
   all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 35, 18, 0, 0, 14))  
   
  
@@ -274,10 +293,10 @@ function set_up_scene2(){
 function set_up_scene1point5(){
   if(we_dont_want_dancing_boxes){
     we_dont_want_dancing_boxes = false
-    items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[0], 1, 5, 0, 0))
-    items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[1], 1, 5, 0, 0))
-    items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[2], 1, 5, 0, 0))
-    items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[3], 1, 5, 0, 0))
+    items.push(new DrawableBox(100+getRandomInt(-5,5),(game_screen.height - getRandomInt(395,405)),210,180,message_array[0], 1, 5, 0, 0))
+    items.push(new DrawableBox(300+getRandomInt(-5,5),(game_screen.height - getRandomInt(395,405)),210,180,message_array[1], 1, 5, 0, 0))
+    items.push(new DrawableBox(500+getRandomInt(-5,5),(game_screen.height - getRandomInt(395,405)),210,180,message_array[2], 1, 5, 0, 0))
+    items.push(new DrawableBox(700+getRandomInt(-5,5),(game_screen.height - getRandomInt(395,405)),210,180,message_array[3], 1, 5, 0, 0))
   }
 }
  
