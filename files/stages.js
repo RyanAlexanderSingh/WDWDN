@@ -57,9 +57,9 @@ function init_items(){
   all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_up.png", 0, 0, 0, 0, 0, 15)) 
   all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 0, 0, 0, 0, 20)) 
   // Left Hands
-  all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 0, 0, 0, 0, 0, -20)) 
-  all_items.push(new ItemInfo("Bin Lid", "files/pictures/bulletproofvest.png", 0, 0, 0, 0, 0, 25))  
-  all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 0, 0, 0, 0, 0, -35)) 
+  all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 0, 0, 0, 0, -20)) 
+  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1, 0, 0, 0, 0, 25))  
+  all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1, 0, 0, 0, 0, -35)) 
   // right arm
   all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 2)) 
   all_items.push(new ItemInfo("Cricket Bat", "files/pictures/CriketBat.png", 2)) 
@@ -140,6 +140,27 @@ function set_up_scene2(){
   items.push(new DrawableBox(300,(game_screen.height - 420),180,70,"I'm gonna kill 'em all!", 0, 5, 0, 0))
 }
 
+function kill_individual(x){
+			x.drawable = false
+      x.posx += 1000
+      if(x.type.head != -1){
+        items[x.type.head].drawable = false
+      }
+      if(x.type.lefth != -1){
+        items[x.type.lefth].drawable = false
+      }
+      if(x.type.righth != -1){
+        items[x.type.righth].drawable = false
+      }
+      if(x.type.torso != -1){
+        items[x.type.torso].drawable = false
+      }
+      if(x.type.feet != -1){
+        items[x.type.feet].drawable = false
+      }
+      
+}
+
 // this function needs to be called in pick scenario in GGJ.js
 function resolve_characters_equip_2_plan(){
 	// this function will take each character and evaluate their chance of living
@@ -163,8 +184,14 @@ function resolve_characters_equip_2_plan(){
 		
 		if (hp < 0){
 			// kill the character
+<<<<<<< HEAD
 			characters[i].drawable = false
 			message = character_names[i] + " didn't make it; turns out the " + item_name + " wasn't that useful"
+=======
+      kill_individual(characters[i])
+      
+			message = character_names[i] + " didn't make it; turns out " + item_name + " wasn't that useful"
+>>>>>>> 4c861594c0386551ce8c85928317cc8e26f81985
 			message_array.push(message)
 			alert(message)
 		} else {

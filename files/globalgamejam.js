@@ -97,8 +97,8 @@ function releasing_click_up() {
 //CLICKING DOWN THE BUTTON FROM WEB
 function clicking_down_button() {
   if(game_screen.cutscene){
-    game_screen.cutscene_pos++
     process_cutscene()
+    game_screen.cutscene_pos++
   }else{
     mouse_position.launching = true
     var e = window.event;

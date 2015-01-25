@@ -2,7 +2,7 @@
 function process_cutscene(){
   //1 fade to black
   if(game_screen.cutscene_pos==1){
-  alert("FADE TO BLACK!!!")
+  alert("FADE TO BLACK 1 !!!")
   }
   //2 fade to text
   else if(game_screen.cutscene_pos==2){
@@ -10,7 +10,7 @@ function process_cutscene(){
   }
   //3 fade to black
     else if(game_screen.cutscene_pos==3){
-  alert("FADE TO BLACK!!!")
+  alert("FADE TO BLACK  2 !!!")
   }
   //4 fade to shack
     else if(game_screen.cutscene_pos==4){
@@ -31,7 +31,7 @@ function process_cutscene(){
   }
   //8 next cutscene
   else if(game_screen.cutscene_pos==8){
-  alert("FADE TO BLACK!!!")
+  alert("FADE TO BLACK  3 !!!")
   }
   //8 next cutscene
   else if(game_screen.cutscene_pos==8){
@@ -39,7 +39,7 @@ function process_cutscene(){
   }
   //8 next cutscene
   else if(game_screen.cutscene_pos==8){
-  alert("FADE TO BLACK!!!")
+  alert("FADE TO BLACK  4 !!!")
   }
   //8 next cutscene
   else if(game_screen.cutscene_pos==8){
@@ -47,14 +47,13 @@ function process_cutscene(){
   }
   //8 next cutscene
   else if(game_screen.cutscene_pos==8){
-  alert("FADE TO BLACK!!!")
+  alert("FADE TO BLACK  5 !!!")
   }
  }
 
 function draw_cutscene(){
   //1 fade to black
   if(game_screen.cutscene_pos==1){
-  
   }
   //2 fade to text
   else if(game_screen.cutscene_pos==2){
