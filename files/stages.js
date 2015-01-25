@@ -247,10 +247,10 @@ function set_up_sceen1(){
  
  function set_up_scene1point5(){
   
-  items.push(new DrawableBox(100,(game_screen.height - 100),300,150,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(200,(game_screen.height - 200),300,150,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 300),300,150,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(400,(game_screen.height - 400),300,150,message_array[3], 1, 5, 0, 0))
+  items.push(new DrawableBox(100,(game_screen.height - 100),180,150,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(200,(game_screen.height - 200),180,150,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 300),180,150,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(400,(game_screen.height - 400),180,150,message_array[3], 1, 5, 0, 0))
 
 }
   
@@ -264,28 +264,28 @@ function set_up_scene2(){
      }
   }
   
-  items.push(new DrawableBox(650,(game_screen.height - 390),200,30,"I will reason with the zombies!", 0, 5, 0, 1))	
-  items.push(new DrawableBox(100,(game_screen.height - 410),200,30,"I want to cry...", 0, 5, 0, 2))
-  items.push(new DrawableBox(500,(game_screen.height - 450),200,30,"I'm blocking the windows!", 0, 5, 0, 3))
-  items.push(new DrawableBox(350,(game_screen.height - 350),200,30,"I have to call mum...", 0, 5, 0, 4))
-  items.push(new DrawableBox(300,(game_screen.height - 420),200,30,"I'm gonna kill 'em all!", 0, 5, 0, 5))
+  items.push(new DrawableBox(650,(game_screen.height - 390),200,50,"I will reason with the zombies!", 0, 5, 0, 1))	
+  items.push(new DrawableBox(100,(game_screen.height - 410),200,50,"I want to cry...", 0, 5, 0, 2))
+  items.push(new DrawableBox(500,(game_screen.height - 450),200,50,"I'm blocking the windows!", 0, 5, 0, 3))
+  items.push(new DrawableBox(350,(game_screen.height - 350),200,50,"I have to call mum...", 0, 5, 0, 4))
+  items.push(new DrawableBox(300,(game_screen.height - 420),200,50,"I'm gonna kill 'em all!", 0, 5, 0, 5))
 }
  
 function set_up_scene1point5(){
   if(we_dont_want_dancing_boxes){
     we_dont_want_dancing_boxes = false
-    items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[0], 1, 5, 0, 0))
-    items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[1], 1, 5, 0, 0))
-    items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[2], 1, 5, 0, 0))
-    items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[3], 1, 5, 0, 0))
+    items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[0], 1, 5, 0, 0))
+    items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[1], 1, 5, 0, 0))
+    items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[2], 1, 5, 0, 0))
+    items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),210,180,message_array[3], 1, 5, 0, 0))
   }
 }
  
 function set_up_scenePUB(){
-  items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[3], 1, 5, 0, 0))
+  items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,180,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,180,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,180,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,180,message_array[3], 1, 5, 0, 0))
 }
 
  
@@ -362,10 +362,9 @@ function kill_individual(x){
 // this function should resolve the planning stage in a similar function
 function resolve_characters_plan_2_outcome(){
 	// this function will take each character left and evaluate their chances according to their idea.
-	for (i = 0; i < characters.length; i++){
-	
+	for (i = 0; i < characters.length; i++){	
 	if ( characters[i].type.balloon != -1){
-		index = items[characters[i].type.balloon].id
+		index = characters[i].type.balloon
 		// this is story 1
       if(index == 1){
         if (char_hps[i] < 10){
@@ -515,21 +514,42 @@ function resolve_characters_equip_2_plan(){
 
 
 function get_story_opening(){
+	if(game_screen.story == "Zombie"){
 	var story_part =
 	"The night was neither dark, and nor was it stormy. In fact it was just cold and raining; for it was the first night of the 2015 Global Game Jam."
 	return story_part
+	}
+	else{
+	var story_part =
+	"The 42nd floor of the Huertas Delgado Group Skyscraper holds 20 Million in diamonds, owned by Mr. Huertas Delgado."
+	return story_part
+	}
 }
 
 function get_story_change(){
+if(game_screen.story == "Zombie"){
 	var story_part =
 	"At roughly one in the morning, one of our four nerds see a tweet stating that zombies had broken out in London (or vice versa) and were now rampaging!"
 	return story_part
+	}
+	else{
+	var story_part =
+	"Luckily for us, there is also some 'Celebration' in progress..."
+	return story_part
+	}
 }
 
 function get_story_development(){
+if(game_screen.story == "Zombie"){
 	var story_part =
 	"36 and a half outrageous hours later our four nerds found themselves resting deep (so deep) in Hampstead Heath. One nerd looks to the others and asks 'What do we do now?'"
 	return story_part
+    }
+	else{
+	var story_part =
+	"If we can get to all the alarm boxes without being detected, the vault will open and will relieve Mr. Huertas Delgado of his wealth without having to fire a shot"
+	return story_part
+	}
 }
 
 function get_prepared_1(){
