@@ -20,7 +20,7 @@ function init_items(){
   character_names[3] = "Angry Andrea"
   
   message_neg_0[0] = " bit the dust, hard. Apparently the "
-  message_neg_0[1] = " died as they lived: stupidly. It seems that the"
+  message_neg_0[1] = " died as he lived: stupidly. It seems that the"
   message_neg_0[2] = " is now an ex-Nerd. For some reason the"
   
   message_neg_1[0] = " not such a good idea"
@@ -29,7 +29,7 @@ function init_items(){
   
   message_pos_0[0] = " kicked serious zombie ass, using the "
   message_pos_0[1] = " ran for hours, thanks to the "
-  message_pos_0[2] = " opened a can of whup ass with their "
+  message_pos_0[2] = " opened a can of whoop ass with their "
   
   message_pos_1[0] = " totally awesome dude!"
   message_pos_1[1] = " almost as good as an ak"
@@ -103,7 +103,7 @@ function init_items(){
   all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 20, 20, 0, 0, -8)) 
   all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 20, 20, 0, 0, -14)) 
   all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 40, 20, 0, 0, 6)) 
-  all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 20, 20, 0, 0, 14))  
+  all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 40, 20, 0, 0, 14))  
   
  
   //Randomize a subset and add it to items
@@ -192,15 +192,26 @@ function set_up_sceen1(){
     for(var i=0; i<items.length; i++){
       if(items[i].status == 0){
         items[i].drawable = false;
-		items[i].posx = 10000 //send to china unused items
-     }
-	 if(items[i].status != 0){
-        items[i].drawable = false;
-     }
+        items[i].posx = 10000 //send to china unused items
+      }
     }
+
 	  //Setting up background
   game_screen.backgroundurl ="files/pictures/Shettler.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
+  
+  
+  if(set_up_characters){
+    set_up_characters = false
+    for(var i = 0; i < items.length; i++){
+			items[i].posx += 100;
+			items[i].posy += 20;
+    }
+    for(var i = 0; i < characters.length; i++){
+			characters[i].posx += 100;
+			characters[i].posy += 20;
+    }
+  }
   } 
   
   function scene_two(){
@@ -213,10 +224,10 @@ function set_up_sceen1(){
  
  function set_up_scene1point5(){
   
-  items.push(new DrawableBox(100,(game_screen.height - 100),160,140,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(200,(game_screen.height - 200),160,140,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 300),160,140,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(400,(game_screen.height - 400),160,140,message_array[3], 1, 5, 0, 0))
+  items.push(new DrawableBox(100,(game_screen.height - 100),300,150,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(200,(game_screen.height - 200),300,150,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 300),300,150,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(400,(game_screen.height - 400),300,150,message_array[3], 1, 5, 0, 0))
 
 }
   
@@ -252,7 +263,7 @@ function set_up_scene1point5(){
   
 }
 function set_up_scene3(){
-	
+	resolve_characters_plan_2_outcome()
   for(var i=0; i<items.length; i++){
 	 if(items[i].status == 0 && items[i].type == 5){
         items[i].drawable = false;
