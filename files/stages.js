@@ -26,21 +26,34 @@ function init_items(){
   message_neg_0[1] = " died as he lived: stupidly. It seems that the "
   message_neg_0[2] = " is now an ex-Nerd. For some reason the "
   message_neg_0[3] = " has ceased to be because of the stupid "
+  message_neg_0[4] = " is gone and forgotten "
+  message_neg_0[5] = "'s level of stupidity proved Einstein right, his"
+  message_neg_0[6] = " was nominated for a darwin award, his "
+  
   
   message_neg_1[0] = " not such a good idea."
   message_neg_1[1] = " $%&@ing &£%$."
   message_neg_1[2] = " as useful as a engine made of bacon."
   message_neg_1[3] = " only was useful to attract more zombies."
+  message_neg_0[4] = " were so crap, they could have been a zombie plot."
+  message_neg_0[5] = " did nought but hinder."
+  message_neg_0[6] = " broke at just the wrong moment."
   
-  message_pos_0[0] = " kicked serious zombie ass, using the "
-  message_pos_0[1] = " ran for hours, thanks to the "
-  message_pos_0[2] = " opened a can of whoop ass with their "
+  message_pos_0[0] = " kicked serious zombie ass, using his "
+  message_pos_0[1] = " ran for hours, thanks to his "
+  message_pos_0[2] = " opened a can of whoop ass with his "
   message_pos_0[3] = " is now a level 3 barbarian thanks to his "
+  message_pos_0[4] = " incremented is badassery level, using his "
+  message_pos_0[5] = " dealt out seemingly infinite ownage using his "
+  message_pos_0[6] = " became the zombie's god of death "
   
   message_pos_1[0] = " totally awesome dude!"
-  message_pos_1[1] = " almost as good as an ak."
+  message_pos_1[1] = " almost as good as an AK47."
   message_pos_1[2] = " pretty much the best thing ever!"
-  message_pos_1[3] = ", that he will adopt as his new family!"
+  message_pos_1[3] = " that he will adopt as his new family!"
+  message_pos_1[4] = " does 9999 damage"
+  message_pos_1[5] = " will be gold plated later tonight"
+  message_pos_1[6] = " is pretty awesome!"
 
   var item_posx = []
   var item_posy = []
