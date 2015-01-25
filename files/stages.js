@@ -85,16 +85,23 @@ function init_items(){
   // HATS // (id, url, type, sizex, sizey, offsetx, offsety, hp )
   all_items.push(new ItemInfo("Plastic bag", "files/pictures/Plastic_bag_down.png", 0, 40, 40, 0, 0, -5)) 
   all_items[all_items.length-1].url_up = "files/pictures/plastic_bag_on.png"
+  all_items.push(new ItemInfo("Tesco bag", "files/pictures/TescoBagDown.png", 0, 30, 32, 0, 0, -5)) 
+  all_items[all_items.length-1].url_up = "files/pictures/TescoBag.png"
   all_items.push(new ItemInfo("Sauce Pan", "files/pictures/Sauce_pan_on.png", 0, 28, 13, -7, -15, 10)) 
   all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_down.png", 0, 20, 20, 5, 5, 7)) 
   all_items[all_items.length-1].url_up = "files/pictures/Make_up_up.png"
   all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 25, 25, 0, -35, 3)) 
   all_items.push(new ItemInfo("Jugernaut", "files/pictures/jugernaut.png", 0, 45, 28, 0, 0, 50)) 
+  all_items.push(new ItemInfo("Helmet", "files/pictures/helmet.png", 0, 23, 42, 0, 0, 50)) 
+  all_items.push(new ItemInfo("Clown mask", "files/pictures/ClownFace.png", 0, 23, 42, 0, 10, 50)) 
+  all_items.push(new ItemInfo("Cone", "files/pictures/cone.png", 0, 30, 35, 0, -35, 50)) 
+  all_items.push(new ItemInfo("Wizard hat", "files/pictures/Wizzard.png", 0, 30, 35, 0, -40, 50)) 
   // Left Hands
   all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 20, 20, 0, 0, -15)) 
+  all_items.push(new ItemInfo("Dustbin lid", "files/pictures/shield.png", 1, 15, 30, 0, 0, -15)) 
   all_items.push(new ItemInfo("Clock", "files/pictures/clock_off.png", 1, 15, 42, -3, 17, 5)) 
   all_items[all_items.length-1].url_up = "files/pictures/clock_on.png"
-  all_items.push(new ItemInfo("Microphone", "files/pictures/Microphone_down.png", 1, 15, 42, -3, 17, 5)) 
+  all_items.push(new ItemInfo("Microphone", "files/pictures/Microphone_down.png", 1, 25, 35, -3, -25, 5)) 
   all_items[all_items.length-1].url_up = "files/pictures/Microphone.png"
   all_items.push(new ItemInfo("Sword", "files/pictures/sword_down.png", 1, 18, 50, -4, -49, 15))  
   all_items[all_items.length-1].url_up = "files/pictures/sword_up.png"
@@ -105,10 +112,13 @@ function init_items(){
   all_items.push(new ItemInfo("Hammer", "files/pictures/hammer_on.png", 1, 18, 50, -3, -23, 20))  
   all_items[all_items.length-1].url_up = "files/pictures/hammer_down.png"
   all_items.push(new ItemInfo("Cricket", "files/pictures/CriketBat_down", 1, 18, 50, -3, -23, 20))  
-  all_items[all_items.length-1].url_up = "files/pictures/CriketBat.png.png"
-  all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 20, 20, 0, 0, 3))  
+  all_items[all_items.length-1].url_up = "files/pictures/CriketBat.png"
+  all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 32, 32, 14, -33, 3))  
+  all_items[all_items.length-1].url_up = "files/pictures/Rat_flailon.png"
   // Torso
   all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 25, -2, 30, -6))  
+  all_items.push(new ItemInfo("Iron bra", "files/pictures/Bra.png", 3, 30, 35, 0, 40, -6))  
+  all_items.push(new ItemInfo("Klevar chest", "files/pictures/GladChest.png", 3, 28, 32, -2, 40, -6))  
   // Feet
   all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 35, 20, 0, -5, -8)) 
   all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 35, 12, 0, 0, -14)) 
