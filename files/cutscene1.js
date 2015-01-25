@@ -41,10 +41,10 @@ function draw_cutscene(){
 	
   }
   else if(game_screen.cutscene_pos==6){
-  end_credits = true;
-	
+  set_up_scene3();
+  game_screen.end_credits = true;
+game_screen.cutscene = false
   //instead of drawing background - draw background and foreground
-  con.drawImage(pub_image, 0, 0);
 	
   }
  }

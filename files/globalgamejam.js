@@ -181,6 +181,7 @@ function init_game() {
   game_screen.story = "Zombie"
   game_screen.name = document.getElementById("progress").value
   game_screen.cutscene = false
+  game_screen.ending = false
   game_screen.cutscene_pos = 0
   dif_time = 0.12
   mouse_position.dragging = -1
@@ -222,17 +223,32 @@ function render() {
 function draw_background(){
   var ctxt = game_screen.context
     var background_image = new Image()
+	if(!game_screen.end_credits){
     background_image.src = game_screen.backgroundurl
+	}
+	else{
+	 background_image.src = './files/pictures/pub_back.png'
+	}
     ctxt.save()
     ctxt.drawImage(background_image, 0, 0,800, 500)
     ctxt.restore()
 }
 
 function draw_frontground(){
+if(!game_screen.end_credits){
   if(game_screen.backgroundurl2 != -1){
   var ctxt = game_screen.context
     var background_image = new Image()
     background_image.src = game_screen.backgroundurl2
+    ctxt.save()
+    ctxt.drawImage(background_image, 0, 0,800, 500)
+    ctxt.restore()
+	}
+  }
+  else{
+   var ctxt = game_screen.context
+    var background_image = new Image()
+    background_image.src = './files/pictures/pub_front.png'
     ctxt.save()
     ctxt.drawImage(background_image, 0, 0,800, 500)
     ctxt.restore()
@@ -244,16 +260,17 @@ function pickScenario(clicked_value){
 	if(clicked_value == "Prepare Equipment")
 	{
 		window.location.href = "./game.html";
-	}	
+	}
+	
 	if(clicked_value == "Prepare Yourself")
 	{
+	if(!game_screen.end_credits){
     game_screen.cutscene_pos=1
     resolve_characters_equip_2_plan();
-	}	
-	if(clicked_value == "Are you ready?")
-	{
-		//do something here with the pub scene
-		resolve_characters_plan_2_outcome();
+	}
+	}
+	else{
+		window.location.href = "./index.html";
 	}
 }
 
