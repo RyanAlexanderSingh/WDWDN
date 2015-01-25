@@ -54,6 +54,7 @@ function draw_cutscene(){
  }
   else if(game_screen.cutscene_pos==8){
   set_up_scene3(); //fade to the final scene
+  set_up_scenePUB();
   game_screen.end_credits = true;
   game_screen.cutscene = false
   //instead of drawing background - draw background and foreground
