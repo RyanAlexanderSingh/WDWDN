@@ -172,56 +172,81 @@ function resolve_characters_equip_2_plan(){
 		var message = ""
 		// check what equipment they have
 		if (characters[i].type.head != -1){
-			alert("this is the item id" + characters[i].type.head)
-			alert("this is the items id" + items[characters[i].type.head].id)
+			// id of the item
 			number = items[characters[i].type.head].id
-			item_name = all_items[number].id
-			alert("this is the all_items id" + item_name)
-			alert("hp was now: " + hp)
+			// is it the first item, add to the item string depending on result
+			if (item_name == ""){
+				item_name = all_items[number].id
+			} else {
+				item_name += " and the " + all_items[number].id
+			}
+			// this is debug yo
+			alert(character_names[i] + " has " + item_name)
+			// alter dat hp yo!
 			hp = hp + all_items[number].hp
 			alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.lefth != -1){
-			alert("this is the item id" + characters[i].type.head)
-			alert("this is the items id" + items[characters[i].type.head].id)
-			number = items[characters[i].type.head].id
-			item_name = all_items[number].id
-			alert("this is the all_items id" + item_name)
-			alert("hp was now: " + hp)
+			// id of the item
+			number = items[characters[i].type.lefth].id
+			// is it the first item, add to the item string depending on result
+			if (item_name == ""){
+				item_name = all_items[number].id
+			} else {
+				item_name += " and the " + all_items[number].id
+			}
+			// this is debug yo
+			alert(character_names[i] + " has " + item_name)
+			// alter dat hp yo!
 			hp = hp + all_items[number].hp
 			alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.righth != -1){
-			alert("this is the item id" + characters[i].type.head)
-			alert("this is the items id" + items[characters[i].type.head].id)
-			number = items[characters[i].type.head].id
-			item_name = all_items[number].id
-			alert("this is the all_items id" + item_name)
-			alert("hp was now: " + hp)
+			// id of the item
+			number = items[characters[i].type.righth].id
+			// is it the first item, add to the item string depending on result
+			if (item_name == ""){
+				item_name = all_items[number].id
+			} else {
+				item_name += " and the " + all_items[number].id
+			}
+			// this is debug yo
+			alert(character_names[i] + " has " + item_name)
+			// alter dat hp yo!
 			hp = hp + all_items[number].hp
 			alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.torso != -1){
-			alert("this is the item id" + characters[i].type.head)
-			alert("this is the items id" + items[characters[i].type.head].id)
-			number = items[characters[i].type.head].id
-			item_name = all_items[number].id
-			alert("this is the all_items id" + item_name)
-			alert("hp was now: " + hp)
+			// id of the item
+			number = items[characters[i].type.torso].id
+			// is it the first item, add to the item string depending on result
+			if (item_name == ""){
+				item_name = all_items[number].id
+			} else {
+				item_name += " and the " + all_items[number].id
+			}
+			// this is debug yo
+			alert(character_names[i] + " has " + item_name)
+			// alter dat hp yo!
 			hp = hp + all_items[number].hp
 			alert("hp is now: " + hp)
 		}
 		
 		if (characters[i].type.feet != -1){
-			alert("this is the item id" + characters[i].type.head)
-			alert("this is the items id" + items[characters[i].type.head].id)
-			number = items[characters[i].type.head].id
-			item_name = all_items[number].id
-			alert("this is the all_items id" + item_name)
-			alert("hp was now: " + hp)
+			// id of the item
+			number = items[characters[i].type.feet].id
+			// is it the first item, add to the item string depending on result
+			if (item_name == ""){
+				item_name = all_items[number].id
+			} else {
+				item_name += " and the " + all_items[number].id
+			}
+			// this is debug yo
+			alert(character_names[i] + " has " + item_name)
+			// alter dat hp yo!
 			hp = hp + all_items[number].hp
 			alert("hp is now: " + hp)
 		}
@@ -229,19 +254,17 @@ function resolve_characters_equip_2_plan(){
 		if (hp < 0){
 			// kill the character
 			characters[i].drawable = false
-			message = character_names[i] + " didn't make it; turns out the " + item_name + " wasn't that useful"
 			kill_individual(characters[i])
-			message = character_names[i] + " didn't make it; turns out " + item_name + " wasn't that useful"
+			message = character_names[i] + " didn't make it; turns out the " + item_name + " weren't that useful!"
 			message_array.push(message)
 			alert(message)
 		} else {
-			message = character_names[i] + " survived; turns out the " + item_name + " was really useful"
+			message = character_names[i] + " survived; turns out the " + item_name + " were really useful!"
 			message_array.push(message)
 			alert(message)
 		}
-		
-		message_array.push()
-		
+	}
+			
 		// evaluate whether they die or not
 		// affect other characters
 		// set the text to be read out next scene
@@ -252,7 +275,7 @@ function resolve_characters_equip_2_plan(){
   game_screen.cutscene = true
   process_cutscene()
 }
-}
+
 
 function get_story_opening(){
 	var story_part =
