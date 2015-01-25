@@ -111,50 +111,15 @@ function DrawBox (screen, box){
 function DrawCharacter (screen, box){
   var ctxt = screen.context
   var head_image = new Image()
-  head_image.src = box.url
+  head_image.src = box.colour.a
+  var body_image = new Image()
+  body_image.src = box.colour.b
+  var leg_image = new Image()
+  leg_image.src = box.colour.c
   ctxt.save()
-  ctxt.translate(box.posx, box.posy)
-  ctxt.beginPath()
-  ctxt.moveTo(box.sizex, -box.sizey/2)
-  ctxt.lineTo(-box.sizex, -box.sizey/2)
-  ctxt.lineTo(-box.sizex,  box.sizey/4)
-  ctxt.lineTo(-3*box.sizex/4,  box.sizey/4)
-  ctxt.lineTo(-3*box.sizex/4,  -box.sizey/3)
-  ctxt.lineTo(-2*box.sizex/3,  -box.sizey/3)
-  ctxt.lineTo(-2*box.sizex/3,  box.sizey/4)
-  ctxt.lineTo(2*box.sizex/3,  box.sizey/4)
-  ctxt.lineTo(2*box.sizex/3,  -box.sizey/3)
-  ctxt.lineTo(3*box.sizex/4,  -box.sizey/3)
-  ctxt.lineTo(3*box.sizex/4,  box.sizey/4)
-  ctxt.lineTo( box.sizex,  box.sizey/4)
-  ctxt.closePath()
-  ctxt.fillStyle = box.colour.b
-  ctxt.fill()
-  ctxt.stroke()
-  ctxt.beginPath()
-  ctxt.moveTo(box.sizex/5, -box.sizey/2)
-  ctxt.lineTo(-box.sizex/5, -box.sizey/2)
-  ctxt.lineTo(-box.sizex/6,  box.sizey/4)
-  ctxt.lineTo( box.sizex/6,  box.sizey/4)
-  ctxt.closePath()
-  ctxt.fillStyle = box.colour.c
-  ctxt.fill()
-  ctxt.stroke()
-  ctxt.beginPath()
-  ctxt.moveTo(-3*box.sizex/5,  box.sizey/4)
-  ctxt.lineTo( 3*box.sizex/5,  box.sizey/4)
-  ctxt.lineTo( 3*box.sizex/5,  box.sizey)
-  ctxt.lineTo( 2*box.sizex/6,  box.sizey)
-  ctxt.lineTo( 0, box.sizey/4+20)
-  ctxt.lineTo(-box.sizex/3,  box.sizey)
-  ctxt.lineTo(-3*box.sizex/5,  box.sizey)
-  ctxt.closePath()
-  ctxt.fillStyle = box.colour.d
-  ctxt.fill()
-  ctxt.stroke()
-  ctxt.restore()
-  ctxt.save()
-  ctxt.drawImage(head_image, box.posx - box.sizex*1.5/2, box.posy - box.sizey,box.sizex*1.5, box.sizey)
+  ctxt.drawImage(leg_image, box.posx - box.sizex, box.posy + 20,box.sizex*1.7, box.sizey)
+  ctxt.drawImage(body_image, box.posx - box.sizex-3 , box.posy-40 ,box.sizex*2.2, box.sizey)
+  ctxt.drawImage(head_image, box.posx - box.sizex, box.posy - box.sizey,box.sizex*1.7, box.sizey)
   ctxt.restore()
 }
 
