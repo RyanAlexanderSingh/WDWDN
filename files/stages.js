@@ -19,7 +19,7 @@ function init_items(){
   character_names[3] = "Angry Andrea"
   
   message_neg_0[0] = " bit the dust, hard. Apparently the "
-  message_neg_0[1] = " died as they lived: stupidly. It seems that the"
+  message_neg_0[1] = " died as he lived: stupidly. It seems that the"
   message_neg_0[2] = " is now an ex-Nerd. For some reason the"
   
   message_neg_1[0] = " not such a good idea"
@@ -28,7 +28,7 @@ function init_items(){
   
   message_pos_0[0] = " kicked serious zombie ass, using the "
   message_pos_0[1] = " ran for hours, thanks to the "
-  message_pos_0[2] = " opened a can of whup ass with their "
+  message_pos_0[2] = " opened a can of whoop ass with their "
   
   message_pos_1[0] = " totally awesome dude!"
   message_pos_1[1] = " almost as good as an ak"
