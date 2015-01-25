@@ -115,6 +115,12 @@ function init_items(){
   all_items[all_items.length-1].url_up = "files/pictures/CriketBat.png"
   all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 32, 32, 14, -33, 3))  
   all_items[all_items.length-1].url_up = "files/pictures/Rat_flailon.png"
+  all_items.push(new ItemInfo("Maze", "files/pictures/MazeOff.png", 1, 18, 33, -6, -38, 3))  
+  all_items[all_items.length-1].url_up = "files/pictures/MazeOn.png"
+  all_items.push(new ItemInfo("Signal", "files/pictures/SignalOff.png", 1, 30, 105, -6, -60, 3))  
+  all_items[all_items.length-1].url_up = "files/pictures/Signal.png"
+  all_items.push(new ItemInfo("Signal", "files/pictures/LMGOff.png", 1, 49, 92, 6, -80, 3))  
+  all_items[all_items.length-1].url_up = "files/pictures/LMGOn.png"
   // Torso
   all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 25, -2, 30, -6))  
   all_items.push(new ItemInfo("Iron bra", "files/pictures/Bra.png", 3, 30, 35, 0, 40, -6))  
@@ -124,7 +130,7 @@ function init_items(){
   all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 35, 20, 0, -5, -8)) 
   all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 35, 12, 0, 0, -14)) 
   all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 35, 20, 0, 0, 6)) 
-  all_items.push(new ItemInfo("'Big platforms", "files/pictures/HugePlatforms.png", 4, 35, 40, 0, 0, 6)) 
+  all_items.push(new ItemInfo("'Big platforms", "files/pictures/HugePlataformers.png", 4, 35, 40, 0, 20, 6)) 
   all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 35, 18, 0, 0, 14))  
   
  
