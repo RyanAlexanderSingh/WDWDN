@@ -68,7 +68,7 @@ function init_items(){
   all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 0, 0, 0, 0, -6))  
   all_items.push(new ItemInfo("Spiky Bra", "files/pictures/Bra.png", 3, 0, 0, 0, 0, 2))  
   all_items.push(new ItemInfo("Shoulder Pads", "files/pictures/shoulders.png", 3, 0, 0, 0, 0, 8))  
-  all_items.push(new ItemInfo("Bullet-Proof Vest", "files/pictures/bulletproofvest.png", 3)) 
+  all_items.push(new ItemInfo("Bullet-Proof Vest", "files/pictures/bulletproofvest.png", 3, 0, 0, 0, 0, 12))  
   // Feet
   all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 0, 0, 0, 0, -8)) 
   all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 0, 0, 0, 0, -14)) 
@@ -159,6 +159,12 @@ function kill_individual(x){
         items[x.type.feet].drawable = false
       }
       
+}
+
+// this function should resolve the planning stage in a similar function
+function resolve_characters_plan_2_outcome(){
+	// this function will take each character left and evaluate their chances according to their idea.
+	for (i = 0; i < 
 }
 
 // this function needs to be called in pick scenario in GGJ.js
