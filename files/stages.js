@@ -115,8 +115,16 @@ function set_up_sceen1(){
     for(var i=0; i<items.length; i++){
       if(items[i].status == 0)
         items[i].posx = 10000 //send to china unused items
+      else{
+        items[i].posx += 120
+        items[i].posy += 20
+      }
     }
     
+    for(var i=0; i<characters.length; i++){
+      characters[i].posx += 120
+      characters[i].posy += 20
+    }
   //Setting up background
   game_screen.backgroundurl ="files/pictures/Shettler.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
