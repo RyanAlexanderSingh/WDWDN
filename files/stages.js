@@ -2,7 +2,6 @@
 var message_array = []
 var character_names = []
 var all_items = []
-var num_rest_items = {}
 
 
 function init_items(){
