@@ -258,12 +258,12 @@ function set_up_scene1point5(){
   
 }
 function set_up_scene3(){
-	resolve_characters_plan_2_outcome()
   for(var i=0; i<items.length; i++){
-	 if(items[i].status == 0 && items[i].type == 5){
+	 if(items[i].type == 5){
         items[i].drawable = false;
      }
   }
+	resolve_characters_plan_2_outcome()
 }
  
 function hide_characters(){
@@ -300,8 +300,8 @@ function resolve_characters_plan_2_outcome(){
 	// this function will take each character left and evaluate their chances according to their idea.
 	for (i = 0; i < characters.length; i++){
 		if ( characters[i].type.balloon != -1){
-			index = items[characters[i].type.head].id
-			alert("the character balloon index is " + index)
+			/*index = items[characters[i].type.head].id
+			alert("the character balloon index is " + index)*/
 		}
 	}
 }

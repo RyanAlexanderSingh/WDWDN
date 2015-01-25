@@ -94,8 +94,10 @@ function releasing_click_up() {
               count++
           }
           
-          if(count == balloon_clicked)
-            alert("JUMP OUT!");
+          if(count == balloon_clicked){
+            game_screen.cutscene_pos=6
+            game_screen.cutscene = true
+          }
         } else{
           item.status = 0;
           item.posx = 50 + mouse_position.dragging*50;
