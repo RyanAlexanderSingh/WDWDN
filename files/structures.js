@@ -118,7 +118,10 @@ function DrawCharacter (screen, box){
   leg_image.src = box.colour.c
   ctxt.save()
   ctxt.drawImage(leg_image, box.posx - box.sizex, box.posy + 20,box.sizex*1.7, box.sizey)
-  ctxt.drawImage(body_image, box.posx - box.sizex-3 , box.posy-40 ,box.sizex*2.2, box.sizey)
+  if(box.colour.d == 1)
+    ctxt.drawImage(body_image, box.posx - box.sizex-5 , box.posy-40 ,box.sizex*2.2, box.sizey*1.7)
+  else
+    ctxt.drawImage(body_image, box.posx - box.sizex-3 , box.posy-40 ,box.sizex*2.2, box.sizey)
   ctxt.drawImage(head_image, box.posx - box.sizex, box.posy - box.sizey,box.sizex*1.7, box.sizey)
   ctxt.restore()
 }
