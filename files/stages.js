@@ -2,9 +2,7 @@
 var message_array = []
 var character_names = []
 var all_items = []
-<<<<<<< HEAD
 
-=======
 
 var message_neg_0 = []
 var message_neg_1 = []
@@ -13,7 +11,6 @@ var message_pos_1 = []
 
 var num_rest_items = {}
 
->>>>>>> 26152ed4342250ca096ac7321193a1e0554ad66e
 
 function init_items(){
 
