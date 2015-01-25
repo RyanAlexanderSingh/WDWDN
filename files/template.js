@@ -113,7 +113,7 @@ function intro_text(){
 			}
 	}
 	if(posInCutscene == 3){
-		window.location.href = "./equipment.html";
+		window.location.href = "./game.html";
 	}
 	
 }
