@@ -58,7 +58,7 @@ function init_items(){
   all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 0, 0, 0, 0, 20)) 
   // Left Hands
   all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1)) 
-  all_items.push(new ItemInfo("Bin Lid", "files/pictures/bulletproofvest.png", 1)) 
+  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1)) 
   all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1)) 
   // right arm
   all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 2)) 
