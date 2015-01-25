@@ -258,12 +258,14 @@ function set_up_scene1point5(){
   
 }
 function set_up_scene3(){
+	resolve_characters_plan_2_outcome()
   for(var i=0; i<items.length; i++){
 	 if(items[i].type == 5){
         items[i].drawable = false;
      }
   }
-	resolve_characters_plan_2_outcome()
+  
+			characters[2].posy += 20;
 }
  
 function hide_characters(){
