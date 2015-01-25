@@ -94,7 +94,7 @@ function init_items(){
   all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 20, 20, 0, 0, -15)) 
   all_items.push(new ItemInfo("Clock", "files/pictures/clock_off.png", 1, 15, 42, -3, 17, 5)) 
   all_items[all_items.length-1].url_up = "files/pictures/clock_on.png"
-  all_items.push(new ItemInfo("Microphone", "files/pictures/Microphone_down.png", 1, 15, 42, -3, 17, 5)) 
+  all_items.push(new ItemInfo("Microphone", "files/pictures/Microphone_down.png", 1, 25, 35, -3, -25, 5)) 
   all_items[all_items.length-1].url_up = "files/pictures/Microphone.png"
   all_items.push(new ItemInfo("Sword", "files/pictures/sword_down.png", 1, 18, 50, -4, -49, 15))  
   all_items[all_items.length-1].url_up = "files/pictures/sword_up.png"
