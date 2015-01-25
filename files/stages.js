@@ -92,6 +92,8 @@ function init_items(){
   all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 20, 20, 0, 0, -15)) 
   all_items.push(new ItemInfo("Clock", "files/pictures/clock_off.png", 1, 15, 42, -3, 17, 5)) 
   all_items[all_items.length-1].url_up = "files/pictures/clock_on.png"
+  all_items.push(new ItemInfo("Microphone", "files/pictures/Microphone_down.png", 1, 15, 42, -3, 17, 5)) 
+  all_items[all_items.length-1].url_up = "files/pictures/Microphone.png"
   all_items.push(new ItemInfo("Sword", "files/pictures/sword_down.png", 1, 18, 50, -4, -49, 15))  
   all_items[all_items.length-1].url_up = "files/pictures/sword_up.png"
   all_items.push(new ItemInfo("Crowbar", "files/pictures/crowbar_down.png", 1, 18, 50, -1, -31, 25))  
@@ -100,6 +102,8 @@ function init_items(){
   all_items[all_items.length-1].url_up = "files/pictures/Wrench_on.png"
   all_items.push(new ItemInfo("Hammer", "files/pictures/hammer_on.png", 1, 18, 50, -3, -23, 20))  
   all_items[all_items.length-1].url_up = "files/pictures/hammer_down.png"
+  all_items.push(new ItemInfo("Cricket", "files/pictures/CriketBat_down", 1, 18, 50, -3, -23, 20))  
+  all_items[all_items.length-1].url_up = "files/pictures/CriketBat.png.png"
   all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 20, 20, 0, 0, 3))  
   // Torso
   all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 25, -2, 30, -6))  
