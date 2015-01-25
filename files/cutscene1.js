@@ -7,8 +7,8 @@ weekslater21 = new Image();
 weekslater21.src = './files/pictures/21WeeksLater.png'
 black_image = new Image();
 black_image.src = './files/pictures/black_bg.jpg'
-pub_image = new Image();
-pub_image.src = './files/pictures/pub_back.png'
+end_img = new Image();
+end_img.src = './files/pictures/Thankyou.png'
 
 function draw_cutscene(){
   //1 fade to black
@@ -44,8 +44,7 @@ function draw_cutscene(){
 	con.save(); 
 	con.drawImage(black_image, 0, 0); //we'll fade the image to black
   }
-  else if(game_screen.cutscene_pos==7){
-	
+  else if(game_screen.cutscene_pos==7){	
 	con.save();
 	con.clearRect(0, 0, game_screen.width, game_screen.height)
     con.drawImage(weekslater21, 0, 0);    //fade to 21 weeks later
@@ -54,9 +53,21 @@ function draw_cutscene(){
   set_up_scene3(); //fade to the final scene
   set_up_scenePUB();
   game_screen.end_credits = true;
-  game_screen.cutscene = false
   //instead of drawing background - draw background and foreground
   }
+   else if(game_screen.cutscene_pos==9){
+  con.save();
+  con.clearRect(0, 0, game_screen.width, game_screen.height)
+    con.drawImage(end_img, 0, 0);    //go to thank you
+	
+	//OUR ACTUAL TIMER
+	timerID = setInterval("start_again()", 6000);
+  //instead of drawing background - draw background and foreground
+ }
+ }
+ 
+ function start_again(){
+	window.location.href = "index.html";
  }
  
  function animateToBlack(){
