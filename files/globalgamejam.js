@@ -15,8 +15,8 @@ function releasing_click_up() {
       //Check what type of object is
       if(item.type == 0){ //head
         if(character.type.num_avalaible > 0 && character.type.head == -1){
-          item.posx = character.posx - 5
-          item.posy = character.posy - character.sizey/2 - 5
+          item.posx = character.posx - 5 + all_items[item.id].offsetx
+          item.posy = character.posy - character.sizey/2 - 5 + all_items[item.id].offsety
           character.type.head = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -63,8 +63,8 @@ function releasing_click_up() {
       }
       else if(item.type == 4){ //feet
         if(character.type.num_avalaible > 0 && character.type.feet == -1){
-          item.posx = character.posx
-          item.posy = character.posy + character.sizey
+          item.posx = character.posx - 5
+          item.posy = character.posy + character.sizey + 14
           character.type.feet = mouse_position.dragging
           character.type.num_avalaible--
         } else{

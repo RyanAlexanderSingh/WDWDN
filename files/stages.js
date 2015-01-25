@@ -55,7 +55,7 @@ function init_items(){
   all_items.push(new ItemInfo("Plastic bag", "files/pictures/plastic_bag_on.png", 0, 40, 40, 0, 0, -5)) 
   all_items.push(new ItemInfo("Sauce Pan", "files/pictures/sauce_pan_down.png", 0, 20, 20, 0, 0, 10)) 
   all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_down.png", 0, 20, 20, 0, 0, 7)) 
-  all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 20, 20, 0, 0, 3)) 
+  all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 25, 25, 0, -35, 3)) 
   all_items.push(new ItemInfo("Jugernaut", "files/pictures/jugernaut.png", 0, 45, 28, 0, 0, 50)) 
   // Left Hands
   all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 20, 20, 0, 0, -15)) 
@@ -72,7 +72,7 @@ function init_items(){
   // Feet
   all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 20, 20, 0, 0, -8)) 
   all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 20, 20, 0, 0, -14)) 
-  all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 20, 20, 0, 0, 6)) 
+  all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 40, 20, 0, 0, 6)) 
   all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 20, 20, 0, 0, 14))  
   
  
