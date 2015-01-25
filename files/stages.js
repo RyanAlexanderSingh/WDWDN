@@ -213,10 +213,10 @@ function set_up_sceen1(){
  
  function set_up_scene1point5(){
   
-  items.push(new DrawableBox(100,(game_screen.height - 100),160,140,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(200,(game_screen.height - 200),160,140,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 300),160,140,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(400,(game_screen.height - 400),160,140,message_array[3], 1, 5, 0, 0))
+  items.push(new DrawableBox(100,(game_screen.height - 100),300,150,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(200,(game_screen.height - 200),300,150,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 300),300,150,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(400,(game_screen.height - 400),300,150,message_array[3], 1, 5, 0, 0))
 
 }
   
