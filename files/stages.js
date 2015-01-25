@@ -129,7 +129,8 @@ function set_up_sceen1(){
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
   }
 
-//This will include the basic stages
+//This will set up the second scene
+// posx, posy, sizex, sizey, colour, status, type, url, id)
 function set_up_scene2(){
   items.push(new DrawableBox(650,(game_screen.height - 390),250,70,"I will reason with the zombies!", 0, 5, 0, 0))
   items.push(new DrawableBox(100,(game_screen.height - 410),140,70,"I want to cry...", 0, 5, 0, 0))
@@ -163,7 +164,10 @@ function kill_individual(x){
 function resolve_characters_plan_2_outcome(){
 	// this function will take each character left and evaluate their chances according to their idea.
 	for (i = 0; i < characters.length; i++){
-		
+		if ( characters[i].type.balloon != -1){
+			index = items[characters[i].type.head].id
+			// alert("the character baloon index is " + index)
+		}
 	}
 }
 
