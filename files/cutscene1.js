@@ -55,6 +55,7 @@ function draw_cutscene(){
   set_up_scene3(); //fade to the final scene
   set_up_scenePUB();
   game_screen.end_credits = true;
+  play_single_sound('end_song');
   }
   //instead of drawing background - draw background and foreground
   }
@@ -65,6 +66,7 @@ function draw_cutscene(){
 	
 	//OUR ACTUAL TIMER
 	timerID = setInterval("start_again()", 6000);
+	
   //instead of drawing background - draw background and foreground
  }
  }

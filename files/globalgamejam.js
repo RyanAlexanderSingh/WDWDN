@@ -209,8 +209,12 @@ function randStory(){
   }
   else{
   game_screen.story = "Heist"
+  } 
+  // start the music
+  
+  play_single_sound('first_song');
   }
-  }
+  
 
 //This function is the one starting up the game
 //This function will only load the game the first time
@@ -237,7 +241,7 @@ set_up_characters = true
   set_up_sceen1()
   
   // start the music
-  play_single_sound('in_the_back_room')
+  play_single_sound('second_song');
 }
 
 //This is the render function. It will be called each frame

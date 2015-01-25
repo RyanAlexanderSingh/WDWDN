@@ -10,6 +10,9 @@
 	<script type="text/javascript" src="./files/globalgamejam.js"></script>
     <script type="text/javascript" src="./files/structures.js"></script>
     <script type="text/javascript" src="./files/stages.js"></script>
+	
+	<script type="text/javascript" src="./files/audio_handler.js"></script>
+    <audio id="first_song" src="./files/music/first.wav" preload="auto"></audio>
 	<style type="text/css">
 		canvas{
 		padding-left: 0;
@@ -32,7 +35,6 @@
     <script>
 		var canvas = document.getElementById('index');
         var context = canvas.getContext('2d');
-		
 		make_splash_img();
 		
     </script>
@@ -53,6 +55,5 @@
 		context.fillText("A game by Juanmi Huertas Delgado, Ryan Singh and Sam Hayhurst",100, canvas.height/2);	  
     </script>
 	<center>
-    <!-- <input type="submit" id="progress" value="Prepare Equipment" class="buttons" onclick="pickScenario(this.value)"/> -->
 	</center>
 </body></html>
