@@ -164,11 +164,11 @@ function resolve_characters_equip_2_plan(){
 		if (hp < 0){
 			// kill the character
 			characters[i].drawable = false
-			message = character_names[i] + " didn't make it; turns out " + item_name + " wasn't that useful"
+			message = character_names[i] + " didn't make it; turns out the " + item_name + " wasn't that useful"
 			message_array.push(message)
 			alert(message)
 		} else {
-			message = character_names[i] + " survived; turns out " + item_name + " was really useful"
+			message = character_names[i] + " survived; turns out the " + item_name + " was really useful"
 			message_array.push(message)
 			alert(message)
 		}
