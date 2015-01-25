@@ -98,9 +98,7 @@ function releasing_click_up() {
 function clicking_down_button() {
   if(game_screen.cutscene){
     game_screen.cutscene_pos++
-    alert(game_screen.cutscene_pos)
-    
-    
+    process_cutscene()
   }else{
     mouse_position.launching = true
     var e = window.event;

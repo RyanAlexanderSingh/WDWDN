@@ -119,7 +119,6 @@ function set_up_sceen1(){
     characters[i].posx += 120
     characters[i].posy += 20
     }
-    
   }
 
 //This will include the basic stages
