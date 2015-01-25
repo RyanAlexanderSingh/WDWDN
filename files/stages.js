@@ -205,6 +205,11 @@ function set_up_scene2(){
         items[i].drawable = false;
      }
   }
+   for(var i = 0; i < characters.length; i++){
+		if(!characters[i].drawable){
+			characters[i].drawable = true;
+		}
+  }
   
   items.push(new DrawableBox(650,(game_screen.height - 390),250,70,"I will reason with the zombies!", 0, 5, 0, 1))	
   items.push(new DrawableBox(100,(game_screen.height - 410),140,70,"I want to cry...", 0, 5, 0, 2))
@@ -213,7 +218,15 @@ function set_up_scene2(){
   items.push(new DrawableBox(300,(game_screen.height - 420),180,70,"I'm gonna kill 'em all!", 0, 5, 0, 5))
 }
  
+function hide_characters(){
+	for(var i = 0; i < characters.length; i++){
+		if(characters[i].drawable){
+			characters[i].drawable = false;
+		}
+  }
+} 
 function set_up_scene1point5(){
+  
   
   items.push(new DrawableBox(100,(game_screen.height - 100),160,140,message_array[0], 1, 5, 0, 0))
   items.push(new DrawableBox(200,(game_screen.height - 200),160,140,message_array[1], 1, 5, 0, 0))

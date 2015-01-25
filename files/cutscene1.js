@@ -28,6 +28,7 @@ function draw_cutscene(){
     con.save();
     con.drawImage(black_image, 0, 0);
 	prescene_two();
+	hide_characters();
   }
   //4 fade to shack
     else if(game_screen.cutscene_pos==4){
