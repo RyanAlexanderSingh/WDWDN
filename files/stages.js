@@ -5,10 +5,10 @@ var all_items = []
 
 function init_items(){
 
-  character_names[0] = "Jessica"
-  character_names[1] = "John"
-  character_names[2] = "Jennifer"
-  character_names[3] = "James"
+  character_names[0] = "Ryan"
+  character_names[1] = "Juanmi"
+  character_names[2] = "Sam"
+  character_names[3] = "Angry Andrea"
 
 
   var item_posx = []
@@ -53,27 +53,27 @@ function init_items(){
   // ItemInfo(id, url, item type)
   // HATS // (id, url, type, sizex, sizey, offsetx, offsety, hp )
   all_items.push(new ItemInfo("Plastic bag", "files/pictures/Plastig_bag_down.png", 0, 0, 0, 0, 0, -5)) 
-  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/Sauce_pan_on.png", 0, 0, 0, 0, 0, 5)) 
-  all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_up.png", 0, 0, 0, 0, 0, 15)) 
-  all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 0, 0, 0, 0, 20)) 
+  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/Sauce_pan_on.png", 0, 0, 0, 0, 0, 10)) 
+  all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_up.png", 0, 0, 0, 0, 0, 7)) 
+  all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 0, 0, 0, 0, 3)) 
   // Left Hands
-  all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 0, 0, 0, 0, -20)) 
-  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1, 0, 0, 0, 0, 25))  
-  all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1, 0, 0, 0, 0, -35)) 
+  all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 0, 0, 0, 0, -15)) 
+  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1, 0, 0, 0, 0, 14))  
+  all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1, 0, 0, 0, 0, -20)) 
   // right arm
-  all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 2)) 
-  all_items.push(new ItemInfo("Cricket Bat", "files/pictures/CriketBat.png", 2)) 
-  all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 2)) 
+  all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 2, 0, 0, 0, 0, 5)) 
+  all_items.push(new ItemInfo("Cricket Bat", "files/pictures/CriketBat.png", 2, 0, 0, 0, 0, 25))  
+  all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 2, 0, 0, 0, 0, 3))  
   // Torso
-  all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3)) 
-  all_items.push(new ItemInfo("Spiky Bra", "files/pictures/Bra.png", 3)) 
-  all_items.push(new ItemInfo("Shoulder Pads", "files/pictures/shoulders.png", 3)) 
+  all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 0, 0, 0, 0, -6))  
+  all_items.push(new ItemInfo("Spiky Bra", "files/pictures/Bra.png", 3, 0, 0, 0, 0, 2))  
+  all_items.push(new ItemInfo("Shoulder Pads", "files/pictures/shoulders.png", 3, 0, 0, 0, 0, 8))  
   all_items.push(new ItemInfo("Bullet-Proof Vest", "files/pictures/bulletproofvest.png", 3)) 
   // Feet
-  all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4)) 
-  all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4)) 
-  all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4)) 
-  all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4)) 
+  all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 0, 0, 0, 0, -8)) 
+  all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 0, 0, 0, 0, -14)) 
+  all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 0, 0, 0, 0, 6)) 
+  all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 0, 0, 0, 0, 14))  
   
  
   //Randomize a subset and add it to items
@@ -166,7 +166,7 @@ function resolve_characters_equip_2_plan(){
 	// this function will take each character and evaluate their chance of living
 	// for each character
 	for (i=0; i < characters.length; i++){
-		var hp = 0
+		var hp = -1
 		var number = 0
 		var item_name = ""
 		var message = ""
@@ -182,16 +182,56 @@ function resolve_characters_equip_2_plan(){
 			alert("hp is now: " + hp)
 		}
 		
+		if (characters[i].type.lefth != -1){
+			alert("this is the item id" + characters[i].type.head)
+			alert("this is the items id" + items[characters[i].type.head].id)
+			number = items[characters[i].type.head].id
+			item_name = all_items[number].id
+			alert("this is the all_items id" + item_name)
+			alert("hp was now: " + hp)
+			hp = hp + all_items[number].hp
+			alert("hp is now: " + hp)
+		}
+		
+		if (characters[i].type.righth != -1){
+			alert("this is the item id" + characters[i].type.head)
+			alert("this is the items id" + items[characters[i].type.head].id)
+			number = items[characters[i].type.head].id
+			item_name = all_items[number].id
+			alert("this is the all_items id" + item_name)
+			alert("hp was now: " + hp)
+			hp = hp + all_items[number].hp
+			alert("hp is now: " + hp)
+		}
+		
+		if (characters[i].type.torso != -1){
+			alert("this is the item id" + characters[i].type.head)
+			alert("this is the items id" + items[characters[i].type.head].id)
+			number = items[characters[i].type.head].id
+			item_name = all_items[number].id
+			alert("this is the all_items id" + item_name)
+			alert("hp was now: " + hp)
+			hp = hp + all_items[number].hp
+			alert("hp is now: " + hp)
+		}
+		
+		if (characters[i].type.feet != -1){
+			alert("this is the item id" + characters[i].type.head)
+			alert("this is the items id" + items[characters[i].type.head].id)
+			number = items[characters[i].type.head].id
+			item_name = all_items[number].id
+			alert("this is the all_items id" + item_name)
+			alert("hp was now: " + hp)
+			hp = hp + all_items[number].hp
+			alert("hp is now: " + hp)
+		}
+		
 		if (hp < 0){
 			// kill the character
-<<<<<<< HEAD
 			characters[i].drawable = false
 			message = character_names[i] + " didn't make it; turns out the " + item_name + " wasn't that useful"
-=======
-      kill_individual(characters[i])
-      
+			kill_individual(characters[i])
 			message = character_names[i] + " didn't make it; turns out " + item_name + " wasn't that useful"
->>>>>>> 4c861594c0386551ce8c85928317cc8e26f81985
 			message_array.push(message)
 			alert(message)
 		} else {
