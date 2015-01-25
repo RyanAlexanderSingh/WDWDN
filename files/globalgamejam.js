@@ -205,16 +205,15 @@ function init_game() {
 function render() {
   var ctxt = game_screen.context
   //console.log("rendering")
+  
   ctxt.clearRect(0, 0, game_screen.width, game_screen.height)
   ctxt.save()
-  
   draw_background()
   draw_characters()
   draw_items()
   draw_frontground()
   
-  if(game_screen.cutscene)
-    draw_cutscene()
+  draw_cutscene()
   
   ctxt.restore()
   ctxt.save()

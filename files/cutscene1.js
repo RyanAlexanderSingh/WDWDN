@@ -1,12 +1,19 @@
+var fadePct = 0;
+
+base_image = new Image();
+base_image.src = './files/pictures/intro_screen.png'
+black_image = new Image();
+black_image.src = './files/pictures/black_bg.jpg'
 
 function process_cutscene(){
   //1 fade to black
   if(game_screen.cutscene_pos==1){
-  alert("FADE TO BLACK 1 !!!")
+
   }
   //2 fade to text
   else if(game_screen.cutscene_pos==2){
-  alert("FADE TO 2 DAYS LATER!!!")
+  
+	
   }
   //3 fade to black
     else if(game_screen.cutscene_pos==3){
@@ -54,10 +61,15 @@ function process_cutscene(){
 function draw_cutscene(){
   //1 fade to black
   if(game_screen.cutscene_pos==1){
+    var con = document.getElementById("mycanvas").getContext('2d');
+    con.save();
+    con.drawImage(black_image, 0, 0);
   }
   //2 fade to text
   else if(game_screen.cutscene_pos==2){
-  
+  alert("FADE TO 2 DAYS LATER!!!")
+	setInterval(render, 20);
+	game_screen.backgroundurl2 = "./files/pictures/2dayslater.png";
   }
   //3 fade to black
     else if(game_screen.cutscene_pos==3){
@@ -71,4 +83,20 @@ function draw_cutscene(){
   else if(game_screen.cutscene_pos==5){
   }
  }
+ 
+ function animateToBlack(){
+	var can = document.getElementById('mycanvas');
+	var con = can.getContext('2d');
+	if(fadePct > 100){
+		return;
+	}
+	requestAnimationFrame(animateToBlack);
+	
+    fadePct++;
+}
+ 
+ function draw_black(img, opacity) {
+	
+    con.restore();
+}
  
