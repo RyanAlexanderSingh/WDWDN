@@ -97,7 +97,6 @@ function releasing_click_up() {
 //CLICKING DOWN THE BUTTON FROM WEB
 function clicking_down_button() {
   if(game_screen.cutscene){
-    process_cutscene()
     game_screen.cutscene_pos++
   }else{
     mouse_position.launching = true
