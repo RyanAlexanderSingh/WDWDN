@@ -151,6 +151,7 @@ function resolve_characters_equip_2_plan(){
   //At the end of this. Will call to set_up_sceen2
   //Delete things from scene1
   game_screen.cutscene = true
+  process_cutscene()
 }
 
 function get_story_opening(){

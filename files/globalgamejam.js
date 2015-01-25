@@ -251,7 +251,8 @@ function pickScenario(clicked_value){
 	}	
 	if(clicked_value == "Prepare Yourself")
 	{
-      resolve_characters_equip_2_plan()
+    game_screen.cutscene_pos=1
+    resolve_characters_equip_2_plan()
 	}	
 	if(clicked_value == "Are you ready?")
 	{

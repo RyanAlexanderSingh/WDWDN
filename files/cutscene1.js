@@ -28,7 +28,26 @@ function process_cutscene(){
   else if(game_screen.cutscene_pos==7){
     set_up_scene2()
     game_screen.cutscene = false
-    game_screen.cutscene_pos = 0
+  }
+  //8 next cutscene
+  else if(game_screen.cutscene_pos==8){
+  alert("FADE TO BLACK!!!")
+  }
+  //8 next cutscene
+  else if(game_screen.cutscene_pos==8){
+  alert("FADE TO 21 WEEKS LATER!!!")
+  }
+  //8 next cutscene
+  else if(game_screen.cutscene_pos==8){
+  alert("FADE TO BLACK!!!")
+  }
+  //8 next cutscene
+  else if(game_screen.cutscene_pos==8){
+  alert("FADE TO PUB!!!")
+  }
+  //8 next cutscene
+  else if(game_screen.cutscene_pos==8){
+  alert("FADE TO BLACK!!!")
   }
  }
 
@@ -53,3 +72,4 @@ function draw_cutscene(){
   else if(game_screen.cutscene_pos==5){
   }
  }
+ 
