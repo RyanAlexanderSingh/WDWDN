@@ -57,9 +57,9 @@ function init_items(){
   all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_up.png", 0, 0, 0, 0, 0, 15)) 
   all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 0, 0, 0, 0, 20)) 
   // Left Hands
-  all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1)) 
-  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1)) 
-  all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1)) 
+  all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 0, 0, 0, 0, 0, -20)) 
+  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 0, 0, 0, 0, 0, 25))  
+  all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 0, 0, 0, 0, 0, -35)) 
   // right arm
   all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 2)) 
   all_items.push(new ItemInfo("Cricket Bat", "files/pictures/CriketBat.png", 2)) 
@@ -111,7 +111,6 @@ function set_up_sceen1(){
   init_items()
 }
 
-
  function clean_scene1(){
     for(var i=0; i<items.length; i++){
       if(items[i].status == 0)
@@ -147,12 +146,15 @@ function resolve_characters_equip_2_plan(){
 	// for each character
 	for (i=0; i < characters.length; i++){
 		var hp = 0
+		var number = 0
+		var item_name = ""
+		var message = ""
 		// check what equipment they have
 		if (characters[i].type.head != -1){
 			alert("this is the item id" + characters[i].type.head)
 			alert("this is the items id" + items[characters[i].type.head].id)
-			var number = items[characters[i].type.head].id
-			var item_name = all_items[number].id
+			number = items[characters[i].type.head].id
+			item_name = all_items[number].id
 			alert("this is the all_items id" + item_name)
 			alert("hp was now: " + hp)
 			hp = hp + all_items[number].hp
@@ -162,8 +164,16 @@ function resolve_characters_equip_2_plan(){
 		if (hp < 0){
 			// kill the character
 			characters[i].drawable = false
-		}		
+			message = character_names[i] + " didn't make it; turns out " + item_name + " wasn't that useful"
+			message_array.push(message)
+			alert(message)
+		} else {
+			message = character_names[i] + " survived; turns out " + item_name + " was really useful"
+			message_array.push(message)
+			alert(message)
+		}
 		
+		message_array.push()
 		
 		// evaluate whether they die or not
 		// affect other characters
@@ -188,7 +198,6 @@ function get_story_change(){
 	"At roughly one in the morning, one of our four nerds see a tweet stating that zombies had broken out in London (or vice versa) and were now rampaging!"
 	return story_part
 }
-
 
 function get_story_development(){
 	var story_part =
