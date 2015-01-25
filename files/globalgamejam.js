@@ -99,13 +99,14 @@ function releasing_click_up() {
   control.move = true
   time = 0
   mouse_position.launching = false
-  update_counter_items()
+  if(game_screen.cutscene_pos==0){
+	update_counter_items()
+  }
 }
 
 function update_counter_items(){		
-  ui_context.clearRect(0, 0, game_screen.width, game_screen.height)
-ui_context.fillText("Take arms! Equip the nerds with items...if you dare 		               Items left:" + num_rest_items ,30, ui_canvas.height/2);
-    
+	ui_context.clearRect(0, 0, game_screen.width, game_screen.height)
+    ui_context.fillText("Take arms! Equip the nerds with items...if you dare.		               Items left:" + num_rest_items ,30, ui_canvas.height/2);
 }
 
 //CLICKING DOWN THE BUTTON FROM WEB
@@ -194,7 +195,6 @@ function init_game() {
 set_up_characters = true
   clock_init()
   game_screen.story = "Zombie"
-  game_screen.name = document.getElementById("progress").value
   game_screen.cutscene = false
   game_screen.ending = false
   game_screen.cutscene_pos = 0
@@ -269,24 +269,5 @@ if(!game_screen.end_credits){
     ctxt.drawImage(background_image, 0, 0,800, 500)
     ctxt.restore()
   }
-}
-
-//IF TIMER HAS STOPPED OR BUTTON CLICKED
-function pickScenario(clicked_value){
-	if(clicked_value == "Prepare Equipment")
-	{
-		window.location.href = "./game.html";
-	}
-	
-	if(clicked_value == "Prepare Yourself")
-	{
-	if(!game_screen.end_credits){
-    game_screen.cutscene_pos=1
-    resolve_characters_equip_2_plan();
-	}
-	}
-	else{
-		window.location.href = "./index.html";
-	}
 }
 
