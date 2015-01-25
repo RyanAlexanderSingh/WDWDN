@@ -118,11 +118,13 @@ function init_items(){
   // Torso
   all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 25, -2, 30, -6))  
   all_items.push(new ItemInfo("Iron bra", "files/pictures/Bra.png", 3, 30, 35, 0, 40, -6))  
-  all_items.push(new ItemInfo("Klevar chest", "files/pictures/GladChest.png", 3, 28, 32, -2, 40, -6))  
+  all_items.push(new ItemInfo("Klevar chest", "files/pictures/GladChest.png", 3, 28, 32, -2, 40, -6)) 
+  all_items.push(new ItemInfo("Target", "files/pictures/Target.png", 3, 28, 32, 5, 40, -6))  
   // Feet
   all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 35, 20, 0, -5, -8)) 
   all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 35, 12, 0, 0, -14)) 
   all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 35, 20, 0, 0, 6)) 
+  all_items.push(new ItemInfo("'Big platforms", "files/pictures/HugePlatforms.png", 4, 35, 40, 0, 0, 6)) 
   all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 35, 18, 0, 0, 14))  
   
  
