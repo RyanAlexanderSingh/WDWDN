@@ -252,11 +252,11 @@ function set_up_scene2(){
      }
   }
   
-  items.push(new DrawableBox(650,(game_screen.height - 390),250,50,"I will reason with the zombies!", 0, 5, 0, 1))	
-  items.push(new DrawableBox(100,(game_screen.height - 410),140,50,"I want to cry...", 0, 5, 0, 2))
-  items.push(new DrawableBox(500,(game_screen.height - 450),220,60,"I'm blocking the windows!", 0, 5, 0, 3))
-  items.push(new DrawableBox(350,(game_screen.height - 350),180,50,"I have to call mum...", 0, 5, 0, 4))
-  items.push(new DrawableBox(300,(game_screen.height - 420),180,50,"I'm gonna kill 'em all!", 0, 5, 0, 5))
+  items.push(new DrawableBox(650,(game_screen.height - 390),200,30,"I will reason with the zombies!", 0, 5, 0, 1))	
+  items.push(new DrawableBox(100,(game_screen.height - 410),200,30,"I want to cry...", 0, 5, 0, 2))
+  items.push(new DrawableBox(500,(game_screen.height - 450),200,30,"I'm blocking the windows!", 0, 5, 0, 3))
+  items.push(new DrawableBox(350,(game_screen.height - 350),200,30,"I have to call mum...", 0, 5, 0, 4))
+  items.push(new DrawableBox(300,(game_screen.height - 420),200,30,"I'm gonna kill 'em all!", 0, 5, 0, 5))
 }
  
 function set_up_scene1point5(){
