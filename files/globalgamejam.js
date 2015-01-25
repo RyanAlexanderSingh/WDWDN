@@ -15,8 +15,9 @@ function releasing_click_up() {
       //Check what type of object is
       if(item.type == 0){ //head
         if(character.type.num_avalaible > 0 && character.type.head == -1){
-          item.posx = character.posx - 5
-          item.posy = character.posy - character.sizey/2 - 5
+        num_rest_items--
+          item.posx = character.posx - 5 + all_items[item.id].offsetx
+          item.posy = character.posy - character.sizey/2 - 5 + all_items[item.id].offsety
           character.type.head = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -27,8 +28,9 @@ function releasing_click_up() {
       }
       else if(item.type == 1){ //lefthand
         if(character.type.num_avalaible > 0 && character.type.lefth == -1){
-          item.posx = character.posx + character.sizex
-          item.posy = character.posy + 15
+        num_rest_items--
+          item.posx = character.posx + character.sizex + all_items[item.id].offsetx
+          item.posy = character.posy + 15+ all_items[item.id].offsety
           character.type.lefth = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -39,8 +41,9 @@ function releasing_click_up() {
       }
       else if(item.type == 2){ //righthand
         if(character.type.num_avalaible > 0 && character.type.righth == -1){
-          item.posx = character.posx - character.sizex
-          item.posy = character.posy + 15
+        num_rest_items--
+          item.posx = character.posx - character.sizex + all_items[item.id].offsetx
+          item.posy = character.posy + 15+ all_items[item.id].offsety
           character.type.righth = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -51,8 +54,9 @@ function releasing_click_up() {
       }
       else if(item.type == 3){ //torso
         if(character.type.num_avalaible > 0 && character.type.torso == -1){
-          item.posx = character.posx
-          item.posy = character.posy - character.sizey/2 + 10
+        num_rest_items--
+          item.posx = character.posx + all_items[item.id].offsetx
+          item.posy = character.posy - character.sizey/2 + 10+ all_items[item.id].offsety
           character.type.torso = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -63,8 +67,9 @@ function releasing_click_up() {
       }
       else if(item.type == 4){ //feet
         if(character.type.num_avalaible > 0 && character.type.feet == -1){
-          item.posx = character.posx
-          item.posy = character.posy + character.sizey
+        num_rest_items--
+          item.posx = character.posx - 5 + all_items[item.id].offsetx
+          item.posy = character.posy + character.sizey + 14+ all_items[item.id].offsety
           character.type.feet = mouse_position.dragging
           character.type.num_avalaible--
         } else{
@@ -181,6 +186,7 @@ function init_game() {
   game_screen.story = "Zombie"
   game_screen.name = document.getElementById("progress").value
   game_screen.cutscene = false
+  game_screen.ending = false
   game_screen.cutscene_pos = 0
   dif_time = 0.12
   mouse_position.dragging = -1
@@ -222,17 +228,32 @@ function render() {
 function draw_background(){
   var ctxt = game_screen.context
     var background_image = new Image()
+	if(!game_screen.end_credits){
     background_image.src = game_screen.backgroundurl
+	}
+	else{
+	 background_image.src = './files/pictures/pub_back.png'
+	}
     ctxt.save()
     ctxt.drawImage(background_image, 0, 0,800, 500)
     ctxt.restore()
 }
 
 function draw_frontground(){
+if(!game_screen.end_credits){
   if(game_screen.backgroundurl2 != -1){
   var ctxt = game_screen.context
     var background_image = new Image()
     background_image.src = game_screen.backgroundurl2
+    ctxt.save()
+    ctxt.drawImage(background_image, 0, 0,800, 500)
+    ctxt.restore()
+	}
+  }
+  else{
+   var ctxt = game_screen.context
+    var background_image = new Image()
+    background_image.src = './files/pictures/pub_front.png'
     ctxt.save()
     ctxt.drawImage(background_image, 0, 0,800, 500)
     ctxt.restore()
@@ -244,16 +265,17 @@ function pickScenario(clicked_value){
 	if(clicked_value == "Prepare Equipment")
 	{
 		window.location.href = "./game.html";
-	}	
+	}
+	
 	if(clicked_value == "Prepare Yourself")
 	{
+	if(!game_screen.end_credits){
     game_screen.cutscene_pos=1
     resolve_characters_equip_2_plan();
-	}	
-	if(clicked_value == "Are you ready?")
-	{
-		//do something here with the pub scene
-		resolve_characters_plan_2_outcome();
+	}
+	}
+	else{
+		window.location.href = "./index.html";
 	}
 }
 

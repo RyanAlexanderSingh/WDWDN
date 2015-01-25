@@ -27,7 +27,8 @@ function draw_cutscene(){
     else if(game_screen.cutscene_pos==3){
     con.save();
     con.drawImage(black_image, 0, 0);
-	clean_scene()
+	prescene_two();
+	hide_characters();
   }
   //4 fade to shack
     else if(game_screen.cutscene_pos==4){
@@ -36,15 +37,14 @@ function draw_cutscene(){
   }
   //5 show balloons  
   else if(game_screen.cutscene_pos==5){
-	clean_scene() //clean the scene of the speech bubbles
 	set_up_scene2() //show the balloons for scene 2
 	
   }
   else if(game_screen.cutscene_pos==6){
-  end_credits = true;
-  clean_scene()
- 
-  con.drawImage(pub_image, 0, 0);
+  set_up_scene3();
+  game_screen.end_credits = true;
+game_screen.cutscene = false
+  //instead of drawing background - draw background and foreground
 	
   }
  }

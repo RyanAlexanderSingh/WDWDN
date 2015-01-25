@@ -2,10 +2,14 @@
 var message_array = []
 var character_names = []
 var all_items = []
+
 var message_neg_0 = []
 var message_neg_1 = []
 var message_pos_0 = []
 var message_pos_1 = []
+
+var num_rest_items = {}
+
 
 function init_items(){
 
@@ -71,27 +75,33 @@ function init_items(){
   //Generate the whole list
   // ItemInfo(id, url, item type)
   // HATS // (id, url, type, sizex, sizey, offsetx, offsety, hp )
-  all_items.push(new ItemInfo("Plastic bag", "files/pictures/plastic_bag_on.png", 0, 40, 40, 0, 0, -5)) 
-  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/sauce_pan_down.png", 0, 20, 20, 0, 0, 10)) 
-  all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_down.png", 0, 20, 20, 0, 0, 7)) 
-  all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 20, 20, 0, 0, 3)) 
+  all_items.push(new ItemInfo("Plastic bag", "files/pictures/Plastic_bag_down.png", 0, 40, 40, 0, 0, -5)) 
+  all_items[all_items.length-1].url_up = "files/pictures/plastic_bag_on.png"
+  all_items.push(new ItemInfo("Sauce Pan", "files/pictures/sauce_pan_down.png", 0, 28, 28, -7, -15, 10)) 
+  all_items[all_items.length-1].url_up = "files/pictures/Sauce_pan_on.png"
+  all_items.push(new ItemInfo("Make Up", "files/pictures/Make_up_down.png", 0, 20, 20, 5, 5, 7)) 
+  all_items[all_items.length-1].url_up = "files/pictures/Make_up_up.png"
+  all_items.push(new ItemInfo("Top Hat", "files/pictures/TopHat.png", 0, 25, 25, 0, -35, 3)) 
   all_items.push(new ItemInfo("Jugernaut", "files/pictures/jugernaut.png", 0, 45, 28, 0, 0, 50)) 
   // Left Hands
   all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 20, 20, 0, 0, -15)) 
-  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1, 20, 20, 0, 0, 14))  
-  all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1, 20, 20, 0, 0, -20)) 
-  all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 1, 20, 20, 0, 0, 5)) 
-  all_items.push(new ItemInfo("Cricket Bat", "files/pictures/CriketBat.png", 1, 20, 20, 0, 0, 25))  
+  all_items.push(new ItemInfo("Clock", "files/pictures/clock_off.png", 1, 15, 42, -3, 17, 5)) 
+  all_items[all_items.length-1].url_up = "files/pictures/clock_on.png"
+  all_items.push(new ItemInfo("Sword", "files/pictures/sword_down.png", 1, 18, 50, -4, -49, 15))  
+  all_items[all_items.length-1].url_up = "files/pictures/sword_up.png"
+  all_items.push(new ItemInfo("Crowbar", "files/pictures/crowbar_down.png", 1, 18, 50, -1, -31, 25))  
+  all_items[all_items.length-1].url_up = "files/pictures/crowbar_on.png"
+  all_items.push(new ItemInfo("Wrench", "files/pictures/Wrench_down.png", 1, 15, 40, -5, -35, 15))  
+  all_items[all_items.length-1].url_up = "files/pictures/Wrench_on.png"
+  all_items.push(new ItemInfo("Hammer", "files/pictures/hammer_on.png", 1, 18, 50, -3, -23, 20))  
+  all_items[all_items.length-1].url_up = "files/pictures/hammer_down.png"
   all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 20, 20, 0, 0, 3))  
   // Torso
-  all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 20, 0, 0, -6))  
-  all_items.push(new ItemInfo("Spiky Bra", "files/pictures/Bra.png", 3, 20, 20, 0, 0, 2))  
-  all_items.push(new ItemInfo("Shoulder Pads", "files/pictures/shoulders.png", 3, 20, 20, 0, 0, 8))  
-  all_items.push(new ItemInfo("Bullet-Proof Vest", "files/pictures/bulletproofvest.png", 3, 20, 20, 0, 0, 12))  
+  all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 20, -2, 15, -6))  
   // Feet
   all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 20, 20, 0, 0, -8)) 
   all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 20, 20, 0, 0, -14)) 
-  all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 20, 20, 0, 0, 6)) 
+  all_items.push(new ItemInfo("'Platforms", "files/pictures/Platforms.png", 4, 40, 20, 0, 0, 6)) 
   all_items.push(new ItemInfo("Roller-Skates", "files/pictures/Rollerskates.png", 4, 20, 20, 0, 0, 14))  
   
  
@@ -128,7 +138,7 @@ function set_up_sceen1(){
   //Setting up background
   game_screen.backgroundurl ="files/pictures/forest.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
-
+  num_rest_items = 8
   //Setting up characters
   var urlHeads = []
   var urlBodies = []
@@ -177,29 +187,54 @@ function set_up_sceen1(){
   init_items()
 }
 
- function clean_scene(){
+ function prescene_two(){
     for(var i=0; i<items.length; i++){
       if(items[i].status == 0){
         items[i].drawable = false;
 		items[i].posx = 10000 //send to china unused items
-     } else{
-        items[i].posx += 120
-        items[i].posy += 20
-      }
+     }
+	 if(items[i].status != 0){
+        items[i].drawable = false;
+     }
     }
-    
-    for(var i=0; i<characters.length; i++){
-      characters[i].posx += 120
-      characters[i].posy += 20
-    }
-  //Setting up background
+	  //Setting up background
   game_screen.backgroundurl ="files/pictures/Shettler.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
+  } 
+  
+  function scene_two(){
+	for(var i=0; i<items.length; i++){
+	 if(items[i].status != 0){
+        items[i].drawable = true;
+     }
   }
+ }
+ 
+ function set_up_scene1point5(){
+  
+  items.push(new DrawableBox(100,(game_screen.height - 100),160,140,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(200,(game_screen.height - 200),160,140,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 300),160,140,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(400,(game_screen.height - 400),160,140,message_array[3], 1, 5, 0, 0))
+
+}
+  
 
 //This will set up the second scene
 // posx, posy, sizex, sizey, colour, status, type, url, id
 function set_up_scene2(){
+	
+  for(var i=0; i<items.length; i++){
+	 if(items[i].status == 1 && items[i].type == 5){
+        items[i].drawable = false;
+     }
+  }
+   for(var i = 0; i < characters.length; i++){
+		if(!characters[i].drawable){
+			characters[i].drawable = true;
+		}
+  }
+  
   items.push(new DrawableBox(650,(game_screen.height - 390),250,70,"I will reason with the zombies!", 0, 5, 0, 1))	
   items.push(new DrawableBox(100,(game_screen.height - 410),140,70,"I want to cry...", 0, 5, 0, 2))
   items.push(new DrawableBox(500,(game_screen.height - 450),220,80,"I'm blocking the windows!", 0, 5, 0, 3))
@@ -214,7 +249,23 @@ function set_up_scene1point5(){
   items.push(new DrawableBox(500,(game_screen.height - 400),180,150,message_array[2], 1, 5, 0, 0))
   items.push(new DrawableBox(700,(game_screen.height - 400),180,150,message_array[3], 1, 5, 0, 0))
 
+function set_up_scene3(){
+	
+  for(var i=0; i<items.length; i++){
+	 if(items[i].status == 0 && items[i].type == 5){
+        items[i].drawable = false;
+     }
+  }
 }
+ 
+function hide_characters(){
+	for(var i = 0; i < characters.length; i++){
+		if(characters[i].drawable){
+			characters[i].drawable = false;
+		}
+  }
+} 
+
 
 function kill_individual(x){
 			x.drawable = false
