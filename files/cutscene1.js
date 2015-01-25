@@ -50,14 +50,17 @@ function draw_cutscene(){
     con.drawImage(weekslater21, 0, 0);    //fade to 21 weeks later
  }
   else if(game_screen.cutscene_pos==8){
+  if(we_dont_want_dancing_boxes2){
+    we_dont_want_dancing_boxes2 = false
   set_up_scene3(); //fade to the final scene
   set_up_scenePUB();
   game_screen.end_credits = true;
+  }
   //instead of drawing background - draw background and foreground
   }
    else if(game_screen.cutscene_pos==9){
   con.save();
-  con.clearRect(0, 0, game_screen.width, game_screen.height)
+  // con.clearRect(0, 0, game_screen.width, game_screen.height)
     con.drawImage(end_img, 0, 0);    //go to thank you
 	
 	//OUR ACTUAL TIMER

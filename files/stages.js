@@ -3,6 +3,8 @@ var message_array = []
 var character_names = []
 var all_items = []
 var we_dont_want_supermans = true
+var we_dont_want_dancing_boxes = true
+var we_dont_want_dancing_boxes2 = true
 
 var message_neg_0 = []
 var message_neg_1 = []
@@ -258,14 +260,23 @@ function set_up_scene2(){
 }
  
 function set_up_scene1point5(){
-  items.push(new DrawableBox(100,(game_screen.height - 400),180,150,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 400),180,150,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(500,(game_screen.height - 400),180,150,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(700,(game_screen.height - 400),180,150,message_array[3], 1, 5, 0, 0))
+  if(we_dont_want_dancing_boxes){
+    we_dont_want_dancing_boxes = false
+    items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[0], 1, 5, 0, 0))
+    items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[1], 1, 5, 0, 0))
+    items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[2], 1, 5, 0, 0))
+    items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[3], 1, 5, 0, 0))
+  }
 }
  
 function set_up_scenePUB(){
+  items.push(new DrawableBox(100+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(300+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(500+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(700+getRandomInt(-15,15),(game_screen.height - getRandomInt(385,415)),180,150,message_array[3], 1, 5, 0, 0))
 }
+
+ 
 
 function set_up_scene3(){
 	resolve_characters_plan_2_outcome()
@@ -347,7 +358,6 @@ function resolve_characters_plan_2_outcome(){
 		index = items[characters[i].type.balloon].id
 		// this is story 1
       if(index == 1){
-		alert("story index 1")
         if (char_hps[i] < 10){
 			characters[i].drawable = false
 			kill_individual(characters[i])
@@ -357,7 +367,6 @@ function resolve_characters_plan_2_outcome(){
 		}
 	// this is story 2
       }else if (index == 2){
-		alert("story index 2")
 		if (char_hps[i] > 5 && char_hps[i] < 15){
 			message_array[i] = character_names[i] + " didn't realise that crying was the zombies only weakness, it took weeks to clear the corpses"
 		} else {
@@ -367,7 +376,6 @@ function resolve_characters_plan_2_outcome(){
 		}
 		// this is story 2
       }else if (index == 3){
-		alert("story index 3")
 		if (char_hps[i] > 15){
 			message_array[i] = character_names[i] + "'s quick thinking allowed him to sit out the tragedy playing Trial 'n Error"
 		} else {
@@ -377,7 +385,6 @@ function resolve_characters_plan_2_outcome(){
 		}
 		// this is story 2
       }else if (index == 4){
-		alert("story index 4")
 		if (char_hps[i] % 2 == 0){
 			message_array[i] = character_names[i] + "'s call for help reached the A-TEAM there were explosions and beer, many fools were pitied"
 		} else {
@@ -386,7 +393,6 @@ function resolve_characters_plan_2_outcome(){
 			message_array[i] = "While searching for signal " + character_names[i] + " was mistaken for a zombie by a super awesome attack choppa"
 		}
 		}else if (index == 5){
-		alert("story index 5")
 		if (char_hps[i] > 25){
 			message_array[i] = character_names[i] + " went an a super awesome killing spree, earning themselves a place among the most famous zombie slayers"
 		} else {
