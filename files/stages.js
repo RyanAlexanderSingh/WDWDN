@@ -153,11 +153,10 @@ function set_up_scene2(){
 }
  
 function set_up_scene1point5(){
-  items.push(new DrawableBox(650,(game_screen.height - 390),290, 140,message_array[0], 1, 5, 0, 0))
-  items.push(new DrawableBox(130,(game_screen.height - 280),290,140,message_array[1], 1, 5, 0, 0))
-  items.push(new DrawableBox(500,(game_screen.height - 450),290,140,message_array[2], 1, 5, 0, 0))
-  items.push(new DrawableBox(350,(game_screen.height - 350),290,140,message_array[3], 1, 5, 0, 0))
-  items.push(new DrawableBox(300,(game_screen.height - 420),290,140,message_array[4], 1, 5, 0, 0))
+  items.push(new DrawableBox(100,(game_screen.height - 100),160,140,message_array[0], 1, 5, 0, 0))
+  items.push(new DrawableBox(200,(game_screen.height - 200),160,140,message_array[1], 1, 5, 0, 0))
+  items.push(new DrawableBox(300,(game_screen.height - 300),160,140,message_array[2], 1, 5, 0, 0))
+  items.push(new DrawableBox(400,(game_screen.height - 400),160,140,message_array[3], 1, 5, 0, 0))
 }
 
 function kill_individual(x){
@@ -282,14 +281,13 @@ function resolve_characters_equip_2_plan(){
 			//alert("hp is now: " + hp)
 		}
 		
-		if (hp < 0){
+		// the char should die unless all the others are dead
+		if (hp < 0 && (characters[0].drawable == true || characters[1].drawable == true || characters[2].drawable == true)){
 			// kill the character
-			if ( characters[0].drawable == true || characters[1].drawable == true || characters[2].drawable == true){
 			characters[i].drawable = false
 			kill_individual(characters[i])
 			message = character_names[i] + " didn't make it; turns out the " + item_name + " weren't that useful!"
 			message_array.push(message)
-			}
 		} else {
 			message = character_names[i] + " survived; turns out the " + item_name + " were really useful!"
 			message_array.push(message)
