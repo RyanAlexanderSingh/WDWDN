@@ -243,7 +243,7 @@ function draw_frontground(){
 function pickScenario(clicked_value){
 	if(clicked_value == "Prepare Equipment")
 	{
-		window.location.href = "./equipment.html";
+		window.location.href = "./game.html";
 	}	
 	if(clicked_value == "Prepare Yourself")
 	{
@@ -252,7 +252,8 @@ function pickScenario(clicked_value){
 	}	
 	if(clicked_value == "Are you ready?")
 	{
-		window.location.href = "./outcome.html";
+		//do something here with the pub scene
+		
 	}
 }
 
