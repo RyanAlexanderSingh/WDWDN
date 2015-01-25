@@ -178,7 +178,7 @@ function resolve_characters_plan_2_outcome(){
 	for (i = 0; i < characters.length; i++){
 		if ( characters[i].type.balloon != -1){
 			index = items[characters[i].type.head].id
-			// alert("the character baloon index is " + index)
+			alert("the character balloon index is " + index)
 		}
 	}
 }
@@ -275,15 +275,15 @@ function resolve_characters_equip_2_plan(){
 		
 		if (hp < 0){
 			// kill the character
+			if ( characters[0].drawable == true || characters[1].drawable == true || characters[2].drawable == true){
 			characters[i].drawable = false
 			kill_individual(characters[i])
 			message = character_names[i] + " didn't make it; turns out the " + item_name + " weren't that useful!"
 			message_array.push(message)
-			//alert(message)
+			}
 		} else {
 			message = character_names[i] + " survived; turns out the " + item_name + " were really useful!"
 			message_array.push(message)
-			//alert(message)
 		}
 	}
   
