@@ -117,6 +117,7 @@ function set_up_sceen1(){
   var selectedH = []
   var selectedB = []
   var selectedL = []
+  var dressL = []
   var colours = []
   urlHeads.push("files/pictures/Face1.png")
   urlHeads.push("files/pictures/Face2.png")
@@ -130,14 +131,9 @@ function set_up_sceen1(){
   urlLegs.push("files/pictures/Legs2.png")
   urlLegs.push("files/pictures/Legs1.png")
   urlLegs.push("files/pictures/Legs4.png")
-  for(var i=0; i< 4; i++){
-    selectedH[i] = i
-    selectedB[i] = i
-    selectedL[i] = i
-  }
-  shuffle(selectedH)
-  shuffle(selectedB)
-  shuffle(selectedL)
+  shuffle(urlHeads)
+  shuffle(urlBodies)
+  shuffle(urlLegs)
   var random = getRandomInt(0,100)
   var otherRandom
   if(random < 30){
@@ -148,21 +144,21 @@ function set_up_sceen1(){
   if(random < 30){
     otherRandom = getRandomInt(0,3)
     urlBodies[otherRandom] = "files/pictures/Dress.png"
+    dressL[otherRandom] = 1
   }
   for(var i = 0; i < 4; i++){
-    var n_colour = new DrawingInfo(urlHeads[selectedH[i]],urlBodies[selectedB[i]],urlLegs[selectedL[i]],getRandomColor(),-1)
+    var n_colour = new DrawingInfo(urlHeads[i],urlBodies[i],urlLegs[i],dressL[i],-1)
     colours.push(n_colour)
   }
-  characters.push(new DrawableBox(100, (game_screen.height - 200), 40, 90, colours[0],0,new Equipment(2),-1, character_names[0]))
-  characters.push(new DrawableBox(200, (game_screen.height - 150), 40, 90, colours[1],0,new Equipment(2),-1, character_names[1]))
-  characters.push(new DrawableBox(400, (game_screen.height - 200), 40, 90, colours[2],0,new Equipment(2),-1, character_names[2]))
-  characters.push(new DrawableBox(500, (game_screen.height - 150), 40, 90, colours[3],0,new Equipment(2),-1, character_names[3]))
-  characters[otherRandom].url = 1
+  characters.push(new DrawableBox(100, (game_screen.height - 200), 40, 90, colours[3],0,new Equipment(2),-1, character_names[0]))
+  characters.push(new DrawableBox(200, (game_screen.height - 150), 40, 90, colours[2],0,new Equipment(2),-1, character_names[1]))
+  characters.push(new DrawableBox(400, (game_screen.height - 200), 40, 90, colours[1],0,new Equipment(2),-1, character_names[2]))
+  characters.push(new DrawableBox(500, (game_screen.height - 150), 40, 90, colours[0],0,new Equipment(2),-1, character_names[3]))
   //Setting up items
   init_items()
 }
 
- function clean_scene1(){
+ function clean_scene(){
     for(var i=0; i<items.length; i++){
       if(items[i].status == 0){
         items[i].drawable = false;
@@ -193,10 +189,12 @@ function set_up_scene2(){
 }
  
 function set_up_scene1point5(){
+
   items.push(new DrawableBox(100,(game_screen.height - 100),160,140,message_array[0], 1, 5, 0, 0))
   items.push(new DrawableBox(200,(game_screen.height - 200),160,140,message_array[1], 1, 5, 0, 0))
   items.push(new DrawableBox(300,(game_screen.height - 300),160,140,message_array[2], 1, 5, 0, 0))
   items.push(new DrawableBox(400,(game_screen.height - 400),160,140,message_array[3], 1, 5, 0, 0))
+
 }
 
 function kill_individual(x){
