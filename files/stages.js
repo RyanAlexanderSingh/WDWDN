@@ -63,19 +63,19 @@ function init_items(){
   all_items.push(new ItemInfo("Jugernaut", "files/pictures/jugernaut.png", 0, 45, 28, 0, 0, 50)) 
   // Left Hands
   all_items.push(new ItemInfo("Shroom", "files/pictures/Mushroom.png", 1, 20, 20, 0, 0, -15)) 
-  all_items.push(new ItemInfo("Bin Lid", "files/pictures/shield.png", 1, 10, 20, 0, -10, 14))  
-  all_items.push(new ItemInfo("MicroPhone", "files/pictures/Microphone.png", 1, 20, 20, 0, 0, -20)) 
-  all_items.push(new ItemInfo("Flowers", "files/pictures/Flowers.png", 1, 20, 20, 0, 0, 5)) 
+  all_items.push(new ItemInfo("Clock", "files/pictures/clock_off.png", 1, 15, 42, -3, 17, 5)) 
+  all_items[all_items.length-1].url_up = "files/pictures/clock_on.png"
   all_items.push(new ItemInfo("Sword", "files/pictures/sword_down.png", 1, 18, 50, -4, -49, 15))  
   all_items[all_items.length-1].url_up = "files/pictures/sword_up.png"
   all_items.push(new ItemInfo("Crowbar", "files/pictures/crowbar_down.png", 1, 18, 50, -1, -31, 25))  
   all_items[all_items.length-1].url_up = "files/pictures/crowbar_on.png"
+  all_items.push(new ItemInfo("Wrench", "files/pictures/Wrench_down.png", 1, 15, 40, -5, -35, 15))  
+  all_items[all_items.length-1].url_up = "files/pictures/Wrench_on.png"
+  all_items.push(new ItemInfo("Hammer", "files/pictures/hammer_on.png", 1, 18, 50, -3, -23, 20))  
+  all_items[all_items.length-1].url_up = "files/pictures/hammer_down.png"
   all_items.push(new ItemInfo("Rat-Flail", "files/pictures/Rat_flail.png", 1, 20, 20, 0, 0, 3))  
   // Torso
-  all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 20, 0, 0, -6))  
-  all_items.push(new ItemInfo("Spiky Bra", "files/pictures/Bra.png", 3, 20, 20, 0, 0, 2))  
-  all_items.push(new ItemInfo("Shoulder Pads", "files/pictures/shoulders.png", 3, 20, 20, 0, 0, 8))  
-  all_items.push(new ItemInfo("Bullet-Proof Vest", "files/pictures/bulletproofvest.png", 3, 20, 20, 0, 0, 12))  
+  all_items.push(new ItemInfo("Medal", "files/pictures/Mdeal.png", 3, 20, 20, -2, 15, -6))  
   // Feet
   all_items.push(new ItemInfo("Wellies", "files/pictures/Wellies.png", 4, 20, 20, 0, 0, -8)) 
   all_items.push(new ItemInfo("Flip Flops", "files/pictures/FlipsFlops.png", 4, 20, 20, 0, 0, -14)) 
