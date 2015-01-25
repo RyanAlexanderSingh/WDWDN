@@ -3,6 +3,7 @@ var message_array = []
 var character_names = []
 var all_items = []
 
+
 function init_items(){
 
   character_names[0] = "Ryan"
@@ -159,29 +160,53 @@ function set_up_sceen1(){
   init_items()
 }
 
- function clean_scene(){
+ function prescene_two(){
     for(var i=0; i<items.length; i++){
       if(items[i].status == 0){
         items[i].drawable = false;
 		items[i].posx = 10000 //send to china unused items
-     } else{
-        items[i].posx += 120
-        items[i].posy += 20
-      }
+     }
+	 if(items[i].status != 0){
+        items[i].drawable = false;
+     }
     }
-    
-    for(var i=0; i<characters.length; i++){
-      characters[i].posx += 120
-      characters[i].posy += 20
-    }
-  //Setting up background
+	  //Setting up background
   game_screen.backgroundurl ="files/pictures/Shettler.png" //"files/pictures/pub_back.png"
   game_screen.backgroundurl2 = -1 //"files/pictures/pub_front.png"
+  } 
+  
+  function scene_two(){
+	for(var i=0; i<items.length; i++){
+	 if(items[i].status != 0){
+        items[i].drawable = true;
+     }
   }
+ }
+  
+  // function presetup2(){
+    // for(var i=0; i<items.length; i++){
+      // if(items[i].status != 0){
+        // items[i].posx += 120
+        // items[i].posy += 20
+      // }
+    // }
+    
+    // for(var i=0; i<characters.length; i++){
+      // characters[i].posx += 120
+      // characters[i].posy += 20
+    // }
+ // }
 
 //This will set up the second scene
 // posx, posy, sizex, sizey, colour, status, type, url, id
 function set_up_scene2(){
+	
+  for(var i=0; i<items.length; i++){
+	 if(items[i].status == 1 && items[i].type == 5){
+        items[i].drawable = false;
+     }
+  }
+  
   items.push(new DrawableBox(650,(game_screen.height - 390),250,70,"I will reason with the zombies!", 0, 5, 0, 1))	
   items.push(new DrawableBox(100,(game_screen.height - 410),140,70,"I want to cry...", 0, 5, 0, 2))
   items.push(new DrawableBox(500,(game_screen.height - 450),220,80,"I'm blocking the windows!", 0, 5, 0, 3))
@@ -190,7 +215,7 @@ function set_up_scene2(){
 }
  
 function set_up_scene1point5(){
-
+  
   items.push(new DrawableBox(100,(game_screen.height - 100),160,140,message_array[0], 1, 5, 0, 0))
   items.push(new DrawableBox(200,(game_screen.height - 200),160,140,message_array[1], 1, 5, 0, 0))
   items.push(new DrawableBox(300,(game_screen.height - 300),160,140,message_array[2], 1, 5, 0, 0))
