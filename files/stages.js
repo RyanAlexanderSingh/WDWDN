@@ -237,7 +237,6 @@ function hide_characters(){
   }
 } 
 
-
 function kill_individual(x){
 			x.drawable = false
       x.posx += 1000
