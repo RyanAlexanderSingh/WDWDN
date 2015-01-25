@@ -392,6 +392,7 @@ function resolve_characters_plan_2_outcome(){
 		}
       }else{
 		// do something to the array
+		// leave the message as is from previous round
       }
 	}
 	}
