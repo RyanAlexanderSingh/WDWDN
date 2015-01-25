@@ -2,7 +2,7 @@
 var message_array = []
 var character_names = []
 var all_items = []
-
+var we_dont_want_supermans = true
 
 var message_neg_0 = []
 var message_neg_1 = []
@@ -271,9 +271,13 @@ function set_up_scene3(){
         items[i].drawable = false;
      }
   }
-      move_individual(characters[1], 0, -80);
+  if(we_dont_want_supermans){
+  we_dont_want_supermans = false
+  move_individual(characters[1], 0, -80);
       move_individual(characters[2], -100, 0);
       move_individual(characters[3], -100, -50);
+  }
+   
 }
  
 function hide_characters(){
